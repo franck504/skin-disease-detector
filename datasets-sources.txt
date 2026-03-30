@@ -1,0 +1,217 @@
+from datasets import load_dataset
+dataset = load_dataset("electricsheepafrica/Africa-skin-cancer-images-EHR")
+https://huggingface.co/datasets/electricsheepafrica/Africa-skin-cancer-images-EHR?utm_source=chatgpt.com
+
+
+---------------------------------------------------------
+
+
+https://passionderm.github.io/?utm_source=chatgpt.com
+
+
+-----------------------------------------------------------
+
+
+https://github.com/ptschandl/HAM10000_dataset
+https://zenodo.org/records/15832294?utm_source=chatgpt.com
+
+
+-----------------------------------------------------------
+
+
+
+
+
+
+Très bonne question — là tu touches **le vrai défi des projets IA santé : accéder aux données**.
+Je vais te donner **des méthodes concrètes (100% pratiques)** pour chacun de tes datasets 👇
+
+---
+
+# 🟢 1. PASSION Dermatology (Afrique) → ⚠️ accès contrôlé
+
+👉 Lien officiel : [Accéder au site PASSION Dataset](https://passionderm.github.io/?utm_source=chatgpt.com)
+
+## 📥 Comment l’obtenir :
+
+1. Aller sur le site
+2. Cliquer sur **“Request Access to Dataset”**
+3. Remplir :
+
+   * nom + institution (ou projet étudiant)
+   * objectif (recherche IA santé)
+4. Attendre validation
+
+## ⚠️ IMPORTANT :
+
+* ❌ pas de téléchargement direct libre
+* ❌ pas de redistribution autorisée
+* ✅ usage non commercial uniquement ([Passion Derm][1])
+
+👉 En résumé :
+✔ gratuit
+❗ mais **il faut demander l’accès**
+
+---
+
+# 🟢 2. Africanized HAM10000 → ✅ téléchargement direct
+
+👉 Lien : [Télécharger Africanized Dataset (HuggingFace)](https://huggingface.co/datasets/electricsheepafrica/Africa-skin-cancer-images-EHR?utm_source=chatgpt.com)
+
+## 📥 Méthodes :
+
+### 🔹 Méthode simple (site)
+
+* cliquer sur “Download”
+* télécharger les fichiers (~2.7 GB)
+
+### 🔹 Méthode Python (recommandée)
+
+```python
+from datasets import load_dataset
+
+dataset = load_dataset("electricsheepafrica/Africa-skin-cancer-images-EHR")
+```
+
+## 👍 Avantages :
+
+* libre accès
+* prêt pour IA
+* adapté Afrique
+
+## ⚠️ Licence :
+
+* non commercial (CC-BY-NC) ([Hugging Face][2])
+
+---
+
+# 🟢 3. HAM10000 (base originale) → ✅ direct
+
+👉 Lien officiel : [Télécharger HAM10000 (Zenodo)](https://zenodo.org/records/15832294?utm_source=chatgpt.com)
+
+## 📥 Télécharger :
+
+* fichier zip (~2.8 GB)
+* images + CSV
+
+## 📊 Contenu :
+
+* 10 015 images
+* 7 maladies ([Almanacsoft][3])
+
+👉 Très utilisé en IA médicale
+
+---
+
+# 🟡 4. eSkinHealth → ⚠️ accès recherche uniquement
+
+👉 Pas encore “open download” direct (très récent dataset)
+
+## 📥 Comment l’avoir :
+
+### 🔹 Méthode 1 (recommandée)
+
+* lire le papier scientifique
+* contacter les auteurs (email dans article)
+
+👉 Dataset contient :
+
+* 5 623 images
+* 47 maladies tropicales ([arXiv][4])
+
+---
+
+### 🔹 Méthode 2
+
+* chercher sur :
+
+  * GitHub
+  * HuggingFace
+  * Google Dataset Search
+
+👉 parfois publié après (release progressive)
+
+---
+
+# 🧠 STRATÉGIE PRO (TRÈS IMPORTANT)
+
+Tu dois combiner 2 types d’accès :
+
+## ✅ 1. Accès direct (rapide)
+
+* Africanized HAM10000
+* HAM10000
+
+👉 pour commencer TON modèle immédiatement
+
+---
+
+## ✅ 2. Accès contrôlé (qualité)
+
+* PASSION
+* eSkinHealth
+
+👉 pour améliorer ton modèle (Afrique)
+
+---
+
+# 🚀 PLAN CONCRET POUR TOI (très pratique)
+
+### 🥇 Étape 1 (AUJOURD’HUI)
+
+* télécharger :
+
+  * HAM10000
+  * Africanized dataset
+
+👉 tu peux déjà entraîner ton modèle
+
+---
+
+### 🥈 Étape 2
+
+* faire demande PASSION
+* envoyer email eSkinHealth
+
+👉 pendant que tu développes
+
+---
+
+### 🥉 Étape 3
+
+* fusionner datasets
+* fine-tuning Afrique
+
+---
+
+# ⚠️ ERREUR À ÉVITER (très important)
+
+❌ Ne cherche pas :
+
+* torrents
+* scraping datasets
+* reupload illégal
+
+👉 Beaucoup de datasets médicaux sont :
+
+* protégés
+* éthiques
+* sensibles
+
+---
+
+# 💬 Si tu veux aller plus loin
+
+Je peux t’aider à :
+
+✅ écrire le mail pour demander eSkinHealth
+✅ script Python pour fusionner datasets
+✅ pipeline IA complet (entraînement + mobile Flutter)
+✅ optimiser pour ton PC (tu m’as déjà montré ton CPU 😉)
+
+Dis-moi 👍
+
+[1]: https://passionderm.github.io/?utm_source=chatgpt.com "PASSION for Dermatology"
+[2]: https://huggingface.co/datasets/electricsheepafrica/Africa-skin-cancer-images-EHR?utm_source=chatgpt.com "electricsheepafrica/Africa-skin-cancer-images-EHR · Datasets at Hugging Face"
+[3]: https://www.almanacsoft.com/skindx?utm_source=chatgpt.com "AlmanacSoft - SkinDx"
+[4]: https://arxiv.org/abs/2508.18608?utm_source=chatgpt.com "eSkinHealth: A Multimodal Dataset for Neglected Tropical Skin Diseases"

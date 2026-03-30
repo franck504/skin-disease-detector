@@ -1,0 +1,11 @@
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2 -  "/projet3/dataset-2/train/Scabies Lyme Disease and other Infestations and Bites": ignorer les images dans ce dossier , trop sale , "/projet3/dataset-2/train/Scabies Lyme Disease and other Infestations and Bites"
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3 - ne pas prendre "Bites" comme classe-unique-finale,
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+4 - detecter des sous-classes dans les dossiers de datasets, selon les nom des fichiers , pour la classe Cellulitis

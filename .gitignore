@@ -1,0 +1,15 @@
+# Environnement Python
+venv/
+__pycache__/
+*.pyc
+
+# Dataset (trop volumineux pour GitHub, sera sur Google Drive)
+datasets-cutisia/
+
+# Modèles entraînés
+*.h5
+*.tflite
+
+# OS
+.DS_Store
+Thumbs.db

@@ -14,7 +14,9 @@ import nest_asyncio
 MODEL_PATH = 'cutisia_heavy_server.h5'
 LABELS = sorted(os.listdir('datasets-cutisia'))  # Ordre alphabétique des classes
 PORT = 8000
-NGROK_AUTHTOKEN = "VOTRE_AUTHTOKEN_NGROK"  # A obtenir sur dashboard.ngrok.com
+
+# Lecture sécurisée du Token Ngrok (priorité à la variable d'environnement)
+NGROK_AUTHTOKEN = os.getenv("NGROK_AUTHTOKEN", "VOTRE_AUTHTOKEN_NGROK")
 
 # --- INITIALISATION ---
 app = FastAPI(title="Cutisia API - Skin Disease Detection")

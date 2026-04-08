@@ -1,71 +1,94 @@
-# Planification de Projet Jira : IA Médicale "Cutisia"
+# Guide de Saisie Jira (Manuel) : Projet "Cutisia"
 
-Ce document simule votre **Backlog Jira** pour piloter le projet. Il suit l'approche hybride **CRISP-DM** (IA) et **Agile** (Mobile).
+Ce document détaille chaque étape pour construire votre tableau de bord Jira. 
 
----
-
-## 🏗️ EPIC 1 : Recherche & Ingestion de Données (2-3 semaines)
-
-### TASK 1.1 : Identification & Analyse des sources (CRISP-DM Phase 1 & 2)
-*   **Sub-task 1.1.1 :** Analyse structurale des archives extraites (3j) - **[TERMINE]**
-*   **Sub-task 1.1.2 :** Inventaire des classes & choix manuel des 9 maladies cibles (2j) - **[TERMINE]**
-*   **Sub-task 1.1.3 :** Étude de la distance de capture camera/zoom par source (3j)
-
-### TASK 1.2 : Migration & Organisation (CRISP-DM Phase 3)
-*   **Sub-task 1.2.1 :** Création du dossier unifié `datasets-cutisia` (0.5j) - **[TERMINE]**
-*   **Sub-task 1.2.2 :** Script de migration automatique vers l'organisation cible (2j)
-*   **Sub-task 1.2.3 :** Création de dossier par "distance de capture" (sous-classes) (2j)
+## 💡 Mode d'emploi pour la saisie :
+1. **Créer les Épiques** en premier (Bouton "Créer" > Type : Épique).
+2. **Créer les Tâches** et les lier à leur Épique respective via le champ "Épique" ou "Parent".
+3. **Ajouter les Sous-tâches** à l'intérieur de chaque tâche pour le suivi quotidien.
 
 ---
 
-## 🧪 EPIC 2 : Pipeline de Préparation & Qualité (3-4 semaines)
+## 🏗️ EPIC 1 : Recherche & Ingestion de Données
+**Labels :** `DATA`, `CRISP-DM` | **Priorité :** High
 
-### TASK 2.1 : Uniformisation Technique (CRISP-DM Phase 3)
-*   **Sub-task 2.1.1 :** Standardisation des résolutions & formats d'images (3j)
-*   **Sub-task 2.1.2 :** Normalisation des noms de fichiers (1j)
-*   **Sub-task 2.1.3 :** Tri manuel pour validation du zoom (Validation Humaine) (7j)
+### TASK 1.1 : Analyse & Inventaire des sources
+*   **Description :** Étude structurelle des datasets ISIC et HAM10000.
+*   **Sous-tâches :**
+    - [ ] **ST-1.1.1 :** Vérification de l'intégrité des dossiers extraits.
+    - [ ] **ST-1.1.2 :** Mapping des classes (Lèpre, Gale, etc.) vers les dossiers sources.
+    - [ ] **ST-1.1.3 :** Analyse de la résolution moyenne par source.
 
-### TASK 2.2 : Annotation & Augmentation
-*   **Sub-task 2.2.1 :** Importation dans l'outil d'annotation (ex: Roboflow) (2j)
-*   **Sub-task 2.2.2 :** Configuration de la Data Augmentation (simuler photos mobiles) (3j)
-*   **Sub-task 2.2.3 :** Vérification des biais (couleurs de peau) (4j)
-
----
-
-## 🧠 EPIC 3 : Modélisation & Entraînement IA (4-6 semaines)
-
-### TASK 3.1 : Entraînement & Expérimentation (CRISP-DM Phase 4)
-*   **Sub-task 3.1.1 :** Configuration de l'environnement (Kaggle/Colab) (2j)
-*   **Sub-task 3.1.2 :** Entraînement modèles (EfficientNet, MobileNetV3) (10j)
-*   **Sub-task 3.1.3 :** Fine-tuning sur les maladies tropicales spécifiques (7j)
-
-### TASK 3.2 : Évaluation & Compression (CRISP-DM Phase 5)
-*   **Sub-task 3.2.1 :** Analyse de la matrice de confusion (Précision/Rappel) (3j)
-*   **Sub-task 3.2.2 :** Conversion & Optimisation au format TensorFlow Lite (.tflite) (4j)
-*   **Sub-task 3.2.3 :** Validation des performances sur matériel cible (Android/iOS) (5j)
+### TASK 1.2 : Migration Technique Unifiée
+*   **Description :** Déplacement physique des fichiers vers `datasets-cutisia/`.
+*   **Sous-tâches :**
+    - [ ] **ST-1.2.1 :** Test du script `migrate_and_unify.py` sur un échantillon.
+    - [ ] **ST-1.2.2 :** Migration complète des 11 000+ images.
+    - [ ] **ST-1.2.3 :** Contrôle des doublons et des liens brisés.
 
 ---
 
-## 📱 EPIC 4 : Application Mobile Flutter (4-6 semaines)
+## 🧪 EPIC 2 : Pipeline de Préparation & Qualité
+**Labels :** `QUALITY`, `PREPROCESSING` | **Priorité :** High
 
-### TASK 4.1 : Interface Utilisateur (Agile Sprint 1 & 2)
-*   **Sub-task 4.1.1 :** UI Prise de photo avec guide de distance (Overlay caméra) (5j)
-*   **Sub-task 4.1.2 :** Écran de résultats & recommandations médicales (5j)
+### TASK 2.1 : Standardisation & Resizing
+*   **Description :** Préparation visuelle des clichés pour le modèle MobileNetV3.
+*   **Sous-tâches :**
+    - [ ] **ST-2.1.1 :** Redimensionnement massif en 224x224 (Interpolation Lanczos).
+    - [ ] **ST-2.1.2 :** Conversion de tous les formats exotiques (PNG, BMP) en JPEG.
+    - [ ] **ST-2.1.3 :** Normalisation de la luminosité (Histogram Equalization).
 
-### TASK 4.2 : Intégration IA & Cloud (Agile Sprint 3)
-*   **Sub-task 4.2.1 :** Intégration moteur d'inférence TFLite (Offline) (7j)
-*   **Sub-task 4.2.2 :** API Cloud pour traduction en Malgache (si réseau) (5j)
-
----
-
-## 🚀 EPIC 5 : Déploiement & Feedback Terrain (2-3 semaines)
-
-### TASK 5.1 : Tests finaux & Livraison (CRISP-DM Phase 6)
-*   **Sub-task 5.1.1 :** Phase BETA avec médecins testeurs (10j)
-*   **Sub-task 5.1.2 :** Correction des bugs critiques (5j)
-*   **Sub-task 5.1.3 :** Publication sur les stores ou déploiement APK (2j)
+### TASK 2.2 : Nettoyage & Data Augmentation
+*   **Description :** Enrichissement du dataset pour simuler des photos prises sur smartphone.
+*   **Sous-tâches :**
+    - [ ] **ST-2.2.1 :** Tri manuel pour supprimer les images floues.
+    - [ ] **ST-2.2.2 :** Configuration de la rotation, zoom et bruit numérique (Roboflow).
+    - [ ] **ST-2.2.3 :** Vérification de la diversité des teintes de peau (Fitzpatrick).
 
 ---
 
-### 📊 Estimation Totale du Projet : **15 à 22 Semaines** (Environ 4-5 mois)
-*   **Ressources :** 1 ML Engineer, 1 Flutter Dev, 1 Expert Médical (Ponctuel).
+## 🧠 EPIC 3 : Modélisation & Entraînement IA
+**Labels :** `AI`, `MODELING` | **Priorité :** High
+
+### TASK 3.1 : Entraînement Cloud (EfficientNetV2)
+*   **Description :** Création du modèle "Lourd" pour l'expertise via API.
+*   **Sous-tâches :**
+    - [ ] **ST-3.1.1 :** Setup de l'environnement GPU (Colab Pro/Kaggle).
+    - [ ] **ST-3.1.2 :** Fine-tuning des poids ImageNet sur Cutisia.
+    - [ ] **ST-3.1.3 :** Exportation du modèle au format `.h5`.
+
+### TASK 3.2 : Optimisation Mobile (TFLite)
+*   **Description :** Conversion du modèle léger pour Flutter.
+*   **Sous-tâches :**
+    - [ ] **ST-3.2.1 :** Entraînement MobileNetV3-Large.
+    - [ ] **ST-3.2.2 :** Quantification INT8 pour réduire la taille à < 10 Mo.
+    - [ ] **ST-3.2.3 :** Génération du fichier `labels.txt`.
+
+---
+
+## 📱 EPIC 4 : Application Mobile Flutter
+**Labels :** `MOBILE`, `FLUTTER` | **Priorité :** Medium
+
+### TASK 4.1 : Expérience de Capture Intelligent
+*   **Description :** UI caméra avec guide de distance.
+*   **Sous-tâches :**
+    - [ ] **ST-4.1.1 :** Développement de l'overlay caméra (Rectangle de focus).
+    - [ ] **ST-4.1.2 :** Logique de validation de la netteté avant capture.
+
+### TASK 4.2 : Diagnostic & Recommandations
+*   **Description :** Affichage des résultats et conseils de santé.
+*   **Sous-tâches :**
+    - [ ] **ST-4.2.1 :** Intégration du moteur d'inférence TFLite.
+    - [ ] **ST-4.2.2 :** Traduction dynamique des termes médicaux en Malgache.
+
+---
+
+## 🚀 EPIC 5 : Déploiement & Livraison
+**Labels :** `DEVOPS`, `RELEASE` | **Priorité :** Medium
+
+### TASK 5.1 : Validation Terrain & Publication
+*   **Description :** Tests finaux et mise en production.
+*   **Sous-tâches :**
+    - [ ] **ST-5.1.1 :** Test de performance sur smartphones d'entrée de gamme.
+    - [ ] **ST-5.1.2 :** Signature de l'APK/App Bundle.
+    - [ ] **ST-5.1.3 :** Mise en ligne du serveur API pour le modèle lourd.

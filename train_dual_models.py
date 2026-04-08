@@ -1,4 +1,5 @@
 import os
+from PIL import Image
 import tensorflow as tf
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.applications import EfficientNetV2B0, MobileNetV3Large
@@ -25,6 +26,39 @@ if not os.path.exists(DATA_DIR):
     
     if not os.path.exists(DATA_DIR):
         print(f"❌ Erreur : Le dossier '{DATA_DIR}' est introuvable.")
+
+def clean_dataset(directory):
+    """Supprime les fichiers qui ne sont pas des images valides."""
+    print(f"🧹 Nettoyage du dataset dans {directory}...")
+    valid_extensions = ('.png', '.jpg', '.jpeg', '.bmp', '.gif')
+    count_removed = 0
+    for root, dirs, files in os.walk(directory):
+        for file in files:
+            file_path = os.path.join(root, file)
+            # Supprimer les fichiers système cachés
+            if file.startswith('.'):
+                os.remove(file_path)
+                count_removed += 1
+                continue
+            
+            if not file.lower().endswith(valid_extensions):
+                print(f"🗑️ Suppression fichier non-image : {file_path}")
+                os.remove(file_path)
+                count_removed += 1
+                continue
+                
+            try:
+                with Image.open(file_path) as img:
+                    img.verify() # Vérifie l'intégrité
+            except Exception:
+                print(f"❌ Image corrompue supprimée : {file_path}")
+                os.remove(file_path)
+                count_removed += 1
+    print(f"✅ Nettoyage terminé. {count_removed} fichiers problématiques supprimés.")
+
+# Lancer le nettoyage avant l'entraînement
+clean_dataset(DATA_DIR)
+
 IMG_SIZE = (224, 224)
 BATCH_SIZE = 32
 EPOCHS = 20

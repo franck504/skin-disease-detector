@@ -12,12 +12,19 @@ DATA_DIR = 'datasets-cutisia'
 
 # Détection automatique pour Google Colab
 if not os.path.exists(DATA_DIR):
-    colab_drive_path = '/content/drive/MyDrive/datasets-cutisia'
-    if os.path.exists(colab_drive_path):
-        DATA_DIR = colab_drive_path
-        print(f"📌 Dataset détecté sur Google Drive : {DATA_DIR}")
-    else:
-        print(f"❌ Erreur : Le dossier '{DATA_DIR}' est introuvable localement et sur le Drive.")
+    possible_paths = [
+        '/content/drive/MyDrive/cutisia_datasets',
+        '/content/drive/MyDrive/datasets-cutisia',
+        '/content/skin-disease-detector/datasets-cutisia'
+    ]
+    for path in possible_paths:
+        if os.path.exists(path):
+            DATA_DIR = path
+            print(f"📌 Dataset détecté : {DATA_DIR}")
+            break
+    
+    if not os.path.exists(DATA_DIR):
+        print(f"❌ Erreur : Le dossier '{DATA_DIR}' est introuvable.")
 IMG_SIZE = (224, 224)
 BATCH_SIZE = 32
 EPOCHS = 20

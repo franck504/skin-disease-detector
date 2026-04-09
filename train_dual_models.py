@@ -21,7 +21,7 @@ if os.path.exists('/content/drive/MyDrive/cutisia_datasets'):
 os.makedirs(SAVE_DIR, exist_ok=True)
 
 IMG_SIZE = (384, 384) # Taille optimale pour EfficientNetV2L
-BATCH_SIZE = 16       # V2-L est lourd, on réduit le batch pour la mémoire GPU
+BATCH_SIZE = 8       # Réduit pour éviter les erreurs Out of Memory (OOM) avec EfficientNetV2-L
 EPOCHS = 50
 
 # --- PRETRAITEMENT MEDICAL (CLAHE + CROP) ---
@@ -48,14 +48,22 @@ def crop_lesion(image, mask):
 
 def process_image(img_path, mask_path):
     """Pipeline complet pour une image individuelle"""
-    img = cv2.imread(img_path.decode('utf-8'))
+    # Correction TF 2.18 : extraction du numpy avant décodage
+    img_path_str = img_path.numpy().decode('utf-8')
+    mask_path_str = mask_path.numpy().decode('utf-8')
+
+    img = cv2.imread(img_path_str)
+    if img is None:
+        return np.zeros((*IMG_SIZE, 3), dtype=np.float32)
+
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     
     # Charger le masque si disponible
-    if os.path.exists(mask_path.decode('utf-8')):
-        mask = cv2.imread(mask_path.decode('utf-8'), cv2.IMREAD_GRAYSCALE)
-        # 1. Crop
-        img = crop_lesion(img, mask)
+    if os.path.exists(mask_path_str):
+        mask = cv2.imread(mask_path_str, cv2.IMREAD_GRAYSCALE)
+        if mask is not None:
+            # 1. Crop
+            img = crop_lesion(img, mask)
     
     # 2. Resize final
     img = cv2.resize(img, IMG_SIZE)

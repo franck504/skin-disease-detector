@@ -1,0 +1,422 @@
+2026-04-09 00:18:58.555265: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1775693938.575634    5583 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1775693938.582470    5583 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1775693938.598720    5583 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775693938.598787    5583 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775693938.598792    5583 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775693938.598795    5583 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2026-04-09 00:18:58.603733: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+📌 Dataset détecté : /content/drive/MyDrive/cutisia_datasets
+📡 Sauvegarde configurée sur Google Drive : /content/drive/MyDrive/cutisia_models/
+🧹 Nettoyage du dataset dans /content/drive/MyDrive/cutisia_datasets...
+✅ Nettoyage terminé. 0 fichiers problématiques supprimés.
+🚀 Préparation de l'entraînement pour 6 classes...
+Found 8972 images belonging to 6 classes.
+Found 2241 images belonging to 6 classes.
+
+📦 Entraînement du modèle LOURD (Serveur/Cloud)...
+2026-04-09 00:23:28.863040: W tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:47] Overriding orig_value setting because the TF_FORCE_GPU_ALLOW_GROWTH environment variable is set. Original config value was 0.
+I0000 00:00:1775694208.869211    5583 gpu_device.cc:2019] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 13757 MB memory:  -> device: 0, name: Tesla T4, pci bus id: 0000:00:04.0, compute capability: 7.5
+Downloading data from https://storage.googleapis.com/tensorflow/keras-applications/efficientnet_v2/efficientnetv2-b0_notop.h5
+24274472/24274472 ━━━━━━━━━━━━━━━━━━━━ 0s 0us/step
+Epoch 1/20
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1775694232.862643   11493 service.cc:152] XLA service 0x7db174003f10 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+I0000 00:00:1775694232.862680   11493 service.cc:160]   StreamExecutor device (0): Tesla T4, Compute Capability 7.5
+2026-04-09 00:23:53.730781: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:269] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+I0000 00:00:1775694235.665527   11493 cuda_dnn.cc:529] Loaded cuDNN version 91002
+2026-04-09 00:24:04.902495: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-09 00:24:05.041136: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-09 00:24:06.586234: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-09 00:24:06.728132: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+I0000 00:00:1775694256.600822   11493 device_compiler.h:188] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+233/281 ━━━━━━━━━━━━━━━━━━━━ 33s 692ms/step - accuracy: 0.3110 - loss: 1.68552026-04-09 00:27:07.478059: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-09 00:27:07.611508: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-09 00:27:09.207359: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-09 00:27:09.350306: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-09 00:27:09.491403: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+281/281 ━━━━━━━━━━━━━━━━━━━━ 0s 772ms/step - accuracy: 0.3121 - loss: 1.68312026-04-09 00:28:59.392335: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-09 00:28:59.528387: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-09 00:28:59.664167: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+281/281 ━━━━━━━━━━━━━━━━━━━━ 328s 1s/step - accuracy: 0.3182 - loss: 1.6707 - val_accuracy: 0.3284 - val_loss: 1.6456
+Epoch 2/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 246s 877ms/step - accuracy: 0.3221 - loss: 1.6586 - val_accuracy: 0.3284 - val_loss: 1.6459
+Epoch 3/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 247s 880ms/step - accuracy: 0.3218 - loss: 1.6572 - val_accuracy: 0.3284 - val_loss: 1.6447
+Epoch 4/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 242s 862ms/step - accuracy: 0.3241 - loss: 1.6581 - val_accuracy: 0.3284 - val_loss: 1.6463
+Epoch 5/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 239s 850ms/step - accuracy: 0.3272 - loss: 1.6581 - val_accuracy: 0.3284 - val_loss: 1.6443
+Epoch 6/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 238s 848ms/step - accuracy: 0.3258 - loss: 1.6562 - val_accuracy: 0.3284 - val_loss: 1.6458
+Epoch 7/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 241s 858ms/step - accuracy: 0.3280 - loss: 1.6590 - val_accuracy: 0.3284 - val_loss: 1.6436
+Epoch 8/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 241s 858ms/step - accuracy: 0.3284 - loss: 1.6552 - val_accuracy: 0.3284 - val_loss: 1.6451
+Epoch 9/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 245s 873ms/step - accuracy: 0.3280 - loss: 1.6541 - val_accuracy: 0.3284 - val_loss: 1.6449
+Epoch 10/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 245s 873ms/step - accuracy: 0.3281 - loss: 1.6536 - val_accuracy: 0.3284 - val_loss: 1.6443
+Epoch 11/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 273s 973ms/step - accuracy: 0.3281 - loss: 1.6551 - val_accuracy: 0.3284 - val_loss: 1.6453
+Epoch 12/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 244s 868ms/step - accuracy: 0.3278 - loss: 1.6549 - val_accuracy: 0.3284 - val_loss: 1.6423
+Epoch 13/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 253s 900ms/step - accuracy: 0.3285 - loss: 1.6514 - val_accuracy: 0.3284 - val_loss: 1.6417
+Epoch 14/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 286s 1s/step - accuracy: 0.3280 - loss: 1.6507 - val_accuracy: 0.3284 - val_loss: 1.6429
+Epoch 15/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 244s 868ms/step - accuracy: 0.3275 - loss: 1.6538 - val_accuracy: 0.3284 - val_loss: 1.6415
+Epoch 16/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 243s 866ms/step - accuracy: 0.3281 - loss: 1.6530 - val_accuracy: 0.3284 - val_loss: 1.6407
+Epoch 17/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 261s 864ms/step - accuracy: 0.3281 - loss: 1.6540 - val_accuracy: 0.3284 - val_loss: 1.6413
+Epoch 18/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 245s 873ms/step - accuracy: 0.3281 - loss: 1.6521 - val_accuracy: 0.3284 - val_loss: 1.6408
+Epoch 19/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 244s 868ms/step - accuracy: 0.3281 - loss: 1.6530 - val_accuracy: 0.3284 - val_loss: 1.6435
+Epoch 20/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 253s 902ms/step - accuracy: 0.3281 - loss: 1.6514 - val_accuracy: 0.3284 - val_loss: 1.6402
+WARNING:absl:You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+
+📱 Entraînement du modèle LEGER (Mobile/Flutter)...
+Downloading data from https://storage.googleapis.com/tensorflow/keras-applications/mobilenet_v3/weights_mobilenet_v3_large_224_1.0_float_no_top_v2.h5
+12683000/12683000 ━━━━━━━━━━━━━━━━━━━━ 0s 0us/step
+Epoch 1/20
+2026-04-09 01:48:17.667088: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-09 01:48:17.808424: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-09 01:48:17.948796: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+102/281 ━━━━━━━━━━━━━━━━━━━━ 2:04 697ms/step - accuracy: 0.2322 - loss: 1.85572026-04-09 01:49:41.794759: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-09 01:49:41.931363: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+281/281 ━━━━━━━━━━━━━━━━━━━━ 0s 741ms/step - accuracy: 0.2569 - loss: 1.78492026-04-09 01:52:56.183712: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-09 01:52:56.316744: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+281/281 ━━━━━━━━━━━━━━━━━━━━ 302s 997ms/step - accuracy: 0.2766 - loss: 1.7306 - val_accuracy: 0.3284 - val_loss: 1.6379
+Epoch 2/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 278s 892ms/step - accuracy: 0.3105 - loss: 1.6667 - val_accuracy: 0.3284 - val_loss: 1.6288
+Epoch 3/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 255s 906ms/step - accuracy: 0.3232 - loss: 1.6466 - val_accuracy: 0.3311 - val_loss: 1.6225
+Epoch 4/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 257s 915ms/step - accuracy: 0.3258 - loss: 1.6374 - val_accuracy: 0.3302 - val_loss: 1.6149
+Epoch 5/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 256s 909ms/step - accuracy: 0.3310 - loss: 1.6278 - val_accuracy: 0.3307 - val_loss: 1.6082
+Epoch 6/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 256s 909ms/step - accuracy: 0.3320 - loss: 1.6237 - val_accuracy: 0.3307 - val_loss: 1.6028
+Epoch 7/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 252s 895ms/step - accuracy: 0.3356 - loss: 1.6178 - val_accuracy: 0.3315 - val_loss: 1.5954
+Epoch 8/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 251s 895ms/step - accuracy: 0.3365 - loss: 1.6104 - val_accuracy: 0.3338 - val_loss: 1.5890
+Epoch 9/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 250s 889ms/step - accuracy: 0.3354 - loss: 1.6058 - val_accuracy: 0.3369 - val_loss: 1.5828
+Epoch 10/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 250s 891ms/step - accuracy: 0.3399 - loss: 1.6021 - val_accuracy: 0.3396 - val_loss: 1.5753
+Epoch 11/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 279s 995ms/step - accuracy: 0.3418 - loss: 1.5949 - val_accuracy: 0.3427 - val_loss: 1.5687
+Epoch 12/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 251s 892ms/step - accuracy: 0.3460 - loss: 1.5902 - val_accuracy: 0.3458 - val_loss: 1.5647
+Epoch 13/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 253s 900ms/step - accuracy: 0.3486 - loss: 1.5861 - val_accuracy: 0.3512 - val_loss: 1.5629
+Epoch 14/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 249s 888ms/step - accuracy: 0.3470 - loss: 1.5821 - val_accuracy: 0.3552 - val_loss: 1.5560
+Epoch 15/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 249s 886ms/step - accuracy: 0.3492 - loss: 1.5844 - val_accuracy: 0.3641 - val_loss: 1.5485
+Epoch 16/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 251s 894ms/step - accuracy: 0.3519 - loss: 1.5777 - val_accuracy: 0.3690 - val_loss: 1.5465
+Epoch 17/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 251s 895ms/step - accuracy: 0.3530 - loss: 1.5765 - val_accuracy: 0.3681 - val_loss: 1.5453
+Epoch 18/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 251s 895ms/step - accuracy: 0.3578 - loss: 1.5704 - val_accuracy: 0.3753 - val_loss: 1.5380
+Epoch 19/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 247s 880ms/step - accuracy: 0.3601 - loss: 1.5700 - val_accuracy: 0.3757 - val_loss: 1.5399
+Epoch 20/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 251s 892ms/step - accuracy: 0.3627 - loss: 1.5650 - val_accuracy: 0.3864 - val_loss: 1.5317
+WARNING:absl:You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+
+🔄 Conversion vers TensorFlow Lite...
+Saved artifact at '/tmp/tmpk5nxbf2s'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): TensorSpec(shape=(None, 224, 224, 3), dtype=tf.float32, name='keras_tensor_278')
+Output Type:
+  TensorSpec(shape=(None, 6), dtype=tf.float32, name=None)
+Captures:
+  138203939435728: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203939435344: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203939436496: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203939433040: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203939434000: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203939434960: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660016464: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660016272: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203939436304: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660013776: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660014352: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660014160: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660013200: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660014544: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660013008: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660011280: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660012816: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660012624: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660015504: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660011472: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660015888: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660017040: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660016848: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660014736: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660017616: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660017232: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660013584: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660017424: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660013968: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660018576: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660018960: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660019152: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660018192: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660018768: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660019728: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660020112: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660020304: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660019344: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660019920: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660020880: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660018384: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660020496: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660020688: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660017808: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660021840: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660021264: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660021456: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660021648: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660018000: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660022800: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660022224: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660022416: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660022608: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660019536: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660023760: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660023184: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660021072: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660024528: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660023952: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660024912: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660023376: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660022032: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660024720: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660025488: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660024144: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660024336: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660025296: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660022992: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660025104: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660023568: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890475920: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890476112: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203660025680: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890474960: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890474576: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890475344: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890476880: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890476304: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890477264: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890475728: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890474768: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890477072: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890477840: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890476496: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890475152: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890477648: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890475536: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890478800: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890478224: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890478416: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890478608: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890476688: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890479760: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890479184: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890477456: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890480528: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890479952: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890480912: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890479376: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890478032: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890480720: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890481488: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890480144: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890478992: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890481296: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890479568: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890482448: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890481872: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890482064: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890482256: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890480336: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890483408: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890482832: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890483024: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890483216: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890481104: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890484368: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203939435536: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203939436112: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890481680: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203939435920: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138203939434384: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890484752: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890483792: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890484560: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890482640: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890485520: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890485904: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890486096: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890485136: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890485712: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890486672: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890483984: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890486288: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890486480: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890484944: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890487632: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890487056: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890487248: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890487440: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890483600: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890488592: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890488016: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890488208: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890488400: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890485328: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890489552: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890488976: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890489168: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890489360: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890486864: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890490512: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890489936: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890488784: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890490320: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890490128: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890489744: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890487824: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888837136: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888836944: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200890490704: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888837712: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888836368: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888837328: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888837520: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888836560: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888838672: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888838096: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888838288: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888838480: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888836176: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888839632: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888839056: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888836752: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888840400: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888839824: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888840784: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888839248: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888837904: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888840592: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888841360: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888840016: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888838864: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888841168: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888839440: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888842320: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888841744: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888841936: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888842128: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888840208: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888843280: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888842704: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888840976: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888844048: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888843472: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888844432: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888842896: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888841552: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888844240: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888845008: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888843664: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888842512: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888844816: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888843088: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888845968: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888845392: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888845584: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888845776: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888843856: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888846928: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888846352: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888844624: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888847696: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888847120: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888848080: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888846544: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888845200: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888847888: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888848656: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888847312: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888846160: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888848464: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888846736: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888849616: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888849040: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888849232: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888849424: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888847504: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888850576: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888850000: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888848272: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888851344: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888850768: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888851728: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888850192: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888850960: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888851536: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888852304: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888848848: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888849808: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888850384: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888852112: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888851920: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200888851152: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200887608912: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200887609104: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200887608336: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200887607760: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200887607568: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200887608144: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200887609872: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200887609296: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200887610256: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200887608720: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200887607376: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200887610064: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200887610832: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200887609488: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200887607952: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200887610640: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200887608528: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200887611792: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200887610448: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200887611024: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200887611408: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  138200887612752: TensorSpec(shape=(), dtype=tf.resource, name=None)
+W0000 00:00:1775704427.922639    5583 tf_tfl_flatbuffer_helpers.cc:365] Ignored output_format.
+W0000 00:00:1775704427.922711    5583 tf_tfl_flatbuffer_helpers.cc:368] Ignored drop_control_dependency.
+2026-04-09 03:13:47.923366: I tensorflow/cc/saved_model/reader.cc:83] Reading SavedModel from: /tmp/tmpk5nxbf2s
+2026-04-09 03:13:47.940857: I tensorflow/cc/saved_model/reader.cc:52] Reading meta graph with tags { serve }
+2026-04-09 03:13:47.940940: I tensorflow/cc/saved_model/reader.cc:147] Reading SavedModel debug info (if present) from: /tmp/tmpk5nxbf2s
+I0000 00:00:1775704428.097906    5583 mlir_graph_optimization_pass.cc:425] MLIR V1 optimization pass is not enabled
+2026-04-09 03:13:48.124304: I tensorflow/cc/saved_model/loader.cc:236] Restoring SavedModel bundle.
+2026-04-09 03:13:49.127141: I tensorflow/cc/saved_model/loader.cc:220] Running initialization op on SavedModel bundle at path: /tmp/tmpk5nxbf2s
+2026-04-09 03:13:49.422068: I tensorflow/cc/saved_model/loader.cc:471] SavedModel load for tags { serve }; Status: success: OK. Took 1498706 microseconds.
+
+✅ Tous les modèles ont été sauvegardés dans : /content/drive/MyDrive/cutisia_models/
+- cutisia_heavy_server.h5
+- cutisia_mobile.tflite

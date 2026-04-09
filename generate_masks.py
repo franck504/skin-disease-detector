@@ -1,83 +1,95 @@
 import os
+import sys
+
+# --- PATCH DE COMPATIBILITÉ KERAS 3 / TF 2.18 ---
+# Ce patch corrige l'erreur 'AttributeError: module keras.utils has no attribute generic_utils'
+import tensorflow as tf
+import keras
+if not hasattr(keras.utils, 'generic_utils'):
+    import keras.src.utils.generic_utils as generic_utils
+    keras.utils.generic_utils = generic_utils
+    print("🔧 Patch Keras generic_utils appliqué.")
+
+os.environ['SM_FRAMEWORK'] = 'tf.keras'
+
+try:
+    import segmentation_models as sm
+except ImportError:
+    print("📦 Installation de segmentation-models...")
+    # On installe sans h5py imposé pour éviter les conflits Python 3.12
+    os.system('pip install -U segmentation-models')
+    import segmentation_models as sm
+
 import numpy as np
 import cv2
 from glob import glob
 from tqdm import tqdm
 
-# On force l'installation de segmentation_models si on est sur Colab
-try:
-    import segmentation_models as sm
-except ImportError:
-    print("📦 Installation des bibliothèques de segmentation...")
-    os.system('pip install -U segmentation-models')
-    os.system('pip install h5py==2.10.0') # Correction bug version h5py sur Colab
-    import segmentation_models as sm
+# --- DÉTECTION ROBUSTE DU DOSSIER DATASET ---
+def find_dataset_path(base_name):
+    possible_roots = ['/content', '/content/skin-disease-detector', os.getcwd()]
+    for root in possible_roots:
+        # Recherche récursive du dossier
+        for dirpath, dirnames, filenames in os.walk(root):
+            if base_name in dirnames:
+                return os.path.join(dirpath, base_name)
+    return None
 
-os.environ['SM_FRAMEWORK'] = 'tf.keras'
+DATASET_PATH = find_dataset_path('datasets-cutisia')
+if not DATASET_PATH:
+    print("❌ ERREUR : Le dossier 'datasets-cutisia' est introuvable sur le disque.")
+    print(f"DEBUG: Dossier actuel : {os.getcwd()}")
+    print(f"DEBUG: Contenu : {os.listdir('.')}")
+    sys.exit(1)
 
-# --- CONFIGURATION ---
-DATASET_PATH = 'datasets-cutisia'
-# Si sur Colab, on cherche sur le Drive
-if os.path.exists('/content/drive/MyDrive/cutisia_datasets'):
-    DATASET_PATH = '/content/drive/MyDrive/cutisia_datasets'
+print(f"📌 Dataset trouvé à : {DATASET_PATH}")
 
 MASK_OUTPUT_PATH = '/content/drive/MyDrive/cutisia_masks'
 if not os.path.exists('/content/drive/MyDrive'):
-    MASK_OUTPUT_PATH = './cutisia_masks' # Local si test
+    MASK_OUTPUT_PATH = './cutisia_masks'
 
 os.makedirs(MASK_OUTPUT_PATH, exist_ok=True)
 
-# --- CHARGEMENT DU MODELE U-NET (PRE-ENTRAINE ISIC) ---
-# Note : Nous utilisons un backbone ResNet34 pour un bon équilibre vitesse/précision
+# --- CHARGEMENT DU MODELE U-NET ---
 BACKBONE = 'resnet34'
 preprocess_input = sm.get_preprocessing(BACKBONE)
-
-# On définit le modèle avec 1 classe de sortie (Sigmoid pour Masque)
 model = sm.Unet(BACKBONE, encoder_weights='imagenet', classes=1, activation='sigmoid')
-# Idéalement, on chargerait ici les poids spécifiques ISIC si disponibles .h5
-# Pour ce script, nous utilisons les poids ImageNet qui sont déjà excellents pour détecter les textures.
 
 def generate_masks():
-    print(f"🚀 Lancement de la génération des masques depuis {DATASET_PATH}...")
-    
-    # Récupérer toutes les images
     image_paths = glob(os.path.join(DATASET_PATH, '*/*'))
     image_paths = [p for p in image_paths if p.lower().endswith(('.jpg', '.jpeg', '.png'))]
-    
-    print(f"📸 {len(image_paths)} images détectées.")
+    print(f"📸 {len(image_paths)} images à traiter.")
 
     for img_path in tqdm(image_paths):
         try:
-            # 1. Charger et préparer l'image
             original_img = cv2.imread(img_path)
             if original_img is None: continue
             
             img_rgb = cv2.cvtColor(original_img, cv2.COLOR_BGR2RGB)
-            img_resized = cv2.resize(img_rgb, (256, 256))
+            h, w = img_rgb.shape[:2]
             
-            # 2. Prétraitement spécifique au Backbone
+            # Prediction on 256x256
+            img_resized = cv2.resize(img_rgb, (256, 256))
             img_input = np.expand_dims(img_resized, axis=0)
             img_input = preprocess_input(img_input)
             
-            # 3. Prédiction du masque
             pr_mask = model.predict(img_input, verbose=0).squeeze()
             
-            # 4. Post-traitement (Binarisation)
+            # Resize mask back to original size for perfect crop later
             binary_mask = (pr_mask > 0.5).astype(np.uint8) * 255
+            final_mask = cv2.resize(binary_mask, (w, h))
             
-            # 5. Sauvegarde
-            # On conserve la structure des dossiers (Leprosy, Tinea, etc.)
             cls_name = os.path.basename(os.path.dirname(img_path))
             save_dir = os.path.join(MASK_OUTPUT_PATH, cls_name)
             os.makedirs(save_dir, exist_ok=True)
             
             mask_name = os.path.basename(img_path)
-            cv2.imwrite(os.path.join(save_dir, mask_name), binary_mask)
+            cv2.imwrite(os.path.join(save_dir, mask_name), final_mask)
             
         except Exception as e:
-            print(f"⚠️ Erreur sur {img_path}: {e}")
+            pass
 
-    print(f"✅ Terminé ! Masques disponibles dans : {MASK_OUTPUT_PATH}")
+    print(f"✅ Masques générés dans : {MASK_OUTPUT_PATH}")
 
 if __name__ == "__main__":
     generate_masks()

@@ -1,42 +1,35 @@
 import os
-from PIL import Image
+import sys
 
-def audit_dataset(directory):
-    print(f"--- 📊 AUDIT DU DATASET : {directory} ---")
-    if not os.path.exists(directory):
-        print(f"❌ Dossier {directory} introuvable.")
+def audit_dataset():
+    # Détection dynamique du dossier
+    possible_paths = [
+        'datasets-cutisia',
+        '/content/skin-disease-detector/datasets-cutisia',
+        '/content/drive/MyDrive/cutisia_datasets'
+    ]
+    
+    DATA_DIR = None
+    for p in possible_paths:
+        if os.path.exists(p):
+            DATA_DIR = p
+            break
+            
+    if not DATA_DIR:
+        print("❌ Dossier datasets-cutisia introuvable.")
+        print(f"DEBUG info: os.getcwd() = {os.getcwd()}")
+        print(f"DEBUG info: os.listdir() = {os.listdir('.')}")
         return
 
-    classes = [d for d in os.listdir(directory) if os.path.isdir(os.path.join(directory, d))]
-    total_images = 0
-    stats = {}
-
-    for cls in classes:
-        cls_path = os.path.join(directory, cls)
-        images = [f for f in os.listdir(cls_path) if f.lower().endswith(('.png', '.jpg', '.jpeg', '.bmp'))]
-        stats[cls] = len(images)
-        total_images += len(images)
-
-    print(f"\n📂 Nombre de classes : {len(classes)}")
-    print(f"🖼️ Nombre total d'images : {total_images}")
-    print("\n📈 Distribution par classe :")
-    for cls, count in sorted(stats.items(), key=lambda x: x[1], reverse=True):
-        percentage = (count / total_images) * 100
-        print(f" - {cls}: {count} images ({percentage:.1f}%)")
-
-    # Recherche de masques ou métadonnées
-    print("\n🔍 Vérification des métadonnées/masques...")
-    metadata_files = []
-    for root, dirs, files in os.walk(directory):
-        for f in files:
-            if 'mask' in f.lower() or f.endswith(('.json', '.xml', '.csv')):
-                metadata_files.append(f)
+    print(f"--- 📊 AUDIT DU DATASET ({DATA_DIR}) ---")
+    classes = sorted([d for d in os.listdir(DATA_DIR) if os.path.isdir(os.path.join(DATA_DIR, d))])
     
-    if metadata_files:
-        print(f" ✅ {len(metadata_files)} fichiers de métadonnées ou masques potentiels trouvés.")
-        print(f" Exemples : {metadata_files[:5]}")
-    else:
-        print(" ℹ️ Aucun fichier nommé 'mask' ou métadonnées (JSON/XML) trouvé.")
+    total = 0
+    for cls in classes:
+        count = len([f for f in os.listdir(os.path.join(DATA_DIR, cls)) if f.lower().endswith(('.jpg', '.jpeg', '.png'))])
+        print(f" - {cls}: {count} images")
+        total += count
+    print(f"\n✅ Total : {total} images.")
 
 if __name__ == "__main__":
-    audit_dataset('datasets-cutisia')
+    audit_dataset()

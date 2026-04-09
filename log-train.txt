@@ -1,0 +1,824 @@
+2026-04-08 19:53:52.709020: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1775678032.728382    7045 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1775678032.734714    7045 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1775678032.749884    7045 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775678032.749919    7045 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775678032.749923    7045 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775678032.749929    7045 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2026-04-08 19:53:52.754352: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+📌 Dataset détecté : /content/drive/MyDrive/cutisia_datasets
+🧹 Nettoyage du dataset dans /content/drive/MyDrive/cutisia_datasets...
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (542).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (568).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (505).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (501).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (534).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (566).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (553).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (486).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (511).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (480).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (494).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (493).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (615).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (537).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (606).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (619).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (556).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (564).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (574).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (510).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (592).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (638).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (597).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (626).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (530).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (475).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (639).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (504).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (594).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (547).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (628).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (511).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (570).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (586).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (532).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (478).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (558).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (546).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (476).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (495).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (616).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (491).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (569).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (534).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (608).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (518).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (644).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (566).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (611).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (617).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (627).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (508).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (492).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (570).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (625).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (585).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (555).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (604).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (549).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (635).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (633).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (500).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (475).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (482).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (567).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (560).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (477).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (578).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (542).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (517).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (477).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (637).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (493).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (559).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (548).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (483).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (620).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (623).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (533).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (642).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (496).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (474).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (499).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (584).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (569).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (614).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (591).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (541).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (552).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (631).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (561).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (476).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (479).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (628).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (605).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (641).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (453).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (452).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (468).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (469).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (470).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (458).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (464).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (471).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (455).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (466).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (464).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (469).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (455).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (456).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (456).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (461).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (468).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (460).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (470).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (467).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (457).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (454).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (458).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (467).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (461).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (466).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (457).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (463).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (463).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (460).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (459).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (462).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (454).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (459).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (452).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (453).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (462).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (471).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (465).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (465).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (520).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (596).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (602).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (554).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (545).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (624).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (565).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (613).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (632).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (532).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (563).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (508).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (557).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (587).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (643).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (502).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (489).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (519).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (550).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (545).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (490).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (528).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (480).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (624).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (555).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (498).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (631).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (496).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (636).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (513).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (529).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (617).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (635).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (612).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (588).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (609).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (629).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (630).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (535).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (531).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (607).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (626).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (485).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (598).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (560).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (580).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (514).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (595).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (564).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (548).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (563).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (537).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (535).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (620).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (618).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (634).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (588).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (599).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (595).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (640).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (593).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (572).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (502).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (501).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (615).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (571).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (583).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (584).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (613).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (573).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (577).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (645).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (497).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (540).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (527).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (585).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (541).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (472).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (492).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (640).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (543).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (521).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (579).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (498).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (510).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (521).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (610).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (487).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (525).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (479).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (553).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (536).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (507).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (571).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (505).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (576).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (622).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (636).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (608).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (483).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (512).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (559).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (591).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (519).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (482).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (543).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (524).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (565).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (582).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (599).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (597).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (526).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (625).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (557).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (512).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (601).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (627).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (552).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (580).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (612).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (621).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (500).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (506).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (516).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (533).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (593).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (607).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (567).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (491).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (603).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (546).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (634).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (577).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (525).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (504).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (589).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (473).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (581).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (485).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (604).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (549).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (509).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (605).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (523).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (528).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (497).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (642).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (619).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (539).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (514).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (581).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (579).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (600).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (509).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (590).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (606).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (540).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (518).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (524).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (488).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (495).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (618).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (517).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (499).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (551).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (489).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (561).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (522).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (572).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (602).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (638).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (503).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (574).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (526).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (575).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (538).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (632).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (513).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (621).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (484).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (536).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (474).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (598).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (573).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (586).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (484).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (530).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (494).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (611).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (516).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (523).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (529).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (486).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (600).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (594).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (503).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (578).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (531).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (515).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (582).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (643).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (538).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (520).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (629).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (592).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (576).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (639).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (506).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (610).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (644).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (527).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (544).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (589).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (575).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (587).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (556).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (596).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (630).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (568).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (487).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (507).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (633).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (609).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (616).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (641).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (645).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (583).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (562).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (547).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (603).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (522).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (623).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (478).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (614).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (558).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (515).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (544).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (622).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (554).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (550).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (551).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (488).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (473).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (590).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (601).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (481).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (539).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/datasets_me_Melanoma_Melanoma (562).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (637).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (472).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (490).jpg
+❌ Image corrompue supprimée : /content/drive/MyDrive/cutisia_datasets/Mélanomes/Raw_Dataset_me_Melanoma_Melanoma (481).jpg
+✅ Nettoyage terminé. 388 fichiers problématiques supprimés.
+🚀 Préparation de l'entraînement pour 6 classes...
+Found 8972 images belonging to 6 classes.
+Found 2241 images belonging to 6 classes.
+
+📦 Entraînement du modèle LOURD (Serveur/Cloud)...
+2026-04-08 19:58:02.160402: W tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:47] Overriding orig_value setting because the TF_FORCE_GPU_ALLOW_GROWTH environment variable is set. Original config value was 0.
+I0000 00:00:1775678282.161956    7045 gpu_device.cc:2019] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 13757 MB memory:  -> device: 0, name: Tesla T4, pci bus id: 0000:00:04.0, compute capability: 7.5
+Epoch 1/20
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1775678306.885550   16953 service.cc:152] XLA service 0x790080015040 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+I0000 00:00:1775678306.885604   16953 service.cc:160]   StreamExecutor device (0): Tesla T4, Compute Capability 7.5
+2026-04-08 19:58:28.061146: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:269] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+I0000 00:00:1775678310.457087   16953 cuda_dnn.cc:529] Loaded cuDNN version 91002
+2026-04-08 19:58:37.735344: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-08 19:58:37.873796: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-08 19:58:39.287987: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-08 19:58:39.438422: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-08 19:58:39.587931: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-08 19:58:39.735917: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-08 19:58:39.889003: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-08 19:58:40.038253: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-08 19:58:40.113205: E external/local_xla/xla/service/slow_operation_alarm.cc:73] Trying algorithm eng3{k11=2} for conv %cudnn-conv.166 = (f32[32,1152,7,7]{3,2,1,0}, u8[0]{0}) custom-call(f32[32,1152,7,7]{3,2,1,0} %bitcast.42866, f32[1152,1,3,3]{3,2,1,0} %bitcast.42870), window={size=3x3 pad=1_1x1_1}, dim_labels=bf01_oi01->bf01, feature_group_count=1152, custom_call_target="__cudnn$convForward", metadata={op_type="DepthwiseConv2dNative" op_name="EfficientNetV2_Server_1/block6b_dwconv2_1/depthwise" source_file="/usr/local/lib/python3.12/dist-packages/tensorflow/python/framework/ops.py" source_line=1200}, backend_config={"operation_queue_id":"0","wait_on_operation_queues":[],"cudnn_conv_backend_config":{"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0},"force_earliest_schedule":false} is taking a while...
+2026-04-08 19:58:40.192157: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-08 19:58:40.340151: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-08 19:58:40.489943: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-08 19:58:40.637479: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-08 19:58:40.639044: E external/local_xla/xla/service/slow_operation_alarm.cc:140] The operation took 1.525926392s
+Trying algorithm eng3{k11=2} for conv %cudnn-conv.166 = (f32[32,1152,7,7]{3,2,1,0}, u8[0]{0}) custom-call(f32[32,1152,7,7]{3,2,1,0} %bitcast.42866, f32[1152,1,3,3]{3,2,1,0} %bitcast.42870), window={size=3x3 pad=1_1x1_1}, dim_labels=bf01_oi01->bf01, feature_group_count=1152, custom_call_target="__cudnn$convForward", metadata={op_type="DepthwiseConv2dNative" op_name="EfficientNetV2_Server_1/block6b_dwconv2_1/depthwise" source_file="/usr/local/lib/python3.12/dist-packages/tensorflow/python/framework/ops.py" source_line=1200}, backend_config={"operation_queue_id":"0","wait_on_operation_queues":[],"cudnn_conv_backend_config":{"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0},"force_earliest_schedule":false} is taking a while...
+I0000 00:00:1775678330.190725   16953 device_compiler.h:188] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+240/281 ━━━━━━━━━━━━━━━━━━━━ 37s 912ms/step - accuracy: 0.2960 - loss: 1.69242026-04-08 20:02:36.763356: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-08 20:02:36.897850: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-08 20:02:39.182234: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-08 20:02:39.323877: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+281/281 ━━━━━━━━━━━━━━━━━━━━ 0s 993ms/step - accuracy: 0.2986 - loss: 1.68972026-04-08 20:05:25.931352: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-08 20:05:26.067230: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+281/281 ━━━━━━━━━━━━━━━━━━━━ 438s 1s/step - accuracy: 0.3151 - loss: 1.6715 - val_accuracy: 0.3284 - val_loss: 1.6480
+Epoch 2/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 209s 743ms/step - accuracy: 0.3208 - loss: 1.6584 - val_accuracy: 0.3284 - val_loss: 1.6471
+Epoch 3/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 212s 756ms/step - accuracy: 0.3247 - loss: 1.6575 - val_accuracy: 0.3284 - val_loss: 1.6463
+Epoch 4/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 216s 770ms/step - accuracy: 0.3230 - loss: 1.6586 - val_accuracy: 0.3284 - val_loss: 1.6458
+Epoch 5/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 209s 746ms/step - accuracy: 0.3274 - loss: 1.6583 - val_accuracy: 0.3284 - val_loss: 1.6454
+Epoch 6/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 215s 765ms/step - accuracy: 0.3263 - loss: 1.6565 - val_accuracy: 0.3284 - val_loss: 1.6458
+Epoch 7/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 221s 786ms/step - accuracy: 0.3260 - loss: 1.6554 - val_accuracy: 0.3284 - val_loss: 1.6453
+Epoch 8/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 221s 784ms/step - accuracy: 0.3272 - loss: 1.6563 - val_accuracy: 0.3284 - val_loss: 1.6441
+Epoch 9/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 218s 776ms/step - accuracy: 0.3274 - loss: 1.6564 - val_accuracy: 0.3284 - val_loss: 1.6437
+Epoch 10/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 214s 762ms/step - accuracy: 0.3271 - loss: 1.6555 - val_accuracy: 0.3284 - val_loss: 1.6454
+Epoch 11/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 211s 750ms/step - accuracy: 0.3253 - loss: 1.6553 - val_accuracy: 0.3284 - val_loss: 1.6434
+Epoch 12/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 271s 782ms/step - accuracy: 0.3275 - loss: 1.6543 - val_accuracy: 0.3284 - val_loss: 1.6434
+Epoch 13/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 216s 768ms/step - accuracy: 0.3278 - loss: 1.6556 - val_accuracy: 0.3284 - val_loss: 1.6431
+Epoch 14/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 217s 775ms/step - accuracy: 0.3282 - loss: 1.6526 - val_accuracy: 0.3284 - val_loss: 1.6417
+Epoch 15/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 216s 769ms/step - accuracy: 0.3284 - loss: 1.6538 - val_accuracy: 0.3284 - val_loss: 1.6418
+Epoch 16/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 219s 779ms/step - accuracy: 0.3284 - loss: 1.6527 - val_accuracy: 0.3284 - val_loss: 1.6439
+Epoch 17/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 216s 768ms/step - accuracy: 0.3282 - loss: 1.6547 - val_accuracy: 0.3284 - val_loss: 1.6425
+Epoch 18/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 214s 764ms/step - accuracy: 0.3284 - loss: 1.6512 - val_accuracy: 0.3284 - val_loss: 1.6415
+Epoch 19/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 212s 755ms/step - accuracy: 0.3280 - loss: 1.6511 - val_accuracy: 0.3284 - val_loss: 1.6422
+Epoch 20/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 209s 746ms/step - accuracy: 0.3280 - loss: 1.6529 - val_accuracy: 0.3284 - val_loss: 1.6404
+WARNING:absl:You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+
+📱 Entraînement du modèle LEGER (Mobile/Flutter)...
+Downloading data from https://storage.googleapis.com/tensorflow/keras-applications/mobilenet_v3/weights_mobilenet_v3_large_224_1.0_float_no_top_v2.h5
+12683000/12683000 ━━━━━━━━━━━━━━━━━━━━ 0s 0us/step
+Epoch 1/20
+2026-04-08 21:14:44.790327: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-08 21:14:44.928084: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+ 32/281 ━━━━━━━━━━━━━━━━━━━━ 2:24 578ms/step - accuracy: 0.2259 - loss: 1.83682026-04-08 21:15:15.245047: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-08 21:15:15.382240: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+281/281 ━━━━━━━━━━━━━━━━━━━━ 0s 649ms/step - accuracy: 0.2624 - loss: 1.77812026-04-08 21:18:47.712634: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-08 21:18:47.847929: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-08 21:18:47.982559: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-08 21:18:48.118210: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-08 21:18:48.253393: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-08 21:18:48.388208: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-08 21:18:48.525545: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-08 21:18:48.550015: E external/local_xla/xla/service/slow_operation_alarm.cc:73] Trying algorithm eng3{k11=2} for conv %cudnn-conv.123 = (f32[1,960,7,7]{3,2,1,0}, u8[0]{0}) custom-call(f32[1,960,7,7]{3,2,1,0} %bitcast.8053, f32[960,1,5,5]{3,2,1,0} %bitcast.8057), window={size=5x5 pad=2_2x2_2}, dim_labels=bf01_oi01->bf01, feature_group_count=960, custom_call_target="__cudnn$convForward", metadata={op_type="DepthwiseConv2dNative" op_name="MobileNetV3_App_1/expanded_conv_13_depthwise_1/depthwise" source_file="/usr/local/lib/python3.12/dist-packages/tensorflow/python/framework/ops.py" source_line=1200}, backend_config={"operation_queue_id":"0","wait_on_operation_queues":[],"cudnn_conv_backend_config":{"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0},"force_earliest_schedule":false} is taking a while...
+2026-04-08 21:18:48.657240: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-08 21:18:48.661103: E external/local_xla/xla/service/slow_operation_alarm.cc:140] The operation took 1.122578187s
+Trying algorithm eng3{k11=2} for conv %cudnn-conv.123 = (f32[1,960,7,7]{3,2,1,0}, u8[0]{0}) custom-call(f32[1,960,7,7]{3,2,1,0} %bitcast.8053, f32[960,1,5,5]{3,2,1,0} %bitcast.8057), window={size=5x5 pad=2_2x2_2}, dim_labels=bf01_oi01->bf01, feature_group_count=960, custom_call_target="__cudnn$convForward", metadata={op_type="DepthwiseConv2dNative" op_name="MobileNetV3_App_1/expanded_conv_13_depthwise_1/depthwise" source_file="/usr/local/lib/python3.12/dist-packages/tensorflow/python/framework/ops.py" source_line=1200}, backend_config={"operation_queue_id":"0","wait_on_operation_queues":[],"cudnn_conv_backend_config":{"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0},"force_earliest_schedule":false} is taking a while...
+281/281 ━━━━━━━━━━━━━━━━━━━━ 262s 869ms/step - accuracy: 0.2783 - loss: 1.7420 - val_accuracy: 0.3284 - val_loss: 1.6424
+Epoch 2/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 220s 785ms/step - accuracy: 0.3029 - loss: 1.6768 - val_accuracy: 0.3289 - val_loss: 1.6363
+Epoch 3/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 214s 760ms/step - accuracy: 0.3233 - loss: 1.6539 - val_accuracy: 0.3289 - val_loss: 1.6284
+Epoch 4/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 217s 772ms/step - accuracy: 0.3260 - loss: 1.6401 - val_accuracy: 0.3298 - val_loss: 1.6215
+Epoch 5/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 217s 773ms/step - accuracy: 0.3295 - loss: 1.6339 - val_accuracy: 0.3315 - val_loss: 1.6163
+Epoch 6/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 257s 916ms/step - accuracy: 0.3323 - loss: 1.6261 - val_accuracy: 0.3338 - val_loss: 1.6102
+Epoch 7/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 215s 764ms/step - accuracy: 0.3323 - loss: 1.6201 - val_accuracy: 0.3298 - val_loss: 1.6062
+Epoch 8/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 215s 765ms/step - accuracy: 0.3360 - loss: 1.6147 - val_accuracy: 0.3351 - val_loss: 1.5998
+Epoch 9/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 217s 772ms/step - accuracy: 0.3407 - loss: 1.6095 - val_accuracy: 0.3347 - val_loss: 1.5917
+Epoch 10/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 212s 755ms/step - accuracy: 0.3374 - loss: 1.6049 - val_accuracy: 0.3365 - val_loss: 1.5850
+Epoch 11/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 208s 742ms/step - accuracy: 0.3424 - loss: 1.6034 - val_accuracy: 0.3369 - val_loss: 1.5773
+Epoch 12/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 215s 765ms/step - accuracy: 0.3428 - loss: 1.5979 - val_accuracy: 0.3498 - val_loss: 1.5731
+Epoch 13/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 214s 762ms/step - accuracy: 0.3466 - loss: 1.5930 - val_accuracy: 0.3467 - val_loss: 1.5693
+Epoch 14/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 212s 756ms/step - accuracy: 0.3494 - loss: 1.5878 - val_accuracy: 0.3521 - val_loss: 1.5680
+Epoch 15/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 219s 779ms/step - accuracy: 0.3502 - loss: 1.5874 - val_accuracy: 0.3539 - val_loss: 1.5617
+Epoch 16/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 209s 746ms/step - accuracy: 0.3516 - loss: 1.5816 - val_accuracy: 0.3561 - val_loss: 1.5572
+Epoch 17/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 210s 747ms/step - accuracy: 0.3493 - loss: 1.5825 - val_accuracy: 0.3601 - val_loss: 1.5504
+Epoch 18/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 207s 738ms/step - accuracy: 0.3520 - loss: 1.5781 - val_accuracy: 0.3619 - val_loss: 1.5485
+Epoch 19/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 215s 764ms/step - accuracy: 0.3560 - loss: 1.5707 - val_accuracy: 0.3722 - val_loss: 1.5412
+Epoch 20/20
+281/281 ━━━━━━━━━━━━━━━━━━━━ 216s 768ms/step - accuracy: 0.3560 - loss: 1.5745 - val_accuracy: 0.3717 - val_loss: 1.5460
+WARNING:absl:You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+
+🔄 Conversion vers TensorFlow Lite...
+Saved artifact at '/tmp/tmpygyu4ijz'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): TensorSpec(shape=(None, 224, 224, 3), dtype=tf.float32, name='keras_tensor_278')
+Output Type:
+  TensorSpec(shape=(None, 6), dtype=tf.float32, name=None)
+Captures:
+  133046037866512: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133046037867280: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133046037863824: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133046037871312: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133046037864784: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133046037866128: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133046037871504: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425921168: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133046037865744: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133046037867472: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425923280: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425920592: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425920976: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425922512: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425919056: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425920400: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425919440: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425919248: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425919632: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425923472: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425921936: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425920208: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425923664: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425920784: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425924048: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425922704: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425921360: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425923856: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425920016: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425925008: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425925392: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425925584: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425924624: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425925200: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425926160: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425926544: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425926736: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425925776: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425926352: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425927312: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425924816: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425926928: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425927120: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425924240: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425928272: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425927696: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425927888: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425928080: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425924432: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425929232: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425928656: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425928848: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425929040: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425925968: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425930192: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425929616: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425927504: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425930960: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425930384: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425931344: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425929808: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425928464: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425931152: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425931920: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425930576: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425929424: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425931728: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425930000: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425932880: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425932304: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425932496: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425932688: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425930768: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425933840: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425933264: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425931536: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425934608: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425934032: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425934992: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425933456: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425935184: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425933072: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425934416: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425933648: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425932112: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260769488: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425934224: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043425934800: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260768528: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260768912: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260769104: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260769296: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260770448: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260769872: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260768336: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260771216: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260770640: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260771600: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260770064: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260768720: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260771408: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260772176: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260770832: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260769680: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260771984: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260770256: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260773136: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260772560: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260772752: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260772944: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260771024: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260774096: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260773520: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260773712: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260773904: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260771792: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260775056: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133046037866320: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133046037866896: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260772368: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133046037866704: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133046037865168: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260775440: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260774480: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260775248: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260773328: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260776208: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260776592: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260776784: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260775824: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260776400: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260777360: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260774672: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260776976: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260777168: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260775632: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260778320: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260777744: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260777936: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260778128: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260774288: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260779280: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260778704: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260778896: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260779088: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260776016: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260780240: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260779664: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260779856: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260780048: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260777552: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260781200: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260780624: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260780816: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260781008: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260778512: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260782160: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260781584: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260781776: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260781968: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260779472: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260783120: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260782544: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260782736: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260782928: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260780432: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260784080: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260783504: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260781392: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260784272: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260783696: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260784464: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260783888: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260782352: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043260783312: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259179280: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259180624: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259180240: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259179856: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259180048: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259181200: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259179088: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259180432: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259181008: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259179664: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259182160: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259181584: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259181776: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259181968: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259179472: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259183120: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259182544: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259180816: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259183888: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259183312: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259184272: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259182736: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259181392: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259184080: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259184848: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259183504: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259182352: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259184656: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259182928: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259185808: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259185232: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259185424: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259185616: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259183696: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259186768: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259186192: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259184464: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259187536: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259186960: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259187920: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259186384: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259185040: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259187728: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259188496: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259187152: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259186000: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259188304: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259186576: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259189456: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259188880: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259189072: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259189264: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259187344: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259190416: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259189840: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259188112: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259191184: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259190608: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259191568: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259190032: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259188688: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259191376: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259192144: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259190800: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259189648: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259191952: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259190224: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259193104: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259192528: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259192720: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259192912: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259190992: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259194064: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259193488: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259191760: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259194832: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259195216: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259193872: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259194640: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259195024: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259193680: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259193296: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259192336: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043258000208: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043258000016: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259194448: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043259194256: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043257999440: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043257999824: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043258000592: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  133043258001744: TensorSpec(shape=(), dtype=tf.resource, name=None)
+W0000 00:00:1775687250.442831    7045 tf_tfl_flatbuffer_helpers.cc:365] Ignored output_format.
+W0000 00:00:1775687250.442924    7045 tf_tfl_flatbuffer_helpers.cc:368] Ignored drop_control_dependency.
+2026-04-08 22:27:30.443442: I tensorflow/cc/saved_model/reader.cc:83] Reading SavedModel from: /tmp/tmpygyu4ijz
+2026-04-08 22:27:30.461068: I tensorflow/cc/saved_model/reader.cc:52] Reading meta graph with tags { serve }
+2026-04-08 22:27:30.461114: I tensorflow/cc/saved_model/reader.cc:147] Reading SavedModel debug info (if present) from: /tmp/tmpygyu4ijz
+I0000 00:00:1775687250.594853    7045 mlir_graph_optimization_pass.cc:425] MLIR V1 optimization pass is not enabled
+2026-04-08 22:27:30.617812: I tensorflow/cc/saved_model/loader.cc:236] Restoring SavedModel bundle.
+2026-04-08 22:27:31.433718: I tensorflow/cc/saved_model/loader.cc:220] Running initialization op on SavedModel bundle at path: /tmp/tmpygyu4ijz
+2026-04-08 22:27:31.663647: I tensorflow/cc/saved_model/loader.cc:471] SavedModel load for tags { serve }; Status: success: OK. Took 1220209 microseconds.
+
+✅ Tous les modèles ont été sauvegardés !
+- cutisia_heavy_server.h5 (Pour le serveur API)
+- cutisia_mobile.tflite (Pour l'application Flutter)

@@ -9,16 +9,19 @@ from PIL import Image
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.image import img_to_array
 import nest_asyncio
+import cv2
 
 # --- CONFIGURATION ---
-MODEL_PATH = 'cutisia_heavy_server.h5'
+MODEL_PATH = 'cutisia_heavy_elite.h5'
+IMG_SIZE = (384, 384)
+
 # Détection auto du modèle sur Drive pour Colab
-drive_model_path = '/content/drive/MyDrive/cutisia_models/cutisia_heavy_server.h5'
+drive_model_path = '/content/drive/MyDrive/cutisia_models/cutisia_heavy_elite.h5'
 if os.path.exists(drive_model_path):
     MODEL_PATH = drive_model_path
-    print(f"📡 Modèle chargé depuis Google Drive : {MODEL_PATH}")
+    print(f"📡 Modèle ELITE chargé depuis Google Drive : {MODEL_PATH}")
 
-LABELS = sorted(os.listdir('datasets-cutisia'))  # Ordre alphabétique des classes
+LABELS = sorted([d for d in os.listdir('datasets-cutisia') if os.path.isdir(os.path.join('datasets-cutisia', d))])
 PORT = 8000
 
 # Lecture sécurisée du Token Ngrok (priorité à la variable d'environnement)
@@ -35,13 +38,26 @@ try:
 except:
     print(f"❌ Erreur : Modèle {MODEL_PATH} introuvable. Entraînez-le d'abord.")
 
+def equalize_derma(img):
+    """Égalisation adaptative (CLAHE) identique à l'entraînement"""
+    lab = cv2.cvtColor(img, cv2.COLOR_RGB2LAB)
+    l, a, b = cv2.split(lab)
+    clahe = cv2.createCLAHE(clipLimit=3.0, tileGridSize=(8, 8))
+    l = clahe.apply(l)
+    lab = cv2.merge((l, a, b))
+    img = cv2.cvtColor(lab, cv2.COLOR_LAB2RGB)
+    return img
+
 def preprocess_image(image: Image.Image):
-    image = image.convert("RGB")
-    image = image.resize((224, 224))
-    image = img_to_array(image)
-    image = np.expand_dims(image, axis=0)
-    image = image / 255.0  # Normalisation (Identique à l'entraînement)
-    return image
+    # 1. Conversion en array et redimensionnement
+    img = np.array(image.convert('RGB'))
+    img = cv2.resize(img, IMG_SIZE)
+    # 2. Application de l'égalisation CLAHE
+    img = equalize_derma(img)
+    # 3. Normalisation
+    img = img.astype(np.float32) / 255.0
+    img = np.expand_dims(img, axis=0)
+    return img
 
 @app.get("/")
 def home():

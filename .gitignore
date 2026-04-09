@@ -13,3 +13,4 @@ datasets-cutisia/
 # OS
 .DS_Store
 Thumbs.db
+/cutisia/

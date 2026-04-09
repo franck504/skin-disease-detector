@@ -12,6 +12,12 @@ import nest_asyncio
 
 # --- CONFIGURATION ---
 MODEL_PATH = 'cutisia_heavy_server.h5'
+# Détection auto du modèle sur Drive pour Colab
+drive_model_path = '/content/drive/MyDrive/cutisia_models/cutisia_heavy_server.h5'
+if os.path.exists(drive_model_path):
+    MODEL_PATH = drive_model_path
+    print(f"📡 Modèle chargé depuis Google Drive : {MODEL_PATH}")
+
 LABELS = sorted(os.listdir('datasets-cutisia'))  # Ordre alphabétique des classes
 PORT = 8000
 

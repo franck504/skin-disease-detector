@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 # --- CONFIGURATION ---
 DATA_DIR = 'datasets-cutisia'
 
-# Détection automatique pour Google Colab
+# Détection automatique du Dataset (Colab / Local)
 if not os.path.exists(DATA_DIR):
     possible_paths = [
         '/content/drive/MyDrive/cutisia_datasets',
@@ -23,9 +23,19 @@ if not os.path.exists(DATA_DIR):
             DATA_DIR = path
             print(f"📌 Dataset détecté : {DATA_DIR}")
             break
-    
-    if not os.path.exists(DATA_DIR):
-        print(f"❌ Erreur : Le dossier '{DATA_DIR}' est introuvable.")
+
+if not os.path.exists(DATA_DIR):
+    print(f"❌ Erreur : Le dossier '{DATA_DIR}' est introuvable.")
+
+# --- CONFIGURATION SAUVEGARDE (DIRECT DRIVE) ---
+SAVE_DIR = './'
+if os.path.exists('/content/drive/MyDrive'):
+    SAVE_DIR = '/content/drive/MyDrive/cutisia_models/'
+    if not os.path.exists(SAVE_DIR):
+        os.makedirs(SAVE_DIR, exist_ok=True)
+    print(f"📡 Sauvegarde configurée sur Google Drive : {SAVE_DIR}")
+else:
+    print(f"🏠 Sauvegarde configurée localement : {SAVE_DIR}")
 
 def clean_dataset(directory):
     """Supprime les fichiers qui ne sont pas des images valides."""
@@ -117,7 +127,7 @@ heavy_history = heavy_model.fit(
     validation_data=val_generator,
     epochs=EPOCHS
 )
-heavy_model.save('cutisia_heavy_server.h5')
+heavy_model.save(os.path.join(SAVE_DIR, 'cutisia_heavy_server.h5'))
 
 # --- ENTRAINEMENT MODELE LEGER (MobileNetV3) ---
 print("\n📱 Entraînement du modèle LEGER (Mobile/Flutter)...")
@@ -127,15 +137,16 @@ mobile_history = mobile_model.fit(
     validation_data=val_generator,
     epochs=EPOCHS
 )
-mobile_model.save('cutisia_mobile.h5')
+mobile_model.save(os.path.join(SAVE_DIR, 'cutisia_mobile.h5'))
 
 # --- CONVERSION TFLITE POUR MOBILE ---
 print("\n🔄 Conversion vers TensorFlow Lite...")
 converter = tf.lite.TFLiteConverter.from_keras_model(mobile_model)
 tflite_model = converter.convert()
-with open('cutisia_mobile.tflite', 'wb') as f:
+tflite_path = os.path.join(SAVE_DIR, 'cutisia_mobile.tflite')
+with open(tflite_path, 'wb') as f:
     f.write(tflite_model)
 
-print("\n✅ Tous les modèles ont été sauvegardés !")
-print("- cutisia_heavy_server.h5 (Pour le serveur API)")
-print("- cutisia_mobile.tflite (Pour l'application Flutter)")
+print(f"\n✅ Tous les modèles ont été sauvegardés dans : {SAVE_DIR}")
+print(f"- cutisia_heavy_server.h5")
+print(f"- cutisia_mobile.tflite")

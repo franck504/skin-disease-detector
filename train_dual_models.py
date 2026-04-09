@@ -157,4 +157,15 @@ model.fit(train_ds, validation_data=val_ds, epochs=EPOCHS, callbacks=callbacks)
 
 # --- SAUVEGARDE FINALE ---
 model.save(os.path.join(SAVE_DIR, 'cutisia_heavy_elite.h5'))
-print(f"✅ Modèle ELITE sauvegardé dans {SAVE_DIR}")
+print(f"✅ Modèle ELITE (H5) sauvegardé dans {SAVE_DIR}")
+
+# --- CONVERSION TFLITE POUR MOBILE ---
+print("📱 Conversion du modèle pour mobile...")
+converter = tf.lite.TFLiteConverter.from_keras_model(model)
+tflite_model = converter.convert()
+
+tflite_path = os.path.join(SAVE_DIR, 'cutisia_mobile.tflite')
+with open(tflite_path, 'wb') as f:
+    f.write(tflite_model)
+
+print(f"✅ Modèle MOBILE (TFLite) sauvegardé dans {SAVE_DIR}")

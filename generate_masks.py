@@ -1,14 +1,22 @@
 import os
 import sys
 
-# --- PATCH DE COMPATIBILITÉ KERAS 3 / TF 2.18 ---
-# Ce patch corrige l'erreur 'AttributeError: module keras.utils has no attribute generic_utils'
+# --- PATCH UNIVERSEL KERAS 3 (TF 2.16+) ---
 import tensorflow as tf
 import keras
+
+# Création d'un objet factice pour simuler generic_utils
+class GenericUtilsStub:
+    def get_custom_objects(self):
+        # Redirection vers le nouveau système de Keras 3
+        try:
+            return keras.saving.get_custom_objects()
+        except:
+            return {}
+
 if not hasattr(keras.utils, 'generic_utils'):
-    import keras.src.utils.generic_utils as generic_utils
-    keras.utils.generic_utils = generic_utils
-    print("🔧 Patch Keras generic_utils appliqué.")
+    keras.utils.generic_utils = GenericUtilsStub()
+    print("🔧 Patch Keras 3 (Object-based) appliqué.")
 
 os.environ['SM_FRAMEWORK'] = 'tf.keras'
 
@@ -16,7 +24,6 @@ try:
     import segmentation_models as sm
 except ImportError:
     print("📦 Installation de segmentation-models...")
-    # On installe sans h5py imposé pour éviter les conflits Python 3.12
     os.system('pip install -U segmentation-models')
     import segmentation_models as sm
 
@@ -25,24 +32,25 @@ import cv2
 from glob import glob
 from tqdm import tqdm
 
-# --- DÉTECTION ROBUSTE DU DOSSIER DATASET ---
+# --- DÉTECTION DU DOSSIER DATASET ---
 def find_dataset_path(base_name):
-    possible_roots = ['/content', '/content/skin-disease-detector', os.getcwd()]
-    for root in possible_roots:
-        # Recherche récursive du dossier
-        for dirpath, dirnames, filenames in os.walk(root):
-            if base_name in dirnames:
-                return os.path.join(dirpath, base_name)
+    # Les chemins prioritaires sur Colab
+    possible_paths = [
+        '/content/drive/MyDrive/cutisia_datasets',
+        '/content/skin-disease-detector/datasets-cutisia',
+        'datasets-cutisia'
+    ]
+    for p in possible_paths:
+        if os.path.exists(p):
+            return p
     return None
 
 DATASET_PATH = find_dataset_path('datasets-cutisia')
 if not DATASET_PATH:
-    print("❌ ERREUR : Le dossier 'datasets-cutisia' est introuvable sur le disque.")
-    print(f"DEBUG: Dossier actuel : {os.getcwd()}")
-    print(f"DEBUG: Contenu : {os.listdir('.')}")
+    print("❌ Dossier dataset introuvable.")
     sys.exit(1)
 
-print(f"📌 Dataset trouvé à : {DATASET_PATH}")
+print(f"📌 Dataset : {DATASET_PATH}")
 
 MASK_OUTPUT_PATH = '/content/drive/MyDrive/cutisia_masks'
 if not os.path.exists('/content/drive/MyDrive'):
@@ -50,7 +58,7 @@ if not os.path.exists('/content/drive/MyDrive'):
 
 os.makedirs(MASK_OUTPUT_PATH, exist_ok=True)
 
-# --- CHARGEMENT DU MODELE U-NET ---
+# --- MODELE U-NET ---
 BACKBONE = 'resnet34'
 preprocess_input = sm.get_preprocessing(BACKBONE)
 model = sm.Unet(BACKBONE, encoder_weights='imagenet', classes=1, activation='sigmoid')
@@ -58,7 +66,7 @@ model = sm.Unet(BACKBONE, encoder_weights='imagenet', classes=1, activation='sig
 def generate_masks():
     image_paths = glob(os.path.join(DATASET_PATH, '*/*'))
     image_paths = [p for p in image_paths if p.lower().endswith(('.jpg', '.jpeg', '.png'))]
-    print(f"📸 {len(image_paths)} images à traiter.")
+    print(f"📸 Traitement de {len(image_paths)} images...")
 
     for img_path in tqdm(image_paths):
         try:
@@ -68,14 +76,12 @@ def generate_masks():
             img_rgb = cv2.cvtColor(original_img, cv2.COLOR_BGR2RGB)
             h, w = img_rgb.shape[:2]
             
-            # Prediction on 256x256
             img_resized = cv2.resize(img_rgb, (256, 256))
             img_input = np.expand_dims(img_resized, axis=0)
             img_input = preprocess_input(img_input)
             
             pr_mask = model.predict(img_input, verbose=0).squeeze()
             
-            # Resize mask back to original size for perfect crop later
             binary_mask = (pr_mask > 0.5).astype(np.uint8) * 255
             final_mask = cv2.resize(binary_mask, (w, h))
             
@@ -86,10 +92,10 @@ def generate_masks():
             mask_name = os.path.basename(img_path)
             cv2.imwrite(os.path.join(save_dir, mask_name), final_mask)
             
-        except Exception as e:
+        except Exception:
             pass
 
-    print(f"✅ Masques générés dans : {MASK_OUTPUT_PATH}")
+    print(f"✅ Terminé : {MASK_OUTPUT_PATH}")
 
 if __name__ == "__main__":
     generate_masks()

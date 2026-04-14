@@ -1,0 +1,95 @@
+2026-04-12 19:19:41.667512: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1776021581.690460    2075 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1776021581.698690    2075 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1776021581.716563    2075 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1776021581.716598    2075 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1776021581.716603    2075 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1776021581.716607    2075 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2026-04-12 19:19:41.721782: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-04-12 19:20:03.637936: W tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:47] Overriding orig_value setting because the TF_FORCE_GPU_ALLOW_GROWTH environment variable is set. Original config value was 0.
+I0000 00:00:1776021603.640609    2075 gpu_device.cc:2019] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 13757 MB memory:  -> device: 0, name: Tesla T4, pci bus id: 0000:00:04.0, compute capability: 7.5
+🏗️ Construction de EfficientNetV2-L pour 6 classes...
+Downloading data from https://storage.googleapis.com/tensorflow/keras-applications/efficientnet_v2/efficientnetv2-l_notop.h5
+473176280/473176280 ━━━━━━━━━━━━━━━━━━━━ 31s 0us/step
+
+🚀 Phase 1 : Entraînement des couches hautes (Warm-up)...
+Epoch 1/5
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1776021708.140500    2191 service.cc:152] XLA service 0x7a447c004de0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+I0000 00:00:1776021708.140544    2191 service.cc:160]   StreamExecutor device (0): Tesla T4, Compute Capability 7.5
+2026-04-12 19:21:50.757676: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:269] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+I0000 00:00:1776021717.751928    2191 cuda_dnn.cc:529] Loaded cuDNN version 91002
+2026-04-12 19:22:17.167543: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-12 19:22:17.304345: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-12 19:22:18.538398: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-12 19:22:18.684344: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-12 19:22:19.629993: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-12 19:22:19.779713: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-12 19:22:21.384517: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-12 19:22:21.557524: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-12 19:22:21.731386: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-12 19:22:22.938854: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-12 19:22:23.156005: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+I0000 00:00:1776021780.223730    2191 device_compiler.h:188] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+ 127/1122 ━━━━━━━━━━━━━━━━━━━━ 1:38:49 6s/step - accuracy: 0.2956 - loss: 1.7171Corrupt JPEG data: 1 extraneous bytes before marker 0xd9
+ 147/1122 ━━━━━━━━━━━━━━━━━━━━ 1:37:11 6s/step - accuracy: 0.2997 - loss: 1.7125Corrupt JPEG data: 1 extraneous bytes before marker 0xd9
+ 226/1122 ━━━━━━━━━━━━━━━━━━━━ 1:29:29 6s/step - accuracy: 0.3078 - loss: 1.7004Corrupt JPEG data: 1 extraneous bytes before marker 0xd9
+ 533/1122 ━━━━━━━━━━━━━━━━━━━━ 59:31 6s/step - accuracy: 0.3147 - loss: 1.6802Corrupt JPEG data: 1 extraneous bytes before marker 0xd9
+ 625/1122 ━━━━━━━━━━━━━━━━━━━━ 50:07 6s/step - accuracy: 0.3166 - loss: 1.6767Corrupt JPEG data: 1 extraneous bytes before marker 0xd9
+ 760/1122 ━━━━━━━━━━━━━━━━━━━━ 36:21 6s/step - accuracy: 0.3184 - loss: 1.6721Corrupt JPEG data: 1 extraneous bytes before marker 0xd9
+ 818/1122 ━━━━━━━━━━━━━━━━━━━━ 30:28 6s/step - accuracy: 0.3187 - loss: 1.6706Corrupt JPEG data: 2 extraneous bytes before marker 0xd9
+ 889/1122 ━━━━━━━━━━━━━━━━━━━━ 23:19 6s/step - accuracy: 0.3191 - loss: 1.6688Corrupt JPEG data: 1 extraneous bytes before marker 0xd9
+ 998/1122 ━━━━━━━━━━━━━━━━━━━━ 12:23 6s/step - accuracy: 0.3196 - loss: 1.6665Corrupt JPEG data: 1 extraneous bytes before marker 0xd9
+1121/1122 ━━━━━━━━━━━━━━━━━━━━ 5s 6s/step - accuracy: 0.3199 - loss: 1.6644 2026-04-12 21:15:13.538658: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-12 21:15:13.673193: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-12 21:15:14.571166: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-12 21:15:14.712819: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-12 21:15:15.940389: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-12 21:15:16.095834: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-12 21:15:18.564723: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-12 21:15:18.769277: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-12 21:15:20.051764: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-12 21:15:20.273100: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+1122/1122 ━━━━━━━━━━━━━━━━━━━━ 0s 6s/step - accuracy: 0.3199 - loss: 1.6644Corrupt JPEG data: 2 extraneous bytes before marker 0xd9
+Corrupt JPEG data: 2 extraneous bytes before marker 0xd9
+Corrupt JPEG data: 1 extraneous bytes before marker 0xd9
+2026-04-12 21:43:33.448934: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-12 21:43:33.583675: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-12 21:43:34.471162: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-12 21:43:34.612045: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-12 21:43:35.550186: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-12 21:43:35.707519: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-12 21:43:38.078924: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-12 21:43:38.276920: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-12 21:43:39.816632: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-04-12 21:43:40.032765: E external/local_xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+WARNING:absl:You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+1122/1122 ━━━━━━━━━━━━━━━━━━━━ 8613s 8s/step - accuracy: 0.3224 - loss: 1.6482 - val_accuracy: 0.3295 - val_loss: 1.6245 - learning_rate: 1.0000e-04
+Epoch 2/5
+  50/1122 ━━━━━━━━━━━━━━━━━━━━ 8:31 477ms/step - accuracy: 0.2812 - loss: 1.7079Corrupt JPEG data: 1 extraneous bytes before marker 0xd9
+ 139/1122 ━━━━━━━━━━━━━━━━━━━━ 6:48 416ms/step - accuracy: 0.3099 - loss: 1.6739Corrupt JPEG data: 1 extraneous bytes before marker 0xd9
+ 449/1122 ━━━━━━━━━━━━━━━━━━━━ 4:25 395ms/step - accuracy: 0.3232 - loss: 1.6505Corrupt JPEG data: 1 extraneous bytes before marker 0xd9
+ 476/1122 ━━━━━━━━━━━━━━━━━━━━ 4:15 395ms/step - accuracy: 0.3233 - loss: 1.6499Corrupt JPEG data: 1 extraneous bytes before marker 0xd9
+ 634/1122 ━━━━━━━━━━━━━━━━━━━━ 3:11 393ms/step - accuracy: 0.3239 - loss: 1.6467Corrupt JPEG data: 1 extraneous bytes before marker 0xd9
+ 778/1122 ━━━━━━━━━━━━━━━━━━━━ 2:14 392ms/step - accuracy: 0.3247 - loss: 1.6439Corrupt JPEG data: 1 extraneous bytes before marker 0xd9
+ 786/1122 ━━━━━━━━━━━━━━━━━━━━ 2:11 392ms/step - accuracy: 0.3248 - loss: 1.6437Corrupt JPEG data: 2 extraneous bytes before marker 0xd9
+ 876/1122 ━━━━━━━━━━━━━━━━━━━━ 1:36 391ms/step - accuracy: 0.3249 - loss: 1.6422Corrupt JPEG data: 1 extraneous bytes before marker 0xd9
+1035/1122 ━━━━━━━━━━━━━━━━━━━━ 34s 391ms/step - accuracy: 0.3251 - loss: 1.6403Corrupt JPEG data: 1 extraneous bytes before marker 0xd9
+1122/1122 ━━━━━━━━━━━━━━━━━━━━ 0s 391ms/step - accuracy: 0.3252 - loss: 1.6396Corrupt JPEG data: 2 extraneous bytes before marker 0xd9
+Corrupt JPEG data: 2 extraneous bytes before marker 0xd9
+Corrupt JPEG data: 1 extraneous bytes before marker 0xd9
+WARNING:absl:You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+1122/1122 ━━━━━━━━━━━━━━━━━━━━ 569s 507ms/step - accuracy: 0.3270 - loss: 1.6314 - val_accuracy: 0.3290 - val_loss: 1.6079 - learning_rate: 1.0000e-04
+Epoch 3/5
+  86/1122 ━━━━━━━━━━━━━━━━━━━━ 7:19 425ms/step - accuracy: 0.3049 - loss: 1.6447Corrupt JPEG data: 1 extraneous bytes before marker 0xd9
+ 182/1122 ━━━━━━━━━━━━━━━━━━━━ 6:23 408ms/step - accuracy: 0.3138 - loss: 1.6416Corrupt JPEG data: 1 extraneous bytes before marker 0xd9
+ 351/1122 ━━━━━━━━━━━━━━━━━━━━ 5:07 399ms/step - accuracy: 0.3234 - loss: 1.6295Corrupt JPEG data: 1 extraneous bytes before marker 0xd9
+ 415/1122 ━━━━━━━━━━━━━━━━━━━━ 4:41 398ms/step - accuracy: 0.3250 - loss: 1.6277Corrupt JPEG data: 1 extraneous bytes before marker 0xd9
+ 702/1122 ━━━━━━━━━━━━━━━━━━━━ 2:45 394ms/step - accuracy: 0.3269 - loss: 1.6258Corrupt JPEG data: 1 extraneous bytes before marker 0xd9
+ 773/1122 ━━━━━━━━━━━━━━━━━━━━ 2:17 393ms/step - accuracy: 0.3270 - loss: 1.6255Corrupt JPEG data: 1 extraneous bytes before marker 0xd9
+ 899/1122 ━━━━━━━━━━━━━━━━━━━━ 1:27 393ms/step - accuracy: 0.3274 - loss: 1.6245Corrupt JPEG data: 2 extraneous bytes before marker 0xd9
+1020/1122 ━━━━━━━━━━━━━━━━━━━━ 39s 392ms/step - accuracy: 0.3278 - loss: 1.6237Corrupt JPEG data: 1 extraneous bytes before marker 0xd9
+1086/1122 ━━━━━━━━━━━━━━━━━━━━ 14s 392ms/step - accuracy: 0.3279 - loss: 1.6233Corrupt JPEG data: 1 extraneous bytes before marker 0xd9
+1112/1122 ━━━━━━━━━━━━━━━━━━━━ 3s 392ms/step - accuracy: 0.3280 - loss: 1.6232

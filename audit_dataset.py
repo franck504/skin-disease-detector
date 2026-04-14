@@ -5,6 +5,7 @@ def audit_dataset():
     # Détection dynamique du dossier
     possible_paths = [
         'datasets-cutisia',
+        '/kaggle/input/cutisiav2/datasets-cutisia',
         '/content/skin-disease-detector/datasets-cutisia',
         '/content/drive/MyDrive/cutisia_datasets'
     ]

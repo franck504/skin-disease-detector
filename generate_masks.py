@@ -36,6 +36,7 @@ from tqdm import tqdm
 def find_dataset_path(base_name):
     # Les chemins prioritaires sur Colab
     possible_paths = [
+        '/kaggle/input/cutisiav2/datasets-cutisia',
         '/content/drive/MyDrive/cutisia_datasets',
         '/content/skin-disease-detector/datasets-cutisia',
         'datasets-cutisia'
@@ -53,7 +54,10 @@ if not DATASET_PATH:
 print(f"📌 Dataset : {DATASET_PATH}")
 
 MASK_OUTPUT_PATH = '/content/drive/MyDrive/cutisia_masks'
-if not os.path.exists('/content/drive/MyDrive'):
+if os.path.exists('/kaggle'):
+    print("💎 Environnement KAGGLE détecté.")
+    MASK_OUTPUT_PATH = '/kaggle/working/cutisia_masks'
+elif not os.path.exists('/content/drive/MyDrive'):
     MASK_OUTPUT_PATH = './cutisia_masks'
 
 os.makedirs(MASK_OUTPUT_PATH, exist_ok=True)

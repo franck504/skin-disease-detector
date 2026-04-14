@@ -8,6 +8,8 @@ from tensorflow.keras.models import Model
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.callbacks import EarlyStopping, ReduceLROnPlateau, ModelCheckpoint
 from sklearn.model_selection import train_test_split
+import wandb
+from wandb.integration.keras import WandbMetricsLogger
 
 # --- CONFIGURATION ---
 DATA_DIR = 'datasets-cutisia'
@@ -144,11 +146,24 @@ val_ds = val_ds.map(tf_map_fn, num_parallel_calls=tf.data.AUTOTUNE).batch(BATCH_
 
 model, base_model = build_elite_model(num_classes)
 
+# --- INITIALISATION SURVEILLANCE WANDB ---
+wandb.init(
+    project="cutisia-elite",
+    config={
+        "learning_rate": 1e-4,
+        "epochs": EPOCHS,
+        "batch_size": BATCH_SIZE,
+        "model_type": "EfficientNetV2-L",
+        "input_size": IMG_SIZE[0]
+    }
+)
+
 # Callbacks
 callbacks = [
     EarlyStopping(monitor='val_loss', patience=8, restore_best_weights=True),
     ReduceLROnPlateau(monitor='val_loss', factor=0.2, patience=4, min_lr=1e-7),
-    ModelCheckpoint(os.path.join(SAVE_DIR, 'best_cutisia_v2L.h5'), save_best_only=True)
+    ModelCheckpoint(os.path.join(SAVE_DIR, 'best_cutisia_v2L.h5'), save_best_only=True),
+    WandbMetricsLogger() # Envoi des courbes vers le smartphone
 ]
 
 print("\n🚀 Phase 1 : Entraînement des couches hautes (Warm-up)...")

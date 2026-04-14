@@ -36,7 +36,7 @@ from tqdm import tqdm
 def find_dataset_path(base_name):
     # Les chemins prioritaires sur Colab
     possible_paths = [
-        '/kaggle/input/cutisiav2/datasets-cutisia',
+        '/kaggle/input/datasets/scribeassistant/cutisiav2/cutisia_data/cutisia_datasets',
         '/content/drive/MyDrive/cutisia_datasets',
         '/content/skin-disease-detector/datasets-cutisia',
         'datasets-cutisia'

@@ -17,8 +17,8 @@ SAVE_DIR = '/content/drive/MyDrive/cutisia_models/'
 # --- DETECTION AUTO DE L'ENVIRONNEMENT ---
 if os.path.exists('/kaggle'):
     print("💎 Environnement KAGGLE détecté.")
-    DATA_DIR = '/kaggle/input/cutisiav2/datasets-cutisia'
-    MASK_DIR = '/kaggle/input/cutisiav2/cutisia_masks'
+    DATA_DIR = '/kaggle/input/datasets/scribeassistant/cutisiav2/cutisia_data/cutisia_datasets'
+    MASK_DIR = '/kaggle/input/datasets/scribeassistant/cutisiav2/cutisia_data/cutisia_masks'
     SAVE_DIR = '/kaggle/working/'
 elif os.path.exists('/content/drive/MyDrive/cutisia_datasets'):
     print("☁️ Environnement COLAB détecté.")

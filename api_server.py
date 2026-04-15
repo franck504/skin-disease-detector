@@ -12,17 +12,23 @@ import nest_asyncio
 import cv2
 
 # --- CONFIGURATION ---
-MODEL_PATH = 'cutisia_heavy_elite.h5'
 IMG_SIZE = (384, 384)
-
-# Détection auto du modèle sur Drive pour Colab
-drive_model_path = '/content/drive/MyDrive/cutisia_models/cutisia_heavy_elite.h5'
-if os.path.exists(drive_model_path):
-    MODEL_PATH = drive_model_path
-    print(f"📡 Modèle ELITE chargé depuis Google Drive : {MODEL_PATH}")
-
-LABELS = sorted([d for d in os.listdir('datasets-cutisia') if os.path.isdir(os.path.join('datasets-cutisia', d))])
 PORT = 8000
+
+# Labels hardcodés (ordre alphabétique = ordre du modèle)
+LABELS = ['Candidiase', 'Leprosy', 'Mélanomes', 'Monkeypox', 'Scabies', 'Tinea']
+
+# Détection auto du modèle : Drive Colab > local
+DRIVE_PATHS = [
+    '/content/drive/MyDrive/Cutisia_Elite_AI_Models/best_cutisia_v2L.h5',
+    '/content/drive/MyDrive/Cutisia_Elite_AI_Models/cutisia_heavy_elite.h5',
+]
+MODEL_PATH = 'cutisia_heavy_elite.h5'  # Fallback local
+for path in DRIVE_PATHS:
+    if os.path.exists(path):
+        MODEL_PATH = path
+        print(f"📡 Modèle ELITE chargé depuis Google Drive : {MODEL_PATH}")
+        break
 
 # Lecture sécurisée du Token Ngrok (priorité à la variable d'environnement)
 NGROK_AUTHTOKEN = os.getenv("NGROK_AUTHTOKEN", "VOTRE_AUTHTOKEN_NGROK")

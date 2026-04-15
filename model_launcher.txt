@@ -1,0 +1,18 @@
+# ============================================
+# 🏥 CUTISIA ELITE - Serveur Cloud AI
+# ============================================
+
+# 1. Montage du Drive
+from google.colab import drive
+drive.mount('/content/drive')
+
+# 2. Installation des dépendances
+!pip install -q fastapi uvicorn pyngrok nest_asyncio pillow opencv-python-headless tensorflow
+
+# 3. Configuration Ngrok (REMPLACEZ par votre token ngrok)
+# Obtenez-le gratuitement sur https://dashboard.ngrok.com/get-started/your-authtoken
+import os
+os.environ['NGROK_AUTHTOKEN'] = 'VOTRE_TOKEN_NGROK_ICI'
+
+# 4. Lancement du serveur
+!python /content/drive/MyDrive/Cutisia_Elite_AI_Models/skin-disease-detector/api_server.py

@@ -41,7 +41,7 @@ class HomeScreen extends StatelessWidget {
                   const CircleAvatar(
                     radius: 25,
                     backgroundColor: Color(0xFF2E5BFF),
-                    child: Icon(Icons.person, color: Colors.white),
+                    backgroundImage: AssetImage('assets/images/user_photo.png'),
                   ),
                 ],
               ),
@@ -216,12 +216,12 @@ class HomeScreen extends StatelessWidget {
 
   Widget _buildDiseaseGrid() {
     final diseases = [
-      'Candidiase',
-      'Leprosy',
-      'Monkeypox',
-      'Mélanomes',
-      'Scabies',
-      'Tinea',
+      {'name': 'Candidiase', 'img': 'assets/images/diseases/Candidiase.jpg'},
+      {'name': 'Leprosy', 'img': 'assets/images/diseases/leprosy.png'},
+      {'name': 'Monkeypox', 'img': 'assets/images/diseases/Monkeypox.jpg'},
+      {'name': 'Mélanomes', 'img': 'assets/images/diseases/Melanoma.jpg'},
+      {'name': 'Scabies', 'img': 'assets/images/diseases/scabies.jpg'},
+      {'name': 'Tinea', 'img': 'assets/images/diseases/tinea.jpg'},
     ];
     return GridView.builder(
       shrinkWrap: true,
@@ -230,19 +230,57 @@ class HomeScreen extends StatelessWidget {
         crossAxisCount: 2,
         mainAxisSpacing: 16,
         crossAxisSpacing: 16,
-        childAspectRatio: 2.5,
+        childAspectRatio: 1.3,
       ),
       itemCount: diseases.length,
       itemBuilder: (context, index) {
+        final d = diseases[index];
         return Container(
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(16),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.05),
+                blurRadius: 10,
+                offset: const Offset(0, 4),
+              ),
+            ],
           ),
-          child: Center(
-            child: Text(
-              diseases[index],
-              style: GoogleFonts.outfit(fontWeight: FontWeight.w500),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(16),
+            child: Stack(
+              fit: StackFit.expand,
+              children: [
+                Image.asset(
+                  d['img']!,
+                  fit: BoxFit.cover,
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Colors.transparent,
+                        Colors.black.withValues(alpha: 0.7),
+                      ],
+                    ),
+                  ),
+                ),
+                Positioned(
+                  bottom: 12,
+                  left: 12,
+                  child: Text(
+                    d['name']!,
+                    style: GoogleFonts.outfit(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      fontSize: 16,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         );

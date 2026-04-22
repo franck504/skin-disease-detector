@@ -32,7 +32,7 @@ class HomeScreen extends StatelessWidget {
                       Text(
                         'Arovy ny fahasalaman\'ny hoditrao.',
                         style: GoogleFonts.outfit(
-                          fontSize: 16,
+                          fontSize: 14,
                           color: const Color(0xFF1C2431).withValues(alpha: 0.6),
                         ),
                       ),

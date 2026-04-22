@@ -194,29 +194,15 @@ class _CollectScreenState extends State<CollectScreen> {
               children: [
                 // Header
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        gradient: const LinearGradient(
-                          colors: [Color(0xFF2E5BFF), Color(0xFF5B8CFF)],
-                        ),
-                        borderRadius: BorderRadius.circular(14),
-                      ),
-                      child: const Icon(
-                        Icons.add_a_photo,
-                        color: Colors.white,
-                        size: 26,
-                      ),
-                    ),
-                    const SizedBox(width: 14),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           'Sary Vaovao',
                           style: GoogleFonts.outfit(
-                            fontSize: 22,
+                            fontSize: 24,
                             fontWeight: FontWeight.bold,
                             color: const Color(0xFF1C2431),
                           ),
@@ -224,11 +210,16 @@ class _CollectScreenState extends State<CollectScreen> {
                         Text(
                           'Fanangonana angon-drakitra ara-pahasalamana',
                           style: GoogleFonts.outfit(
-                            fontSize: 13,
+                            fontSize: 14,
                             color: Colors.grey,
                           ),
                         ),
                       ],
+                    ),
+                    const CircleAvatar(
+                      radius: 25,
+                      backgroundColor: Color(0xFF2E5BFF),
+                      child: Icon(Icons.add_a_photo, color: Colors.white, size: 20),
                     ),
                   ],
                 ),

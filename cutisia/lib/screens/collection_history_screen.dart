@@ -76,11 +76,11 @@ class _CollectionHistoryScreenState extends State<CollectionHistoryScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text('Ireo aretina voangona', style: GoogleFonts.outfit(
-                        fontSize: 22, fontWeight: FontWeight.bold,
+                        fontSize: 24, fontWeight: FontWeight.bold,
                         color: const Color(0xFF1C2431),
                       )),
                       Text('${_entries.length} fitambaran\'ny aretina', style: GoogleFonts.outfit(
-                        fontSize: 13, color: Colors.grey,
+                        fontSize: 14, color: Colors.grey,
                       )),
                     ],
                   ),

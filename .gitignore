@@ -13,4 +13,13 @@ datasets-cutisia/
 # OS
 .DS_Store
 Thumbs.db
-/cutisia/
+# Fichiers générés Flutter (garder le code source)
+cutisia/build/
+cutisia/.dart_tool/
+cutisia/.flutter-plugins
+cutisia/.flutter-plugins-dependencies
+cutisia/android/.gradle/
+cutisia/android/local.properties
+cutisia/android/key.properties
+cutisia/ios/Pods/
+cutisia/.idea/

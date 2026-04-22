@@ -5,6 +5,12 @@
 
 # INTRODUCTION
 
+Dans un monde de plus en plus connecté, l'accès aux soins de santé spécialisés demeure l'un des défis majeurs pour les populations vivant dans des zones isolées ou à ressources limitées. Les maladies de la peau, bien que souvent négligées, touchent près d'un tiers de la population mondiale et constituent un fardeau socio-économique considérable. La rareté des dermatologues, couplée à la difficulté d'accès aux infrastructures hospitalières, entraîne des diagnostics tardifs qui aggravent les complications médicales.
+
+Le projet **Cutisia** s'inscrit dans cette dynamique de transformation numérique de la santé. Il propose de mettre la puissance de l'Intelligence Artificielle et de la vision par ordinateur au service du dépistage précoce. En exploitant la ubiquité des smartphones, notre solution permet de capturer, de segmenter et de classifier des lésions cutanées en temps réel, offrant ainsi une première orientation diagnostique fiable. Intégré dans une vision de "Smart DATA-CITY", Cutisia n'est pas seulement un outil individuel, mais un maillon essentiel d'un système d'information géographique sanitaire capable de monitorer l'évolution épidémiologique à l'échelle urbaine.
+
+Ce mémoire présente le parcours de conception et de réalisation de ce système, depuis l'ingénierie complexe d'un dataset multi-sources jusqu'au déploiement d'un moteur d'inférence optimisé pour les terminaux mobiles à ressources limitées.
+
 # PARTIE 1 : ÉTAT DE L'ART ET PROBLÉMATIQUE DE LA SANTÉ DERMATOLOGIQUE
 
 ## Chapitre 1 : Enjeux de la dermatologie et apport des technologies numériques
@@ -88,6 +94,12 @@
 #### 8.2.2 Évolutivité : Intégration de la détection par segmentation et suivi temporel
 
 # CONCLUSION
+
+Au terme de ce projet, nous avons réussi à concevoir et à déployer une solution complète d'aide au diagnostic dermatologique alliant rigueur scientifique et contraintes de terrain. L'implémentation d'un pipeline hybride, utilisant l'architecture **U-Net** pour une segmentation précise de la lésion et des modèles de classification optimisés pour le **Edge Computing**, a permis de garantir des performances élevées tout en maintenant une réactivité optimale sur mobile.
+
+Les tests effectués sur une diversité de pathologies — allant du mélanome aux maladies tropicales négligées comme la lèpre — démontrent le potentiel de l'IA pour combler le fossé médical dans les zones sous-dotées. Au-delà de l'aspect technique, le projet **Cutisia** valide l'idée qu'une gestion intelligente des données de santé peut transformer une ville en une "Smart City" proactive en matière de santé publique.
+
+Bien que des défis subsistent, notamment en termes de variabilité lumineuse et de diversité des phototypes, les perspectives d'évolution sont nombreuses. L'intégration future de techniques d'IA explicable (XAI) plus poussées et le renforcement des boucles de rétroaction entre personnels de santé et modèles d'apprentissage permettront de faire de Cutisia un standard de la télédermatologie mobile, accessible à tous, partout.
 
 ---
 

@@ -22,7 +22,7 @@ class HomeScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Miarahaba, Mpampiasa!',
+                        'Arahaba,ry Mpampiasa!',
                         style: GoogleFonts.outfit(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
@@ -111,7 +111,7 @@ class HomeScreen extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           Text(
-            'Famantarana aretim-hoditra amin\'ny alalan\'ny AI.',
+            'Famantarana aretin-koditra amin\'ny alalan\'ny AI.',
             style: GoogleFonts.outfit(
               fontSize: 14,
               color: Colors.white.withValues(alpha: 0.8),
@@ -144,15 +144,35 @@ class HomeScreen extends StatelessWidget {
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: [
-          _buildTipCard('Rano', 'Misotroa rano 2L isan\'andro ho an\'ny hoditra mazava.', Icons.water_drop, Colors.blue),
-          _buildTipCard('Fiarovana', 'Mampiasà sunscreen na amin\'ny andro rahona.', Icons.wb_sunny, Colors.orange),
-          _buildTipCard('Fitsaboana', 'Sasao ny tarehinao alohan\'ny tory.', Icons.face, Colors.purple),
+          _buildTipCard(
+            'Rano',
+            'Misotroa rano 2L isan\'andro ho an\'ny hoditra mazava.',
+            Icons.water_drop,
+            Colors.blue,
+          ),
+          _buildTipCard(
+            'Fiarovana',
+            'Mampiasà sunscreen na amin\'ny andro rahona.',
+            Icons.wb_sunny,
+            Colors.orange,
+          ),
+          _buildTipCard(
+            'Fitsaboana',
+            'Sasao ny tarehinao alohan\'ny hatory.',
+            Icons.face,
+            Colors.purple,
+          ),
         ],
       ),
     );
   }
 
-  Widget _buildTipCard(String title, String subtitle, IconData icon, Color color) {
+  Widget _buildTipCard(
+    String title,
+    String subtitle,
+    IconData icon,
+    Color color,
+  ) {
     return Container(
       width: 250,
       margin: const EdgeInsets.only(right: 16),
@@ -178,8 +198,14 @@ class HomeScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(title, style: GoogleFonts.outfit(fontWeight: FontWeight.bold)),
-                Text(subtitle, style: GoogleFonts.outfit(fontSize: 12, color: Colors.grey)),
+                Text(
+                  title,
+                  style: GoogleFonts.outfit(fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  subtitle,
+                  style: GoogleFonts.outfit(fontSize: 12, color: Colors.grey),
+                ),
               ],
             ),
           ),
@@ -190,7 +216,12 @@ class HomeScreen extends StatelessWidget {
 
   Widget _buildDiseaseGrid() {
     final diseases = [
-      'Melanoma', 'Acne', 'Dermatitis', 'Eczema', 'Tumors', 'Leprosy', 'Monkeypox'
+      'Candidiase',
+      'Leprosy',
+      'Monkeypox',
+      'Mélanomes',
+      'Scabies',
+      'Tinea',
     ];
     return GridView.builder(
       shrinkWrap: true,

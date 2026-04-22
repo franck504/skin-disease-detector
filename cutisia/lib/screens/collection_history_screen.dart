@@ -8,7 +8,8 @@ class CollectionHistoryScreen extends StatefulWidget {
   const CollectionHistoryScreen({super.key});
 
   @override
-  State<CollectionHistoryScreen> createState() => _CollectionHistoryScreenState();
+  State<CollectionHistoryScreen> createState() =>
+      _CollectionHistoryScreenState();
 }
 
 class _CollectionHistoryScreenState extends State<CollectionHistoryScreen> {
@@ -26,7 +27,11 @@ class _CollectionHistoryScreenState extends State<CollectionHistoryScreen> {
   Future<void> _loadEntries() async {
     setState(() => _isLoading = true);
     final entries = await _service.getAllEntries();
-    if (mounted) setState(() { _entries = entries; _isLoading = false; });
+    if (mounted)
+      setState(() {
+        _entries = entries;
+        _isLoading = false;
+      });
   }
 
   Future<void> _exportCsv() async {
@@ -34,20 +39,27 @@ class _CollectionHistoryScreenState extends State<CollectionHistoryScreen> {
     try {
       final path = await _service.exportToCsv();
       if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-          content: Text('CSV voalefa any amin\'ny:\n$path', style: GoogleFonts.outfit()),
-          backgroundColor: Colors.green,
-          behavior: SnackBarBehavior.floating,
-          duration: const Duration(seconds: 5),
-        ));
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(
+              'CSV voalefa any amin\'ny:\n$path',
+              style: GoogleFonts.outfit(),
+            ),
+            backgroundColor: Colors.green,
+            behavior: SnackBarBehavior.floating,
+            duration: const Duration(seconds: 5),
+          ),
+        );
       }
     } catch (e) {
       if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-          content: Text('Tsy nahomby ny fandefasana: $e'),
-          backgroundColor: Colors.red,
-          behavior: SnackBarBehavior.floating,
-        ));
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Tsy nahomby ny fandefasana: $e'),
+            backgroundColor: Colors.red,
+            behavior: SnackBarBehavior.floating,
+          ),
+        );
       }
     } finally {
       if (mounted) setState(() => _isExporting = false);
@@ -75,28 +87,49 @@ class _CollectionHistoryScreenState extends State<CollectionHistoryScreen> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Ireo aretina voangona', style: GoogleFonts.outfit(
-                        fontSize: 24, fontWeight: FontWeight.bold,
-                        color: const Color(0xFF1C2431),
-                      )),
-                      Text('${_entries.length} fitambaran\'ny aretina', style: GoogleFonts.outfit(
-                        fontSize: 14, color: Colors.grey,
-                      )),
+                      Text(
+                        'Ireo aretina voangona',
+                        style: GoogleFonts.outfit(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          color: const Color(0xFF1C2431),
+                        ),
+                      ),
+                      Text(
+                        '${_entries.length} fitambaran\'ny aretina',
+                        style: GoogleFonts.outfit(
+                          fontSize: 14,
+                          color: Colors.grey,
+                        ),
+                      ),
                     ],
                   ),
                   ElevatedButton.icon(
                     onPressed: _isExporting ? null : _exportCsv,
                     icon: _isExporting
                         ? const SizedBox(
-                            width: 14, height: 14,
-                            child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white))
+                            width: 14,
+                            height: 14,
+                            child: CircularProgressIndicator(
+                              strokeWidth: 2,
+                              color: Colors.white,
+                            ),
+                          )
                         : const Icon(Icons.download_rounded, size: 18),
-                    label: Text('Handefa CSV', style: GoogleFonts.outfit(fontWeight: FontWeight.bold)),
+                    label: Text(
+                      ' CSV',
+                      style: GoogleFonts.outfit(fontWeight: FontWeight.bold),
+                    ),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFF2E5BFF),
                       foregroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 16,
+                        vertical: 10,
+                      ),
                     ),
                   ),
                 ],
@@ -108,35 +141,46 @@ class _CollectionHistoryScreenState extends State<CollectionHistoryScreen> {
               child: _isLoading
                   ? const Center(child: CircularProgressIndicator())
                   : _entries.isEmpty
-                      ? Center(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(Icons.folder_open_outlined,
-                                  size: 72, color: Colors.grey.shade300),
-                              const SizedBox(height: 16),
-                              Text('Mbola tsy misy aretina voangona.',
-                                  style: GoogleFonts.outfit(
-                                      color: Colors.grey, fontSize: 16)),
-                              const SizedBox(height: 8),
-                              Text('Ampiasao ny fitaovana "Fanangonana" mba handefasana ny aretina voalohany.',
-                                  style: GoogleFonts.outfit(
-                                      color: Colors.grey.shade400, fontSize: 13),
-                                  textAlign: TextAlign.center),
-                            ],
+                  ? Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.folder_open_outlined,
+                            size: 72,
+                            color: Colors.grey.shade300,
                           ),
-                        )
-                      : RefreshIndicator(
-                          onRefresh: _loadEntries,
-                          child: ListView.builder(
-                            padding: const EdgeInsets.symmetric(horizontal: 16),
-                            itemCount: _entries.length,
-                            itemBuilder: (context, index) {
-                              final e = _entries[index];
-                              return _buildEntryCard(e);
-                            },
+                          const SizedBox(height: 16),
+                          Text(
+                            'Mbola tsy misy aretina voangona.',
+                            style: GoogleFonts.outfit(
+                              color: Colors.grey,
+                              fontSize: 16,
+                            ),
                           ),
-                        ),
+                          const SizedBox(height: 8),
+                          Text(
+                            'Ampiasao ny fitaovana "Fanangonana" mba handefasana ny aretina voalohany.',
+                            style: GoogleFonts.outfit(
+                              color: Colors.grey.shade400,
+                              fontSize: 13,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
+                      ),
+                    )
+                  : RefreshIndicator(
+                      onRefresh: _loadEntries,
+                      child: ListView.builder(
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
+                        itemCount: _entries.length,
+                        itemBuilder: (context, index) {
+                          final e = _entries[index];
+                          return _buildEntryCard(e);
+                        },
+                      ),
+                    ),
             ),
           ],
         ),
@@ -164,12 +208,22 @@ class _CollectionHistoryScreenState extends State<CollectionHistoryScreen> {
           context: context,
           builder: (_) => AlertDialog(
             title: Text('Hofafana ve?', style: GoogleFonts.outfit()),
-            content: Text('Tsy azo averina intsony ity hetsika ity.', style: GoogleFonts.outfit()),
+            content: Text(
+              'Tsy azo averina intsony ity hetsika ity.',
+              style: GoogleFonts.outfit(),
+            ),
             actions: [
-              TextButton(onPressed: () => Navigator.pop(context, false),
-                child: const Text('Hanafoana')),
-              TextButton(onPressed: () => Navigator.pop(context, true),
-                child: const Text('Hamafa', style: TextStyle(color: Colors.red))),
+              TextButton(
+                onPressed: () => Navigator.pop(context, false),
+                child: const Text('Hanafoana'),
+              ),
+              TextButton(
+                onPressed: () => Navigator.pop(context, true),
+                child: const Text(
+                  'Hamafa',
+                  style: TextStyle(color: Colors.red),
+                ),
+              ),
             ],
           ),
         );
@@ -181,8 +235,11 @@ class _CollectionHistoryScreenState extends State<CollectionHistoryScreen> {
           color: Colors.white,
           borderRadius: BorderRadius.circular(18),
           boxShadow: [
-            BoxShadow(color: Colors.black.withValues(alpha: 0.04),
-                blurRadius: 8, offset: const Offset(0, 3)),
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.04),
+              blurRadius: 8,
+              offset: const Offset(0, 3),
+            ),
           ],
         ),
         child: Row(
@@ -201,7 +258,10 @@ class _CollectionHistoryScreenState extends State<CollectionHistoryScreen> {
                   fit: BoxFit.cover,
                   errorBuilder: (context, error, stackTrace) => Container(
                     color: Colors.grey.shade200,
-                    child: const Icon(Icons.broken_image_outlined, color: Colors.grey),
+                    child: const Icon(
+                      Icons.broken_image_outlined,
+                      color: Colors.grey,
+                    ),
                   ),
                 ),
               ),
@@ -215,45 +275,75 @@ class _CollectionHistoryScreenState extends State<CollectionHistoryScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 10,
+                        vertical: 4,
+                      ),
                       decoration: BoxDecoration(
                         color: color.withValues(alpha: 0.12),
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      child: Text(e.diseaseLabel,
-                          style: GoogleFonts.outfit(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 12, color: color)),
+                      child: Text(
+                        e.diseaseLabel,
+                        style: GoogleFonts.outfit(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 12,
+                          color: color,
+                        ),
+                      ),
                     ),
                     const SizedBox(height: 6),
                     Text(
                       '${e.patientAge} taona · ${e.patientGender} · ${e.patientNationality}',
-                      style: GoogleFonts.outfit(fontSize: 12, color: Colors.grey.shade700),
+                      style: GoogleFonts.outfit(
+                        fontSize: 12,
+                        color: Colors.grey.shade700,
+                      ),
                     ),
                     const SizedBox(height: 4),
                     Text(
                       'Nataon\'i ${e.collectorName}',
-                      style: GoogleFonts.outfit(fontSize: 11, color: Colors.grey),
+                      style: GoogleFonts.outfit(
+                        fontSize: 11,
+                        color: Colors.grey,
+                      ),
                     ),
                     const SizedBox(height: 4),
                     Row(
                       children: [
-                        const Icon(Icons.schedule, size: 11, color: Colors.grey),
+                        const Icon(
+                          Icons.schedule,
+                          size: 11,
+                          color: Colors.grey,
+                        ),
                         const SizedBox(width: 4),
-                        Text(e.collectedAt,
-                            style: GoogleFonts.outfit(fontSize: 11, color: Colors.grey)),
+                        Text(
+                          e.collectedAt,
+                          style: GoogleFonts.outfit(
+                            fontSize: 11,
+                            color: Colors.grey,
+                          ),
+                        ),
                       ],
                     ),
                     if (e.locationName.isNotEmpty)
                       Row(
                         children: [
-                          const Icon(Icons.location_on, size: 11, color: Colors.grey),
+                          const Icon(
+                            Icons.location_on,
+                            size: 11,
+                            color: Colors.grey,
+                          ),
                           const SizedBox(width: 4),
                           Expanded(
-                            child: Text(e.locationName,
-                                overflow: TextOverflow.ellipsis,
-                                style: GoogleFonts.outfit(
-                                    fontSize: 11, color: Colors.grey)),
+                            child: Text(
+                              e.locationName,
+                              overflow: TextOverflow.ellipsis,
+                              style: GoogleFonts.outfit(
+                                fontSize: 11,
+                                color: Colors.grey,
+                              ),
+                            ),
                           ),
                         ],
                       ),

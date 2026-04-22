@@ -238,6 +238,14 @@ class _ResultScreenState extends State<ResultScreen> {
         const _LoadingPlaceholder(width: double.infinity, height: 15),
         const SizedBox(height: 8),
         const _LoadingPlaceholder(width: 200, height: 15),
+        const SizedBox(height: 30),
+        _buildSectionTitle('Fitsaboana sy Torohevitra'),
+        const SizedBox(height: 12),
+        const _LoadingPlaceholder(width: double.infinity, height: 80),
+        const SizedBox(height: 10),
+        const _LoadingPlaceholder(width: double.infinity, height: 80),
+        const SizedBox(height: 10),
+        const _LoadingPlaceholder(width: double.infinity, height: 80),
       ],
     );
   }
@@ -429,7 +437,13 @@ class _ResultScreenState extends State<ResultScreen> {
 class _LoadingPlaceholder extends StatelessWidget {
   final double width;
   final double height;
-  const _LoadingPlaceholder({required this.width, required this.height});
+  final double borderRadius;
+
+  const _LoadingPlaceholder({
+    required this.width,
+    required this.height,
+    this.borderRadius = 12,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -438,7 +452,7 @@ class _LoadingPlaceholder extends StatelessWidget {
       height: height,
       decoration: BoxDecoration(
         color: Colors.grey.shade200,
-        borderRadius: BorderRadius.circular(height / 2),
+        borderRadius: BorderRadius.circular(borderRadius),
       ),
     );
   }

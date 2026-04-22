@@ -61,7 +61,7 @@ class _ResultScreenState extends State<ResultScreen> {
           _results = results;
           _isLoading = false;
           if (results == null || results.isEmpty) {
-            _errorMessage = "Analysis failed. Please try again.";
+            _errorMessage = "Tsy nahomby ny fanadihadiana. Manandrama indray azafady.";
           }
         });
       }
@@ -79,7 +79,7 @@ class _ResultScreenState extends State<ResultScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Analysis Result', style: GoogleFonts.outfit(fontWeight: FontWeight.bold)),
+        title: Text('Vokatry ny fanadihadiana', style: GoogleFonts.outfit(fontWeight: FontWeight.bold)),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -124,7 +124,7 @@ class _ResultScreenState extends State<ResultScreen> {
     }
 
     if (_results == null || _results!.isEmpty) {
-      return const Text("No results found.");
+      return const Text("Tsy misy valiny hita.");
     }
 
     final topResult = _results![0];
@@ -142,7 +142,7 @@ class _ResultScreenState extends State<ResultScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Fahamarinana (Probability)',
+                    'Fahamarinana',
                     style: GoogleFonts.outfit(color: Colors.grey),
                   ),
                   Text(
@@ -175,7 +175,6 @@ class _ResultScreenState extends State<ResultScreen> {
         const SizedBox(height: 30),
         const Divider(),
         const SizedBox(height: 20),
-        _buildSectionTitle('What is this?'),
         _buildSectionTitle('Inona ity?'),
         const SizedBox(height: 10),
         Text(

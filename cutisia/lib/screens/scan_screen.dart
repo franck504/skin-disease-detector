@@ -13,7 +13,7 @@ class ScanScreen extends StatefulWidget {
 
 class _ScanScreenState extends State<ScanScreen> {
   final _picker = ImagePicker();
-  
+
   bool _isLoading = false;
   bool _isPickerActive = false;
   bool _isCloudMode = false; // Par défaut : Local (Vitesse)
@@ -39,9 +39,9 @@ class _ScanScreenState extends State<ScanScreen> {
 
   Future<void> _pickImage(ImageSource source) async {
     if (_isPickerActive || _isLoading) return;
-    
+
     setState(() => _isPickerActive = true);
-    
+
     try {
       XFile? image;
       if (source == ImageSource.camera) {
@@ -54,7 +54,7 @@ class _ScanScreenState extends State<ScanScreen> {
       }
 
       setState(() => _isPickerActive = false);
-      
+
       if (image == null) return;
       await _processImage(image);
     } catch (e) {
@@ -64,7 +64,9 @@ class _ScanScreenState extends State<ScanScreen> {
       });
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Nisy fahadisoana teo am-pifidianana sary: $e')),
+          SnackBar(
+            content: Text('Nisy fahadisoana teo am-pifidianana sary: $e'),
+          ),
         );
       }
     }
@@ -76,10 +78,8 @@ class _ScanScreenState extends State<ScanScreen> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => ResultScreen(
-          imagePath: image.path,
-          isCloudMode: _isCloudMode,
-        ),
+        builder: (context) =>
+            ResultScreen(imagePath: image.path, isCloudMode: _isCloudMode),
       ),
     );
   }
@@ -88,7 +88,10 @@ class _ScanScreenState extends State<ScanScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Hijery vaovao', style: GoogleFonts.outfit(fontWeight: FontWeight.bold)),
+        title: Text(
+          'Hijery vaovao',
+          style: GoogleFonts.outfit(fontWeight: FontWeight.bold),
+        ),
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
@@ -102,22 +105,33 @@ class _ScanScreenState extends State<ScanScreen> {
               margin: const EdgeInsets.only(bottom: 30),
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               decoration: BoxDecoration(
-                color: _isCloudMode 
-                    ? Colors.blue.withValues(alpha: 0.1) 
+                color: _isCloudMode
+                    ? Colors.blue.withValues(alpha: 0.1)
                     : Colors.grey.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(16),
               ),
               child: SwitchListTile(
-                title: Text('Fahamarinana avo', 
-                  style: GoogleFonts.outfit(fontWeight: FontWeight.bold, fontSize: 16)),
-                subtitle: Text('Mampiasa Cloud Elite AI', style: GoogleFonts.outfit(fontSize: 12)),
-                secondary: Icon(Icons.cloud_done, color: _isCloudMode ? Colors.blue : Colors.grey),
+                title: Text(
+                  'Fahamarinana avo',
+                  style: GoogleFonts.outfit(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                  ),
+                ),
+                subtitle: Text(
+                  'Mampiasa Cloud Elite AI',
+                  style: GoogleFonts.outfit(fontSize: 12),
+                ),
+                secondary: Icon(
+                  Icons.cloud_done,
+                  color: _isCloudMode ? Colors.blue : Colors.grey,
+                ),
                 value: _isCloudMode,
                 onChanged: (val) => setState(() => _isCloudMode = val),
                 activeThumbColor: const Color(0xFF2E5BFF),
               ),
             ),
-            
+
             _buildActionCard(
               'Haka sary',
               'Ampiasao ny fakan-tsary hijerena.',
@@ -126,7 +140,7 @@ class _ScanScreenState extends State<ScanScreen> {
             ),
             const SizedBox(height: 20),
             _buildActionCard(
-              'Sary avy ao amin\'ny finday',
+              'Tahirin-tsarin\'ny finday',
               'Misafidiana sary efa misy.',
               Icons.photo_library,
               () => _pickImage(ImageSource.gallery),
@@ -137,10 +151,7 @@ class _ScanScreenState extends State<ScanScreen> {
               child: Text(
                 'Hamarino tsara fa mazava ny toerana ary mazava tsara ny sary mba hahazoana valiny marina kokoa.',
                 textAlign: TextAlign.center,
-                style: GoogleFonts.outfit(
-                  color: Colors.grey,
-                  fontSize: 14,
-                ),
+                style: GoogleFonts.outfit(color: Colors.grey, fontSize: 14),
               ),
             ),
           ],
@@ -149,7 +160,12 @@ class _ScanScreenState extends State<ScanScreen> {
     );
   }
 
-  Widget _buildActionCard(String title, String subtitle, IconData icon, VoidCallback onTap) {
+  Widget _buildActionCard(
+    String title,
+    String subtitle,
+    IconData icon,
+    VoidCallback onTap,
+  ) {
     return InkWell(
       onTap: onTap,
       borderRadius: BorderRadius.circular(24),
@@ -181,10 +197,7 @@ class _ScanScreenState extends State<ScanScreen> {
             const SizedBox(height: 4),
             Text(
               subtitle,
-              style: GoogleFonts.outfit(
-                fontSize: 14,
-                color: Colors.grey,
-              ),
+              style: GoogleFonts.outfit(fontSize: 14, color: Colors.grey),
             ),
           ],
         ),

@@ -245,22 +245,22 @@ class _CollectionHistoryScreenState extends State<CollectionHistoryScreen> {
         child: Row(
           children: [
             // Image thumbnail
-            ClipRRect(
-              borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(18),
-                bottomLeft: Radius.circular(18),
-              ),
-              child: SizedBox(
-                width: 90,
-                height: 90,
-                child: Image.file(
-                  File(e.imagePath),
-                  fit: BoxFit.cover,
-                  errorBuilder: (context, error, stackTrace) => Container(
-                    color: Colors.grey.shade200,
-                    child: const Icon(
-                      Icons.broken_image_outlined,
-                      color: Colors.grey,
+            Padding(
+              padding: const EdgeInsets.all(12),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: SizedBox(
+                  width: 80,
+                  height: 80,
+                  child: Image.file(
+                    File(e.imagePath),
+                    fit: BoxFit.cover,
+                    errorBuilder: (context, error, stackTrace) => Container(
+                      color: Colors.grey.shade200,
+                      child: const Icon(
+                        Icons.broken_image_outlined,
+                        color: Colors.grey,
+                      ),
                     ),
                   ),
                 ),

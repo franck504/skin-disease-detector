@@ -56,8 +56,8 @@ class _SplashScreenState extends State<SplashScreen>
               opacity: _fadeAnimation,
               child: Image.asset(
                 'assets/images/spalsh.png',
-                width: 120,
-                height: 120,
+                width: 140,
+                height: 140,
               ),
             ),
             const SizedBox(height: 30),
@@ -66,7 +66,7 @@ class _SplashScreenState extends State<SplashScreen>
               child: Text(
                 'Cutisia',
                 style: GoogleFonts.outfit(
-                  fontSize: 22,
+                  fontSize: 24,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                   letterSpacing: 1.5,
@@ -79,7 +79,7 @@ class _SplashScreenState extends State<SplashScreen>
               child: Text(
                 'Mpanampy amin\'ny fahasalaman\'ny hoditra AI',
                 style: GoogleFonts.outfit(
-                  fontSize: 10,
+                  fontSize: 14,
                   color: Colors.white.withValues(alpha: 0.9),
                   fontWeight: FontWeight.w300,
                 ),

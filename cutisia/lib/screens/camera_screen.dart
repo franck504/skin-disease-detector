@@ -49,7 +49,9 @@ class _CameraScreenState extends State<CameraScreen> {
       debugPrint("Camera Error: $e");
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text("Tsy nahomby ny fampandehanana ny fakan-tsary: $e")),
+          SnackBar(
+            content: Text("Tsy nahomby ny fampandehanana ny fakan-tsary: $e"),
+          ),
         );
         Navigator.pop(context);
       }
@@ -63,7 +65,10 @@ class _CameraScreenState extends State<CameraScreen> {
   }
 
   Future<void> _takePicture() async {
-    if (_controller == null || !_controller!.value.isInitialized || _isTakingPicture) return;
+    if (_controller == null ||
+        !_controller!.value.isInitialized ||
+        _isTakingPicture)
+      return;
 
     setState(() => _isTakingPicture = true);
 
@@ -101,9 +106,7 @@ class _CameraScreenState extends State<CameraScreen> {
         fit: StackFit.expand,
         children: [
           // Camera Preview
-          Center(
-            child: CameraPreview(_controller!),
-          ),
+          Center(child: CameraPreview(_controller!)),
 
           // Overlay (Grid/Frame)
           _buildOverlay(),
@@ -120,7 +123,9 @@ class _CameraScreenState extends State<CameraScreen> {
                   style: GoogleFonts.outfit(
                     color: Colors.white,
                     fontSize: 14,
-                    shadows: [const Shadow(blurRadius: 10, color: Colors.black)],
+                    shadows: [
+                      const Shadow(blurRadius: 10, color: Colors.black),
+                    ],
                   ),
                 ),
                 const SizedBox(height: 20),
@@ -128,7 +133,11 @@ class _CameraScreenState extends State<CameraScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     IconButton(
-                      icon: const Icon(Icons.close, color: Colors.white, size: 30),
+                      icon: const Icon(
+                        Icons.close,
+                        color: Colors.white,
+                        size: 30,
+                      ),
                       onPressed: () => Navigator.pop(context),
                     ),
                     GestureDetector(
@@ -142,7 +151,9 @@ class _CameraScreenState extends State<CameraScreen> {
                         ),
                         child: Center(
                           child: _isTakingPicture
-                              ? const CircularProgressIndicator(color: Colors.white)
+                              ? const CircularProgressIndicator(
+                                  color: Colors.white,
+                                )
                               : Container(
                                   height: 60,
                                   width: 60,
@@ -167,15 +178,15 @@ class _CameraScreenState extends State<CameraScreen> {
             left: 20,
             child: IconButton(
               icon: Icon(
-                _controller!.value.flashMode == FlashMode.torch 
-                    ? Icons.flash_on 
+                _controller!.value.flashMode == FlashMode.torch
+                    ? Icons.flash_on
                     : Icons.flash_off,
                 color: Colors.white,
                 size: 28,
               ),
               onPressed: () async {
-                final mode = _controller!.value.flashMode == FlashMode.torch 
-                    ? FlashMode.off 
+                final mode = _controller!.value.flashMode == FlashMode.torch
+                    ? FlashMode.off
                     : FlashMode.torch;
                 await _controller!.setFlashMode(mode);
                 setState(() {});
@@ -190,10 +201,10 @@ class _CameraScreenState extends State<CameraScreen> {
   Widget _buildOverlay() {
     return Container(
       decoration: BoxDecoration(
-        border: Border.all(
-          color: Colors.white.withValues(alpha: 0.3),
-          width: 2,
-        ),
+        // border: Border.all(
+        //   color: Colors.white.withValues(alpha: 0.3),
+        //   width: 2,
+        // ),
       ),
       margin: const EdgeInsets.all(50),
       child: Stack(

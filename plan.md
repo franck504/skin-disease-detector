@@ -60,11 +60,11 @@ Ce mémoire présente le parcours de conception et de réalisation de ce systèm
 ### 5.1 Conception globale de la solution "Edge-to-Cloud"
 #### 5.1.1 Architecture hybride : Inférence locale vs Analyse Cloud
 #### 5.1.2 Arbitrage Performance/Consommation en Edge Computing
-### 5.2 Modélisation et optimisation du moteur d'IA
-#### 5.2.1 Prétraitement des images et segmentation des lésions
-#### 5.2.2 Conversion et optimisation du modèle pour l'embarqué (TFLite)
+### 5.2 Flux de données et communication Client-Serveur
+#### 5.2.1 Diagramme de séquence : De la capture à l'affichage du diagnostic
+#### 5.2.2 API REST et protocoles d'échange sécurisés (HTTPS/TLS)
 ### 5.3 Gouvernance et Éthique des données de santé
-#### 5.3.1 Anonymisation des métadonnées et sécurité des échanges (Protocole HTTPS/TLS)
+#### 5.3.1 Anonymisation des métadonnées patients
 #### 5.3.2 Conformité aux principes de protection des données personnelles (RGPD/Santé)
 
 ## Chapitre 6 : Développement de l'écosystème logiciel

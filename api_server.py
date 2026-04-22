@@ -1,7 +1,8 @@
 import os
 import io
 import uvicorn
-from fastapi import FastAPI, UploadFile, File
+import json
+from fastapi import FastAPI, UploadFile, File, Form
 from fastapi.middleware.cors import CORSMiddleware
 from pyngrok import ngrok
 import numpy as np
@@ -65,6 +66,17 @@ def preprocess_image(image: Image.Image):
     img = np.expand_dims(img, axis=0)
     return img
 
+# Dossier de collecte sur Google Drive
+COLLECT_DIR = "/content/drive/MyDrive/new_cutisia_images"
+if not os.path.exists(COLLECT_DIR):
+    try:
+        os.makedirs(COLLECT_DIR)
+        print(f"📁 Dossier de collecte créé : {COLLECT_DIR}")
+    except:
+        # Fallback local si pas sur Colab/Drive
+        COLLECT_DIR = "new_cutisia_images"
+        if not os.path.exists(COLLECT_DIR): os.makedirs(COLLECT_DIR)
+
 @app.get("/")
 def home():
     return {"message": "Serveur Cutisia en ligne", "classes": LABELS}
@@ -88,6 +100,38 @@ async def predict(file: UploadFile = File(...)):
         "confidence": confidence,
         "results": {LABELS[i]: float(predictions[0][i]) for i in range(len(LABELS))}
     }
+
+@app.post("/collect")
+async def collect(
+    file: UploadFile = File(...),
+    metadata: str = Form(...)
+):
+    """Reçoit une image et un JSON, les enregistre sur le Drive"""
+    try:
+        # Création d'un nom unique basé sur le timestamp
+        import time
+        timestamp = int(time.time() * 1000)
+        base_filename = f"collect_{timestamp}"
+        
+        # 1. Sauvegarde de l'image
+        extension = os.path.splitext(file.filename)[1] or ".jpg"
+        img_path = os.path.join(COLLECT_DIR, base_filename + extension)
+        with open(img_path, "wb") as f:
+            f.write(await file.read())
+            
+        # 2. Sauvegarde des métadonnées JSON
+        json_path = os.path.join(COLLECT_DIR, base_filename + ".json")
+        metadata_dict = json.loads(metadata)
+        with open(json_path, "w", encoding="utf-8") as f:
+            json.dump(metadata_dict, f, ensure_ascii=False, indent=4)
+            
+        return {
+            "status": "success",
+            "message": "Données enregistrées sur le Drive",
+            "filename": base_filename
+        }
+    except Exception as e:
+        return {"status": "error", "message": str(e)}
 
 # --- LANCEMENT NGROK & SERVEUR ---
 def start_server():

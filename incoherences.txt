@@ -1,0 +1,4 @@
+modele tflite 
+image-label --> prediction-label
+leprosy --> melanomes
+melanomes --> melanomes

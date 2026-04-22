@@ -1,6 +1,6 @@
 1 - echanger l'ordre de labels Mélanomes et Monkeypox : Candidiase, Leprosy, Mélanomes, Monkeypox, Scabies, Tinea
-2 - appliquer la langue de l'application en Malgache
-3 - ajouter des propositions statiques de traitement pour chaque maladie
-4 - ajouter une 2em onglet pour une fonctionnalite collecte d'image par des personnels de sante : image + labels + localisation + date + informations du patient
-5 - corriger bug de camera : gestion de camera special pour cet API24
-6 - reproduire des captures des etapes de projet IA
+2 - ajouter des propositions statiques de traitement pour chaque maladie
+3 - ajouter une 2em onglet pour une fonctionnalite collecte d'image par des personnels de sante : image + labels + localisation + date + informations du patient
+- corriger bug de camera : gestion de camera special pour cet API24
+- appliquer la langue de l'application en Malgache
+- reproduire des captures des etapes de projet IA

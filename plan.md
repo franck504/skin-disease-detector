@@ -22,6 +22,9 @@
 ### 2.2 Apprentissage par transfert et spécificités des datasets médicaux
 #### 2.2.1 Problématique du déséquilibre des classes et de la qualité d'image
 #### 2.2.2 Métriques d'évaluation en diagnostic médical (Précision, Rappel, Score F1)
+### 2.3 Méthodologie et Cycle de vie du projet IA
+#### 2.3.1 Approche itérative et processus CRISP-DM (Data Science Lifecycle)
+#### 2.3.2 Phases de prototypage et boucle de rétroaction (Feedback Loop)
 
 ## Chapitre 3 : Ingénierie des données et Prétraitement Avancé
 ### 3.1 Constitution du Dataset et Pipeline de Collecte

@@ -41,16 +41,22 @@
 ### 4.2 Optimisation et Exportation vers l'embarqué
 #### 4.2.1 Analyse des hyperparamètres et suivi de la convergence (Loss/Accuracy)
 #### 4.2.2 Quantification (Int8/Float16) et conversion vers le format TFLite
+### 4.3 Interprétabilité et Fiabilité du modèle (Explainable AI - XAI)
+#### 4.3.1 Visualisation des zones d'activation via Grad-CAM (Heatmaps)
+#### 4.3.2 Analyse des faux positifs et gestion de l'incertitude médicale
 
 # PARTIE 2 : CONCEPTION ARCHITECTURALE ET MÉTHODOLOGIE DU SYSTÈME CUTISIA
 
 ## Chapitre 5 : Architecture système et pipeline de traitement
 ### 5.1 Conception globale de la solution "Edge-to-Cloud"
 #### 5.1.1 Architecture hybride : Inférence locale vs Analyse Cloud
-#### 5.1.2 Flux de données : De la capture d'image à la proposition de traitement
+#### 5.1.2 Arbitrage Performance/Consommation en Edge Computing
 ### 5.2 Modélisation et optimisation du moteur d'IA
 #### 5.2.1 Prétraitement des images et segmentation des lésions
 #### 5.2.2 Conversion et optimisation du modèle pour l'embarqué (TFLite)
+### 5.3 Gouvernance et Éthique des données de santé
+#### 5.3.1 Anonymisation des métadonnées et sécurité des échanges (Protocole HTTPS/TLS)
+#### 5.3.2 Conformité aux principes de protection des données personnelles (RGPD/Santé)
 
 ## Chapitre 6 : Développement de l'écosystème logiciel
 ### 6.1 Interface utilisateur et expérience patient (Mobile)
@@ -72,10 +78,10 @@
 
 ## Chapitre 8 : Évaluation des performances et discussion
 ### 8.1 Validation expérimentale du modèle de détection
-#### 8.1.1 Analyse de la matrice de confusion et taux de réussite par pathologie
+#### 8.1.1 Analyse de la matrice de confusion et courbes AUC-ROC
 #### 8.1.2 Comparaison des performances Local vs Cloud
 ### 8.2 Analyse critique et perspectives d'évolution
-#### 8.2.1 Limites du système : Variabilité lumineuse et types de peau
+#### 8.2.1 Scalabilité urbaine : Gestion des flux massifs de données épidémiologiques
 #### 8.2.2 Évolutivité : Intégration de la détection par segmentation et suivi temporel
 
 # CONCLUSION

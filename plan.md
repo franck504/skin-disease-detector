@@ -23,52 +23,60 @@
 #### 2.2.1 Problématique du déséquilibre des classes et de la qualité d'image
 #### 2.2.2 Métriques d'évaluation en diagnostic médical (Précision, Rappel, Score F1)
 
-## Chapitre 3 : Ingénierie des données et Cycle d'apprentissage de l'IA
-### 3.1 Constitution du Dataset et sources de données
-#### 3.1.1 Collecte par Web Scrapping et exploration des archives (ISIC, Kaggle)
-#### 3.1.2 Sélection et justification des classes (Mélanomes, Monkeypox, Leprosy, etc.)
-### 3.2 Préparation et Analyse Exploratoire des Données (EDA)
-#### 3.2.1 Nettoyage, normalisation et gestion du déséquilibre des classes
-#### 3.2.2 Techniques d'augmentation de données (Data Augmentation) pour la robustesse
-### 3.3 Processus d'entraînement et infrastructure Cloud
-#### 3.3.1 Environnements de calcul haute performance (Kaggle Kernels, Google Colab)
-#### 3.3.2 Choix des hyperparamètres et optimisation des fonctions de perte
+## Chapitre 3 : Ingénierie des données et Prétraitement Avancé
+### 3.1 Constitution du Dataset et Pipeline de Collecte
+#### 3.1.1 Web Scrapping ciblé et agrégation des archives multi-sources (ISIC, Kaggle)
+#### 3.1.2 Sélection des classes pathologiques et analyse de la représentativité
+### 3.2 Segmentation et Localisation des Lésions (ROI)
+#### 3.2.1 Architecture U-Net pour la génération automatique de masques binaires
+#### 3.2.2 Algorithmes de détourage (Auto-Cropping) et centrage sur la pathologie
+### 3.3 Préparation finale et Optimisation des entrées
+#### 3.3.1 Normalisation chromatique et techniques d'augmentation (Data Augmentation)
+#### 3.3.2 Gestion du déséquilibre par sur-échantillonnage et pondération des pertes
+
+## Chapitre 4 : Cycle d'Apprentissage et Modélisation de l'IA
+### 4.1 Stratégie d'entraînement et infrastructure Cloud
+#### 4.1.1 Environnements de calcul haute performance (Kaggle Kernels, Google Colab)
+#### 4.1.2 Choix des architectures (MobileNetV2, EfficientNet) et Transfer Learning
+### 4.2 Optimisation et Exportation vers l'embarqué
+#### 4.2.1 Analyse des hyperparamètres et suivi de la convergence (Loss/Accuracy)
+#### 4.2.2 Quantification (Int8/Float16) et conversion vers le format TFLite
 
 # PARTIE 2 : CONCEPTION ARCHITECTURALE ET MÉTHODOLOGIE DU SYSTÈME CUTISIA
 
-## Chapitre 4 : Architecture système et pipeline de traitement
-### 4.1 Conception globale de la solution "Edge-to-Cloud"
-#### 4.1.1 Architecture hybride : Inférence locale vs Analyse Cloud
-#### 4.1.2 Flux de données : De la capture d'image à la proposition de traitement
-### 4.2 Modélisation et optimisation du moteur d'IA
-#### 4.2.1 Prétraitement des images et segmentation des lésions
-#### 4.2.2 Conversion et optimisation du modèle pour l'embarqué (TFLite)
+## Chapitre 5 : Architecture système et pipeline de traitement
+### 5.1 Conception globale de la solution "Edge-to-Cloud"
+#### 5.1.1 Architecture hybride : Inférence locale vs Analyse Cloud
+#### 5.1.2 Flux de données : De la capture d'image à la proposition de traitement
+### 5.2 Modélisation et optimisation du moteur d'IA
+#### 5.2.1 Prétraitement des images et segmentation des lésions
+#### 5.2.2 Conversion et optimisation du modèle pour l'embarqué (TFLite)
 
-## Chapitre 5 : Développement de l'écosystème logiciel
-### 5.1 Interface utilisateur et expérience patient (Mobile)
-#### 5.1.1 Architecture logicielle et design system (Flutter)
-#### 5.1.2 Gestion du cycle de vie de la caméra et capture optimisée
-### 5.2 Gestion des données et synchronisation Cloud
-#### 5.2.1 Persistance locale des dossiers patients (SQLite/sqflite)
-#### 5.2.2 API de collecte et centralisation des données épidémiologiques
+## Chapitre 6 : Développement de l'écosystème logiciel
+### 6.1 Interface utilisateur et expérience patient (Mobile)
+#### 6.1.1 Architecture logicielle et design system (Flutter)
+#### 6.1.2 Gestion du cycle de vie de la caméra et capture optimisée
+### 6.2 Gestion des données et synchronisation Cloud
+#### 6.2.1 Persistance locale des dossiers patients (SQLite/sqflite)
+#### 6.2.2 API de collecte et centralisation des données épidémiologiques
 
 # PARTIE 3 : RÉALISATION, TESTS ET ANALYSE DES RÉSULTATS
 
-## Chapitre 6 : Mise en œuvre technique et intégration logicielle
-### 6.1 Développement du prototype mobile "Cutisia Elite AI"
-#### 6.1.1 Intégration du moteur d'inférence en temps réel
-#### 6.1.2 Implémentation des modules de localisation et de traitement
-### 6.2 Optimisation pour les contraintes du terrain
-#### 6.2.1 Gestion des performances sur terminaux à ressources limitées (API 24)
-#### 6.2.2 Interface multilingue et accessibilité (Localisation Malgache)
+## Chapitre 7 : Mise en œuvre technique et intégration logicielle
+### 7.1 Développement du prototype mobile "Cutisia Elite AI"
+#### 7.1.1 Intégration du moteur d'inférence en temps réel
+#### 7.1.2 Implémentation des modules de localisation et de traitement
+### 7.2 Optimisation pour les contraintes du terrain
+#### 7.2.1 Gestion des performances sur terminaux à ressources limitées (API 24)
+#### 7.2.2 Interface multilingue et accessibilité (Localisation Malgache)
 
-## Chapitre 7 : Évaluation des performances et discussion
-### 7.1 Validation expérimentale du modèle de détection
-#### 7.1.1 Analyse de la matrice de confusion et taux de réussite par pathologie
-#### 7.1.2 Comparaison des performances Local vs Cloud
-### 7.2 Analyse critique et perspectives d'évolution
-#### 7.2.1 Limites du système : Variabilité lumineuse et types de peau
-#### 7.2.2 Évolutivité : Intégration de la détection par segmentation et suivi temporel
+## Chapitre 8 : Évaluation des performances et discussion
+### 8.1 Validation expérimentale du modèle de détection
+#### 8.1.1 Analyse de la matrice de confusion et taux de réussite par pathologie
+#### 8.1.2 Comparaison des performances Local vs Cloud
+### 8.2 Analyse critique et perspectives d'évolution
+#### 8.2.1 Limites du système : Variabilité lumineuse et types de peau
+#### 8.2.2 Évolutivité : Intégration de la détection par segmentation et suivi temporel
 
 # CONCLUSION
 

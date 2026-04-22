@@ -40,7 +40,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                   const CircleAvatar(
                     radius: 25,
-                    backgroundColor: Color(0xFF2E5BFF),
+                    // backgroundColor: Color(0xFF2E5BFF),
                     backgroundImage: AssetImage('assets/images/user_photo.png'),
                   ),
                 ],
@@ -252,10 +252,7 @@ class HomeScreen extends StatelessWidget {
             child: Stack(
               fit: StackFit.expand,
               children: [
-                Image.asset(
-                  d['img']!,
-                  fit: BoxFit.cover,
-                ),
+                Image.asset(d['img']!, fit: BoxFit.cover),
                 Container(
                   decoration: BoxDecoration(
                     gradient: LinearGradient(

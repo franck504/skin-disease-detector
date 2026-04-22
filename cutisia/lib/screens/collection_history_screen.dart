@@ -35,7 +35,7 @@ class _CollectionHistoryScreenState extends State<CollectionHistoryScreen> {
       final path = await _service.exportToCsv();
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-          content: Text('CSV exported:\n$path', style: GoogleFonts.outfit()),
+          content: Text('CSV voalefa any amin\'ny:\n$path', style: GoogleFonts.outfit()),
           backgroundColor: Colors.green,
           behavior: SnackBarBehavior.floating,
           duration: const Duration(seconds: 5),
@@ -44,7 +44,7 @@ class _CollectionHistoryScreenState extends State<CollectionHistoryScreen> {
     } catch (e) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-          content: Text('Export failed: $e'),
+          content: Text('Tsy nahomby ny fandefasana: $e'),
           backgroundColor: Colors.red,
           behavior: SnackBarBehavior.floating,
         ));
@@ -75,11 +75,11 @@ class _CollectionHistoryScreenState extends State<CollectionHistoryScreen> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Collected Cases', style: GoogleFonts.outfit(
+                      Text('Ireo aretina voangona', style: GoogleFonts.outfit(
                         fontSize: 22, fontWeight: FontWeight.bold,
                         color: const Color(0xFF1C2431),
                       )),
-                      Text('${_entries.length} total entries', style: GoogleFonts.outfit(
+                      Text('${_entries.length} fitambaran\'ny aretina', style: GoogleFonts.outfit(
                         fontSize: 13, color: Colors.grey,
                       )),
                     ],
@@ -91,7 +91,7 @@ class _CollectionHistoryScreenState extends State<CollectionHistoryScreen> {
                             width: 14, height: 14,
                             child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white))
                         : const Icon(Icons.download_rounded, size: 18),
-                    label: Text('Export CSV', style: GoogleFonts.outfit(fontWeight: FontWeight.bold)),
+                    label: Text('Handefa CSV', style: GoogleFonts.outfit(fontWeight: FontWeight.bold)),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFF2E5BFF),
                       foregroundColor: Colors.white,
@@ -115,11 +115,11 @@ class _CollectionHistoryScreenState extends State<CollectionHistoryScreen> {
                               Icon(Icons.folder_open_outlined,
                                   size: 72, color: Colors.grey.shade300),
                               const SizedBox(height: 16),
-                              Text('No cases collected yet.',
+                              Text('Mbola tsy misy aretina voangona.',
                                   style: GoogleFonts.outfit(
                                       color: Colors.grey, fontSize: 16)),
                               const SizedBox(height: 8),
-                              Text('Use the Collect tab to submit your first case.',
+                              Text('Ampiasao ny fitaovana "Fanangonana" mba handefasana ny aretina voalohany.',
                                   style: GoogleFonts.outfit(
                                       color: Colors.grey.shade400, fontSize: 13),
                                   textAlign: TextAlign.center),
@@ -163,13 +163,13 @@ class _CollectionHistoryScreenState extends State<CollectionHistoryScreen> {
         return await showDialog<bool>(
           context: context,
           builder: (_) => AlertDialog(
-            title: Text('Delete entry?', style: GoogleFonts.outfit()),
-            content: Text('This action is irreversible.', style: GoogleFonts.outfit()),
+            title: Text('Hofafana ve?', style: GoogleFonts.outfit()),
+            content: Text('Tsy azo averina intsony ity hetsika ity.', style: GoogleFonts.outfit()),
             actions: [
               TextButton(onPressed: () => Navigator.pop(context, false),
-                child: const Text('Cancel')),
+                child: const Text('Hanafoana')),
               TextButton(onPressed: () => Navigator.pop(context, true),
-                child: const Text('Delete', style: TextStyle(color: Colors.red))),
+                child: const Text('Hamafa', style: TextStyle(color: Colors.red))),
             ],
           ),
         );
@@ -227,12 +227,12 @@ class _CollectionHistoryScreenState extends State<CollectionHistoryScreen> {
                     ),
                     const SizedBox(height: 6),
                     Text(
-                      '${e.patientAge} y/o · ${e.patientGender} · ${e.patientNationality}',
+                      '${e.patientAge} taona · ${e.patientGender} · ${e.patientNationality}',
                       style: GoogleFonts.outfit(fontSize: 12, color: Colors.grey.shade700),
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      'By ${e.collectorName}',
+                      'Nataon\'i ${e.collectorName}',
                       style: GoogleFonts.outfit(fontSize: 11, color: Colors.grey),
                     ),
                     const SizedBox(height: 4),

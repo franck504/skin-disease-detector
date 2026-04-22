@@ -54,7 +54,7 @@ class _ScanScreenState extends State<ScanScreen> {
       });
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Error picking image: $e')),
+          SnackBar(content: Text('Nisy fahadisoana teo am-pifidianana sary: $e')),
         );
       }
     }
@@ -78,7 +78,7 @@ class _ScanScreenState extends State<ScanScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('New Scan', style: GoogleFonts.outfit(fontWeight: FontWeight.bold)),
+        title: Text('Hijery vaovao', style: GoogleFonts.outfit(fontWeight: FontWeight.bold)),
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
@@ -98,9 +98,9 @@ class _ScanScreenState extends State<ScanScreen> {
                 borderRadius: BorderRadius.circular(16),
               ),
               child: SwitchListTile(
-                title: Text('High Precision', 
+                title: Text('Fahamarinana avo', 
                   style: GoogleFonts.outfit(fontWeight: FontWeight.bold, fontSize: 16)),
-                subtitle: Text('Uses Cloud Elite AI', style: GoogleFonts.outfit(fontSize: 12)),
+                subtitle: Text('Mampiasa Cloud Elite AI', style: GoogleFonts.outfit(fontSize: 12)),
                 secondary: Icon(Icons.cloud_done, color: _isCloudMode ? Colors.blue : Colors.grey),
                 value: _isCloudMode,
                 onChanged: (val) => setState(() => _isCloudMode = val),
@@ -109,15 +109,15 @@ class _ScanScreenState extends State<ScanScreen> {
             ),
             
             _buildActionCard(
-              'Take Photo',
-              'Use your camera to scan.',
+              'Haka sary',
+              'Ampiasao ny fakan-tsary hijerena.',
               Icons.camera_alt,
               () => _pickImage(ImageSource.camera),
             ),
             const SizedBox(height: 20),
             _buildActionCard(
-              'Upload from Gallery',
-              'Choose an existing photo.',
+              'Sary avy ao amin\'ny finday',
+              'Misafidiana sary efa misy.',
               Icons.photo_library,
               () => _pickImage(ImageSource.gallery),
             ),
@@ -125,7 +125,7 @@ class _ScanScreenState extends State<ScanScreen> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 40),
               child: Text(
-                'Ensure the area is well-lit and the image is clear for better accuracy.',
+                'Hamarino tsara fa mazava ny toerana ary mazava tsara ny sary mba hahazoana valiny marina kokoa.',
                 textAlign: TextAlign.center,
                 style: GoogleFonts.outfit(
                   color: Colors.grey,

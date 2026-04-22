@@ -37,7 +37,12 @@ class _CollectScreenState extends State<CollectScreen> {
   double? _longitude;
 
   static const List<String> _labels = [
-    'Candidiase', 'Leprosy', 'Monkeypox', 'Mélanomes', 'Scabies', 'Tinea',
+    'Candidiase',
+    'Leprosy',
+    'Monkeypox',
+    'Mélanomes',
+    'Scabies',
+    'Tinea',
   ];
 
   static const List<String> _genders = ['Lahy', 'Vavy'];
@@ -62,7 +67,7 @@ class _CollectScreenState extends State<CollectScreen> {
     try {
       bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
       if (!serviceEnabled) {
-        if (mounted) _showSnack('Location services are disabled.');
+        if (mounted) _showSnack('Tsy mandeha ny GPS (Location).');
         return;
       }
 
@@ -70,13 +75,15 @@ class _CollectScreenState extends State<CollectScreen> {
       if (permission == LocationPermission.denied) {
         permission = await Geolocator.requestPermission();
         if (permission == LocationPermission.denied) {
-          if (mounted) _showSnack('Location permission denied.');
+          if (mounted) _showSnack('Tsy nahazo alalana hampiasa GPS.');
           return;
         }
       }
 
       final pos = await Geolocator.getCurrentPosition(
-        locationSettings: const LocationSettings(accuracy: LocationAccuracy.high),
+        locationSettings: const LocationSettings(
+          accuracy: LocationAccuracy.high,
+        ),
       );
 
       setState(() {
@@ -86,7 +93,7 @@ class _CollectScreenState extends State<CollectScreen> {
             '${pos.latitude.toStringAsFixed(4)}, ${pos.longitude.toStringAsFixed(4)}';
       });
     } catch (e) {
-      if (mounted) _showSnack('Failed to get location: $e');
+      if (mounted) _showSnack('Tsy nahazo ny toerana (GPS): $e');
     } finally {
       if (mounted) setState(() => _isGettingLocation = false);
     }
@@ -95,7 +102,7 @@ class _CollectScreenState extends State<CollectScreen> {
   Future<void> _submit() async {
     if (!_formKey.currentState!.validate()) return;
     if (_pickedImage == null) {
-      _showSnack('Please select an image first.');
+      _showSnack('Mifidiana sary aloha azafady.');
       return;
     }
 
@@ -142,7 +149,7 @@ class _CollectScreenState extends State<CollectScreen> {
         _resetForm();
       }
     } catch (e) {
-      if (mounted) _showSnack('Error saving: $e');
+      if (mounted) _showSnack('Nisy fahadisoana teo am-pitahirizana: $e');
     } finally {
       if (mounted) setState(() => _isSubmitting = false);
     }
@@ -164,11 +171,13 @@ class _CollectScreenState extends State<CollectScreen> {
   }
 
   void _showSnack(String msg, {bool isSuccess = false}) {
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-      content: Text(msg),
-      backgroundColor: isSuccess ? Colors.green : Colors.red,
-      behavior: SnackBarBehavior.floating,
-    ));
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(msg),
+        backgroundColor: isSuccess ? Colors.green : Colors.red,
+        behavior: SnackBarBehavior.floating,
+      ),
+    );
   }
 
   @override
@@ -194,19 +203,31 @@ class _CollectScreenState extends State<CollectScreen> {
                         ),
                         borderRadius: BorderRadius.circular(14),
                       ),
-                      child: const Icon(Icons.add_a_photo, color: Colors.white, size: 26),
+                      child: const Icon(
+                        Icons.add_a_photo,
+                        color: Colors.white,
+                        size: 26,
+                      ),
                     ),
                     const SizedBox(width: 14),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('Raharaha Vaovao', style: GoogleFonts.outfit(
-                          fontSize: 22, fontWeight: FontWeight.bold,
-                          color: const Color(0xFF1C2431),
-                        )),
-                        Text('Fanangonana angon-drakitra ara-pahasalamana', style: GoogleFonts.outfit(
-                          fontSize: 13, color: Colors.grey,
-                        )),
+                        Text(
+                          'Sary Vaovao',
+                          style: GoogleFonts.outfit(
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold,
+                            color: const Color(0xFF1C2431),
+                          ),
+                        ),
+                        Text(
+                          'Fanangonana angon-drakitra ara-pahasalamana',
+                          style: GoogleFonts.outfit(
+                            fontSize: 13,
+                            color: Colors.grey,
+                          ),
+                        ),
                       ],
                     ),
                   ],
@@ -243,11 +264,16 @@ class _CollectScreenState extends State<CollectScreen> {
                         : Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Icon(Icons.add_photo_alternate_outlined,
-                                  size: 52, color: Colors.grey.shade400),
+                              Icon(
+                                Icons.add_photo_alternate_outlined,
+                                size: 52,
+                                color: Colors.grey.shade400,
+                              ),
                               const SizedBox(height: 10),
-                              Text('Tsindrio raha haka sary na handefa',
-                                  style: GoogleFonts.outfit(color: Colors.grey)),
+                              Text(
+                                'Tsindrio raha haka sary na handefa',
+                                style: GoogleFonts.outfit(color: Colors.grey),
+                              ),
                             ],
                           ),
                   ),
@@ -343,7 +369,8 @@ class _CollectScreenState extends State<CollectScreen> {
                       duration: const Duration(milliseconds: 300),
                       child: _isGettingLocation
                           ? const SizedBox(
-                              width: 48, height: 48,
+                              width: 48,
+                              height: 48,
                               child: CircularProgressIndicator(strokeWidth: 2),
                             )
                           : IconButton.filled(
@@ -367,15 +394,20 @@ class _CollectScreenState extends State<CollectScreen> {
                     onPressed: _isSubmitting ? null : _submit,
                     icon: _isSubmitting
                         ? const SizedBox(
-                            width: 18, height: 18,
+                            width: 18,
+                            height: 18,
                             child: CircularProgressIndicator(
-                              strokeWidth: 2, color: Colors.white),
+                              strokeWidth: 2,
+                              color: Colors.white,
+                            ),
                           )
                         : const Icon(Icons.upload_rounded),
                     label: Text(
                       _isSubmitting ? 'Andrasana...' : 'Handefa ny raharaha',
                       style: GoogleFonts.outfit(
-                        fontWeight: FontWeight.bold, fontSize: 16),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
                     ),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFF2E5BFF),
@@ -401,7 +433,8 @@ class _CollectScreenState extends State<CollectScreen> {
     showModalBottomSheet(
       context: context,
       shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(24))),
+        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+      ),
       builder: (_) => SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(20),
@@ -411,12 +444,24 @@ class _CollectScreenState extends State<CollectScreen> {
               ListTile(
                 leading: const Icon(Icons.camera_alt, color: Color(0xFF2E5BFF)),
                 title: Text('Haka sary', style: GoogleFonts.outfit()),
-                onTap: () { Navigator.pop(context); _pickImage(ImageSource.camera); },
+                onTap: () {
+                  Navigator.pop(context);
+                  _pickImage(ImageSource.camera);
+                },
               ),
               ListTile(
-                leading: const Icon(Icons.photo_library, color: Color(0xFF2E5BFF)),
-                title: Text('Hisafidy sary ato amin\'ny finday', style: GoogleFonts.outfit()),
-                onTap: () { Navigator.pop(context); _pickImage(ImageSource.gallery); },
+                leading: const Icon(
+                  Icons.photo_library,
+                  color: Color(0xFF2E5BFF),
+                ),
+                title: Text(
+                  'Hisafidy sary ato amin\'ny finday',
+                  style: GoogleFonts.outfit(),
+                ),
+                onTap: () {
+                  Navigator.pop(context);
+                  _pickImage(ImageSource.gallery);
+                },
               ),
             ],
           ),
@@ -425,9 +470,14 @@ class _CollectScreenState extends State<CollectScreen> {
     );
   }
 
-  Widget _buildSectionTitle(String title) => Text(title,
+  Widget _buildSectionTitle(String title) => Text(
+    title,
     style: GoogleFonts.outfit(
-      fontWeight: FontWeight.bold, fontSize: 15, color: const Color(0xFF1C2431)));
+      fontWeight: FontWeight.bold,
+      fontSize: 15,
+      color: const Color(0xFF1C2431),
+    ),
+  );
 
   Widget _buildTextField({
     required TextEditingController controller,
@@ -480,17 +530,24 @@ class _CollectScreenState extends State<CollectScreen> {
           value: value,
           isExpanded: true,
           icon: const Icon(Icons.keyboard_arrow_down),
-          style: GoogleFonts.outfit(color: const Color(0xFF1C2431), fontSize: 14),
-          items: items.map((item) => DropdownMenuItem(
-            value: item,
-            child: Row(
-              children: [
-                Icon(icon, size: 18, color: const Color(0xFF2E5BFF)),
-                const SizedBox(width: 8),
-                Text(item),
-              ],
-            ),
-          )).toList(),
+          style: GoogleFonts.outfit(
+            color: const Color(0xFF1C2431),
+            fontSize: 14,
+          ),
+          items: items
+              .map(
+                (item) => DropdownMenuItem(
+                  value: item,
+                  child: Row(
+                    children: [
+                      Icon(icon, size: 18, color: const Color(0xFF2E5BFF)),
+                      const SizedBox(width: 8),
+                      Text(item),
+                    ],
+                  ),
+                ),
+              )
+              .toList(),
           onChanged: onChanged,
         ),
       ),

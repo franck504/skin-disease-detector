@@ -90,7 +90,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
             FadeTransition(
               opacity: _fadeAnimation,
               child: Text(
-                'AI Skin Health Assistant',
+                'Mpanampy amin\'ny fahasalaman\'ny hoditra AI',
                 style: GoogleFonts.outfit(
                   fontSize: 18,
                   color: Colors.white.withValues(alpha: 0.9),

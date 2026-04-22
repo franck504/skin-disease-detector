@@ -53,24 +53,10 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
           children: [
             FadeTransition(
               opacity: _fadeAnimation,
-              child: Container(
-                padding: const EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  shape: BoxShape.circle,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withValues(alpha: 0.1),
-                      blurRadius: 20,
-                      spreadRadius: 5,
-                    ),
-                  ],
-                ),
-                child: const Icon(
-                  Icons.health_and_safety,
-                  size: 80,
-                  color: Color(0xFF2E5BFF),
-                ),
+              child: Image.asset(
+                'assets/images/spalsh.png',
+                width: 200,
+                height: 200,
               ),
             ),
             const SizedBox(height: 30),
@@ -97,11 +83,6 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                   fontWeight: FontWeight.w300,
                 ),
               ),
-            ),
-            const SizedBox(height: 100),
-            const CircularProgressIndicator(
-              valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-              strokeWidth: 2,
             ),
           ],
         ),

@@ -25,7 +25,7 @@
 
 ## Chapitre 3 : Ingénierie des données et Prétraitement Avancé
 ### 3.1 Constitution du Dataset et Pipeline de Collecte
-#### 3.1.1 Web Scrapping ciblé et agrégation des archives multi-sources (ISIC, Kaggle)
+#### 3.1.1 Agrégation multi-sources : HAM10000, ISIC Archive, CO2Wounds et Web Scrapping
 #### 3.1.2 Sélection des classes pathologiques et analyse de la représentativité
 ### 3.2 Segmentation et Localisation des Lésions (ROI)
 #### 3.2.1 Architecture U-Net pour la génération automatique de masques binaires

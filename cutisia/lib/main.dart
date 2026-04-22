@@ -40,9 +40,7 @@ class CutisiaApp extends StatelessWidget {
           secondary: const Color(0xFF00D09C),
           surface: const Color(0xFFF5F7FB),
         ),
-        textTheme: GoogleFonts.outfitTextTheme(
-          Theme.of(context).textTheme,
-        ),
+        textTheme: GoogleFonts.outfitTextTheme(Theme.of(context).textTheme),
       ),
       initialRoute: '/',
       routes: {
@@ -63,12 +61,12 @@ class MainShell extends StatefulWidget {
 }
 
 class _MainShellState extends State<MainShell> {
-  int _currentIndex = 0;
+  int _currentIndex = 1; // Home au centre par défaut
 
   final List<Widget> _screens = const [
-    HomeScreen(),
-    CollectScreen(),
-    CollectionHistoryScreen(),
+    CollectScreen(),        // index 0 - gauche
+    HomeScreen(),           // index 1 - centre (défaut)
+    CollectionHistoryScreen(), // index 2 - droite
   ];
 
   @override
@@ -76,21 +74,18 @@ class _MainShellState extends State<MainShell> {
     return Scaffold(
       backgroundColor: const Color(0xFFF5F7FB),
       extendBody: true,
-      body: IndexedStack(
-        index: _currentIndex,
-        children: _screens,
-      ),
+      body: IndexedStack(index: _currentIndex, children: _screens),
       bottomNavigationBar: CurvedNavigationBar(
         index: _currentIndex,
         height: 65,
         backgroundColor: Colors.transparent,
         color: const Color(0xFF2E5BFF),
-        buttonBackgroundColor: const Color(0xFF1A3BBF),
+        buttonBackgroundColor: const Color(0xFF2E5BFF),
         animationDuration: const Duration(milliseconds: 350),
         animationCurve: Curves.easeInOut,
         items: const [
-          Icon(Icons.home_rounded, color: Colors.white, size: 28), // Fandraisana
           Icon(Icons.add_a_photo_rounded, color: Colors.white, size: 28), // Fanangonana
+          Icon(Icons.home_rounded, color: Colors.white, size: 28),        // Fandraisana (centre)
           Icon(Icons.folder_special_rounded, color: Colors.white, size: 28), // Tahiry
         ],
         onTap: (index) => setState(() => _currentIndex = index),

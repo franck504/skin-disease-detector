@@ -49,7 +49,7 @@ class HomeScreen extends StatelessWidget {
               _buildMainCard(context),
               const SizedBox(height: 30),
               Text(
-                'Health Tips',
+                'Torohevitra ara-pahasalamana',
                 style: GoogleFonts.outfit(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -60,7 +60,7 @@ class HomeScreen extends StatelessWidget {
               _buildTipsCarousel(),
               const SizedBox(height: 30),
               Text(
-                'Supported Diseases',
+                'Aretina fantarina',
                 style: GoogleFonts.outfit(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -102,7 +102,7 @@ class HomeScreen extends StatelessWidget {
           const Icon(Icons.camera_alt, color: Colors.white, size: 40),
           const SizedBox(height: 20),
           Text(
-            'Skin Scan',
+            'Cutisia',
             style: GoogleFonts.outfit(
               fontSize: 28,
               fontWeight: FontWeight.bold,
@@ -111,7 +111,7 @@ class HomeScreen extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           Text(
-            'Instant AI diagnosis for tropical skin conditions.',
+            'Famantarana aretim-hoditra amin\'ny alalan\'ny AI.',
             style: GoogleFonts.outfit(
               fontSize: 14,
               color: Colors.white.withValues(alpha: 0.8),
@@ -129,7 +129,7 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             child: Text(
-              'Start Now',
+              'Atombohy izao',
               style: GoogleFonts.outfit(fontWeight: FontWeight.bold),
             ),
           ),
@@ -144,9 +144,9 @@ class HomeScreen extends StatelessWidget {
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: [
-          _buildTipCard('Hydration', 'Drink 2L of water daily for clear skin.', Icons.water_drop, Colors.blue),
-          _buildTipCard('Protection', 'Wear sunscreen even on cloudy days.', Icons.wb_sunny, Colors.orange),
-          _buildTipCard('Routine', 'Cleanse your face before bed.', Icons.face, Colors.purple),
+          _buildTipCard('Rano', 'Misotroa rano 2L isan\'andro ho an\'ny hoditra mazava.', Icons.water_drop, Colors.blue),
+          _buildTipCard('Fiarovana', 'Mampiasà sunscreen na amin\'ny andro rahona.', Icons.wb_sunny, Colors.orange),
+          _buildTipCard('Fitsaboana', 'Sasao ny tarehinao alohan\'ny tory.', Icons.face, Colors.purple),
         ],
       ),
     );

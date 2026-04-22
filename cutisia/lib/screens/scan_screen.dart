@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'result_screen.dart';
+import 'camera_screen.dart';
 
 class ScanScreen extends StatefulWidget {
   const ScanScreen({super.key});
@@ -42,7 +43,16 @@ class _ScanScreenState extends State<ScanScreen> {
     setState(() => _isPickerActive = true);
     
     try {
-      final XFile? image = await _picker.pickImage(source: source);
+      XFile? image;
+      if (source == ImageSource.camera) {
+        image = await Navigator.push<XFile>(
+          context,
+          MaterialPageRoute(builder: (context) => const CameraScreen()),
+        );
+      } else {
+        image = await _picker.pickImage(source: source);
+      }
+
       setState(() => _isPickerActive = false);
       
       if (image == null) return;

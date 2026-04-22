@@ -8,7 +8,8 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderStateMixin {
+class _SplashScreenState extends State<SplashScreen>
+    with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _fadeAnimation;
 
@@ -55,8 +56,8 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
               opacity: _fadeAnimation,
               child: Image.asset(
                 'assets/images/spalsh.png',
-                width: 200,
-                height: 200,
+                width: 120,
+                height: 120,
               ),
             ),
             const SizedBox(height: 30),
@@ -65,7 +66,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
               child: Text(
                 'Cutisia',
                 style: GoogleFonts.outfit(
-                  fontSize: 42,
+                  fontSize: 22,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                   letterSpacing: 1.5,
@@ -78,7 +79,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
               child: Text(
                 'Mpanampy amin\'ny fahasalaman\'ny hoditra AI',
                 style: GoogleFonts.outfit(
-                  fontSize: 18,
+                  fontSize: 10,
                   color: Colors.white.withValues(alpha: 0.9),
                   fontWeight: FontWeight.w300,
                 ),

@@ -7,6 +7,7 @@ import 'package:intl/intl.dart';
 import '../models/collection_entry.dart';
 import '../services/collection_service.dart';
 import '../services/cloud_api_service.dart';
+import 'camera_screen.dart';
 
 class CollectScreen extends StatefulWidget {
   const CollectScreen({super.key});
@@ -58,7 +59,16 @@ class _CollectScreenState extends State<CollectScreen> {
   }
 
   Future<void> _pickImage(ImageSource source) async {
-    final image = await _picker.pickImage(source: source, imageQuality: 85);
+    XFile? image;
+    if (source == ImageSource.camera) {
+      image = await Navigator.push<XFile>(
+        context,
+        MaterialPageRoute(builder: (context) => const CameraScreen()),
+      );
+    } else {
+      image = await _picker.pickImage(source: source, imageQuality: 85);
+    }
+    
     if (image != null) setState(() => _pickedImage = image);
   }
 

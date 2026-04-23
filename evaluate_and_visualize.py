@@ -7,11 +7,26 @@ import seaborn as sns
 from sklearn.metrics import confusion_matrix, roc_curve, auc, classification_report
 from tensorflow.keras.models import load_model
 
-# --- CONFIGURATION ---
-MODEL_PATH = 'cutisia_heavy_elite.h5' # Ou 'best_cutisia_v2L.h5'
+# --- CONFIGURATION & AUTO-DETECTION ---
+MODEL_NAME = 'cutisia_heavy_elite.h5'
 DATA_DIR = 'datasets-cutisia'
 SAVE_DIR = 'evaluation_results'
 IMG_SIZE = (384, 384)
+
+# Détection de l'environnement pour trouver le modèle
+if os.path.exists('/kaggle/working'):
+    MODEL_PATH = os.path.join('/kaggle/working', MODEL_NAME)
+    DATA_DIR = '/kaggle/input/datasets/scribeassistant/cutisiav2/cutisia_data/cutisia_datasets'
+elif os.path.exists('/content/drive/MyDrive/cutisia_models'):
+    MODEL_PATH = os.path.join('/content/drive/MyDrive/cutisia_models', MODEL_NAME)
+    DATA_DIR = '/content/drive/MyDrive/cutisia_datasets'
+else:
+    # Si lancé localement
+    MODEL_PATH = MODEL_NAME
+
+# Si le modèle n'est pas trouvé au chemin spécifique, on cherche dans le dossier courant
+if not os.path.exists(MODEL_PATH):
+    MODEL_PATH = MODEL_NAME
 
 os.makedirs(SAVE_DIR, exist_ok=True)
 

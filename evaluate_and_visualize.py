@@ -13,27 +13,37 @@ DATA_DIR = 'datasets-cutisia'
 SAVE_DIR = 'evaluation_results'
 IMG_SIZE = (384, 384)
 
-# Détection de l'environnement et recherche récursive du modèle
+# Détection de l'environnement et recherche récursive du modèle/données
 if os.path.exists('/kaggle/working'):
     MODEL_PATH = os.path.join('/kaggle/working', MODEL_NAME)
-    DATA_DIR = '/kaggle/input/datasets-cutisia/' # Ajustez selon votre input Kaggle
+    # Sur Kaggle, cherchez dans /kaggle/input/
+    dataset_search = glob.glob("/kaggle/input/**/Candidiase", recursive=True)
+    DATA_DIR = os.path.dirname(dataset_search[0]) if dataset_search else 'datasets-cutisia'
 elif os.path.exists('/content/drive/MyDrive'):
-    print("🔍 Recherche du modèle dans Google Drive (cela peut prendre un instant)...")
+    print("🔍 Recherche du modèle et des données dans Google Drive...")
     import glob
-    # On cherche le fichier dans tout le Drive
-    matches = glob.glob(f"/content/drive/MyDrive/**/{MODEL_NAME}", recursive=True)
-    if matches:
-        MODEL_PATH = matches[0]
-        print(f"🎯 Modèle trouvé : {MODEL_PATH}")
+    
+    # 1. Recherche du modèle
+    model_matches = glob.glob(f"/content/drive/MyDrive/**/{MODEL_NAME}", recursive=True)
+    MODEL_PATH = model_matches[0] if model_matches else MODEL_NAME
+    if model_matches: print(f"🎯 Modèle trouvé : {MODEL_PATH}")
+
+    # 2. Recherche des données (on cherche le dossier qui contient 'Candidiase')
+    data_matches = glob.glob("/content/drive/MyDrive/**/Candidiase", recursive=True)
+    if data_matches:
+        DATA_DIR = os.path.dirname(data_matches[0])
+        print(f"📂 Dossier de données trouvé : {DATA_DIR}")
     else:
-        MODEL_PATH = MODEL_NAME
+        DATA_DIR = 'datasets-cutisia'
 else:
     MODEL_PATH = MODEL_NAME
+    DATA_DIR = 'datasets-cutisia'
 
 # Vérification finale
 if not os.path.exists(MODEL_PATH):
-    print(f"⚠️ AVERTISSEMENT : Le fichier {MODEL_NAME} est introuvable au chemin {MODEL_PATH}")
-    print("💡 Sur Colab, n'oubliez pas de lancer : drive.mount('/content/drive')")
+    print(f"⚠️ AVERTISSEMENT : Modèle introuvable.")
+if not os.path.exists(DATA_DIR):
+    print(f"⚠️ AVERTISSEMENT : Dossier de données {DATA_DIR} introuvable.")
 
 os.makedirs(SAVE_DIR, exist_ok=True)
 

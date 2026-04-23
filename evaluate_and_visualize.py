@@ -10,18 +10,8 @@ from tensorflow.keras.models import load_model
 # --- CONFIGURATION & AUTO-DETECTION ---
 MODEL_NAME = 'cutisia_heavy_elite.h5'
 DATA_DIR = 'datasets-cutisia'
-# Détection de l'environnement pour la sauvegarde
-if os.path.exists('/content/drive/MyDrive'):
-    SAVE_DIR = '/content/drive/MyDrive/Cutisia_Evaluation_Results'
-elif os.path.exists('/kaggle/working'):
-    SAVE_DIR = '/kaggle/working/evaluation_results'
-else:
-    SAVE_DIR = 'evaluation_results'
-
+SAVE_DIR = 'evaluation_results'
 IMG_SIZE = (384, 384)
-
-os.makedirs(SAVE_DIR, exist_ok=True)
-print(f"📁 Les résultats seront sauvegardés dans : {SAVE_DIR}")
 
 # Détection de l'environnement et recherche récursive du modèle/données
 if os.path.exists('/kaggle/working'):

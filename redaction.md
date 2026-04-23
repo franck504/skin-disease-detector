@@ -179,7 +179,7 @@ Nous avons sélectionné 6 classes de maladies prioritaires. Ce choix n'est pas 
 
 Une image de peau contient souvent des éléments inutiles (poils, bijoux, vêtements). Pour que l'IA se concentre sur l'essentiel, nous utilisons un premier modèle appelé **U-Net**. Sa mission est de générer un "masque" : il colorie en blanc la zone de la maladie et en noir le reste de l'image.
 
-> **[ILLUSTRATION : IMAGE 2]**
+> **[ILLUSTRATION : IMAGE 4]**
 > *Description : Exemple de segmentation : (a) Image brute, (b) Masque binaire généré par U-Net, (c) Lésion isolée.*
 
 #### 4.2.2 Algorithmes de détourage (Auto-Cropping) et centrage sur la pathologie
@@ -224,7 +224,7 @@ Nous avons porté notre choix sur l'architecture **MobileNetV2**. Cette architec
 
 Pendant l'entraînement, nous surveillons deux courbes : la **Loss** (l'erreur) et l'**Accuracy** (la précision). Notre but est de faire descendre l'erreur le plus bas possible tout en évitant le sur-apprentissage (overfitting). Nous ajustons des curseurs appelés "hyperparamètres" (comme le taux d'apprentissage) pour guider l'IA vers la meilleure solution.
 
-> **[ILLUSTRATION : IMAGE 3]**
+> **[ILLUSTRATION : IMAGE 6]**
 > *Description : Graphique des courbes d'entraînement (Accuracy vs Epochs) montrant la convergence du modèle.*
 
 #### 5.2.2 Quantification (Int8/Float16) et conversion vers le format TFLite
@@ -312,11 +312,11 @@ Chaque diagnostic est accompagné d'une position géographique (via GPS). Cela p
 
 Même sans internet, Cutisia garde une trace des examens. Nous utilisons une base de données locale **SQLite**. Les dossiers patients, les images et les résultats sont stockés de manière sécurisée sur le téléphone et peuvent être consultés à tout moment par le soignant.
 
-> **[ILLUSTRATION : CAPTURE D'ÉCRAN 1]**
+> **[ILLUSTRATION : CAPTURE D'ÉCRAN 1] schema 8** 
 > *Description : Écran d'accueil de l'application Cutisia en Malgache (Fandraisana) montrant la grille des maladies et le bouton de diagnostic rapide.*
 
 #### 7.1.3 Interface de capture et guidage intelligent
-> **[ILLUSTRATION : CAPTURE D'ÉCRAN 2]**
+> **[ILLUSTRATION : CAPTURE D'ÉCRAN 2] schema 9**
 > *Description : Interface de capture d'image en temps réel montrant un guide de superposition pour aider l'utilisateur à centrer correctement la lésion cutanée.*
 
 #### 7.3.2 Optimisation pour les contraintes du terrain (API 24, terminaux limités)
@@ -337,14 +337,14 @@ L'IA a été spécifiquement entraînée pour reconnaître des lésions sur diff
 
 ### 8.1 Validation expérimentale du modèle de détection
 
-> **[ILLUSTRATION : CAPTURE D'ÉCRAN 3]**
+> **[ILLUSTRATION : CAPTURE D'ÉCRAN 3] schema 10**
 > *Description : Écran de collecte de données (Fanangonana angon-drakitra) utilisé par le personnel de santé, montrant les champs de saisie du patient et la localisation GPS.*
 
 #### 8.1.1 Analyse de la matrice de confusion et courbes AUC-ROC
 
 L'évaluation de notre IA montre des résultats très encourageants. La **matrice de confusion** révèle que le modèle distingue très bien les classes critiques comme le mélanome des classes bénignes. Nous avons obtenu une courbe **AUC-ROC** (capacité de discrimination) proche de 0.90, ce qui place Cutisia à un niveau de fiabilité comparable à celui d'un personnel de santé non spécialiste mais formé.
 
-> **[ILLUSTRATION : IMAGE 5]**
+> **[ILLUSTRATION : IMAGE 5] schema 11**
 > *Description : Matrice de confusion montrant les taux de réussite par pathologie (Mélanome, Monkeypox, Lèpre, etc.).*
 
 #### 8.1.2 Comparaison des performances Local vs Cloud

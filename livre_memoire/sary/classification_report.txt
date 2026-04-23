@@ -1,0 +1,12 @@
+              precision    recall  f1-score   support
+
+  Candidiase       0.40      0.02      0.03      1900
+     Leprosy       0.66      0.63      0.65      1249
+  Mélanomes       0.24      0.10      0.14      3680
+   Monkeypox       0.01      0.10      0.02       772
+     Scabies       0.22      0.24      0.23       958
+       Tinea       0.51      0.19      0.27      2650
+
+    accuracy                           0.18     11209
+   macro avg       0.34      0.21      0.22     11209
+weighted avg       0.36      0.18      0.21     11209

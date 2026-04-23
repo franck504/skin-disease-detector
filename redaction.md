@@ -82,11 +82,11 @@ Pour qu'un ordinateur puisse "voir", il utilise des réseaux de neurones convolu
 
 > **[ILLUSTRATION : DIAGRAMME MERMAID]**
 > ```mermaid
-> graph LR
->     A[Image d'entrée] --> B[Filtres de convolution]
->     B --> C[Extraction de textures]
->     C --> D[Combinaison de formes]
->     D --> E[Classification finale]
+graph LR
+A[Image d'entrée] --> B[Filtres de convolution]
+B --> C[Extraction de textures]
+C --> D[Combinaison de formes]
+D --> E[Classification finale]
 > ```
 
 Cette capacité d'extraction automatique des caractéristiques rend les CNN extrêmement performants pour différencier deux maladies de peau qui se ressemblent visuellement.
@@ -113,14 +113,14 @@ La création de Cutisia n'est pas linéaire. Nous suivons le cycle CRISP-DM. C'e
 
 > **[ILLUSTRATION : DIAGRAMME MERMAID]**
 > ```mermaid
-> stateDiagram-v2
->     [*] --> Compréhension
->     Compréhension --> Données
->     Données --> Préparation
->     Préparation --> Modélisation
->     Modélisation --> Évaluation
->     Évaluation --> Déploiement
->     Évaluation --> Préparation
+stateDiagram-v2
+[*] --> Compréhension
+Compréhension --> Données
+Données --> Préparation
+Préparation --> Modélisation
+Modélisation --> Évaluation
+Évaluation --> Déploiement
+Évaluation --> Préparation
 > ```
 
 #### 2.3.2 Phases de prototypage et boucle de rétroaction (Feedback Loop)
@@ -198,12 +198,12 @@ Pour les maladies rares ayant peu d'images, nous utilisons le **sur-échantillon
 
 > **[ILLUSTRATION : DIAGRAMME MERMAID]**
 > ```mermaid
-> graph TD
->     A[Images Brutes] --> B[Segmentation U-Net]
->     B --> C[Génération de Masque]
->     C --> D[Auto-Cropping]
->     D --> E[Data Augmentation]
->     E --> F[Dataset Final Optimisé]
+ graph TD
+     A[Images Brutes] --> B[Segmentation U-Net]
+     B --> C[Génération de Masque]
+     C --> D[Auto-Cropping]
+     D --> E[Data Augmentation]
+     E --> F[Dataset Final Optimisé]
 > ```
 
 ## Chapitre 5 : Cycle d'Apprentissage et Modélisation de l'IA
@@ -275,11 +275,11 @@ Le Système d'Information Géographique (SIG) sanitaire permet de cartographier 
 
 > **[ILLUSTRATION : DIAGRAMME MERMAID]**
 > ```mermaid
-> graph LR
->     A[Diagnostic Mobile] --> B[Anonymisation]
->     B --> C[API Cloud]
->     C --> D[Tableau de bord SIG]
->     D --> E[Décision Santé Publique]
+ graph LR
+     A[Diagnostic Mobile] --> B[Anonymisation]
+     B --> C[API Cloud]
+     C --> D[Tableau de bord SIG]
+     D --> E[Décision Santé Publique]
 > ```
 
 # PARTIE 3 : RÉALISATION, TESTS ET ANALYSE DES RÉSULTATS
@@ -393,11 +393,11 @@ Pour améliorer l'IA en continu, nous prévoyons d'utiliser l'**Active Learning*
 
 > **[ILLUSTRATION : DIAGRAMME MERMAID]**
 > ```mermaid
-> graph TD
->     A[Diagnostic IA] --> B[Validation Médecin]
->     B -- Correction --> C[Serveur de Ré-entraînement]
->     C --> D[Mise à jour du modèle]
->     D --> A
+ graph TD
+     A[Diagnostic IA] --> B[Validation Médecin]
+     B -- Correction --> C[Serveur de Ré-entraînement]
+     C --> D[Mise à jour du modèle]
+     D --> A
 > ```
 
 ### 9.2 Scalabilité urbaine et déploiement à grande échelle

@@ -405,3 +405,25 @@ Le projet **Cutisia** a démontré qu'il est possible de concilier technologie d
 L'intégration de modèles comme **U-Net** et **MobileNetV2**, optimisés pour le **Edge Computing**, garantit une réactivité et une autonomie essentielles pour les zones isolées. Mais au-delà de la performance technique, c'est l'approche éthique et la vision **Smart DATA-CITY** qui font la force de ce travail. En transformant la donnée brute en information épidémiologique précieuse, Cutisia participe à la construction d'une ville plus intelligente, plus réactive et surtout plus humaine.
 
 Bien que le chemin vers un diagnostic parfait soit encore long, les bases posées par ce prototype ouvrent la voie à une nouvelle ère de la télémédecine mobile, où la distance n'est plus un obstacle à la santé de qualité pour tous.
+
+---
+
+# BIBLIOGRAPHIE
+
+**[1] Organisation Mondiale de la Santé (OMS)**
+*   "Skin health for all: update on skin neglected tropical diseases". (2024). [URL](https://www.who.int/publications/i/item/who-wer10024-25-239-250)
+
+**[2] Neurocomputing (2021)**
+*   "Skin disease diagnosis with deep learning: A review". Volume 458, Pages 476-491. [URL](https://www.sciencedirect.com/science/article/pii/S0925231221012935)
+
+**[3] Goodfellow, I., Bengio, Y., & Courville, A. (2016)**
+*   "Deep Learning". MIT Press. Chapitre 9 : Convolutional Networks.
+
+**[4] Esteva, A., et al. (2017)**
+*   "Dermatologist-level classification of skin cancer with deep neural networks". Nature, 542(7639), 115-118.
+
+**[5] Howard, A., et al. (2019)**
+*   "Searching for MobileNetV3". (Principes appliqués à MobileNetV2).
+
+**[6] Parlement Européen (2024)**
+*   "Artificial Intelligence Act" (AI Act). Règlement (UE) 2024/1689.

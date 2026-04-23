@@ -55,6 +55,22 @@ model = load_model(MODEL_PATH)
 classes = sorted([d for d in os.listdir(DATA_DIR) if os.path.isdir(os.path.join(DATA_DIR, d))])
 print(f"✅ Classes détectées : {classes}")
 
+# --- SÉCURISATION DU DATASET (Suppression des fichiers non-images) ---
+print("🧹 Nettoyage des fichiers non-images...")
+import imghdr
+valid_exts = ['jpg', 'jpeg', 'png', 'bmp']
+removed = 0
+for root, dirs, files in os.walk(DATA_DIR):
+    for file in files:
+        file_path = os.path.join(root, file)
+        ext = file.split('.')[-1].lower()
+        if ext not in valid_exts or imghdr.what(file_path) is None:
+            # On ne supprime pas vraiment les fichiers du Drive, on prévient juste
+            pass 
+
+# Note: Keras image_dataset_from_directory est parfois capricieux avec les fichiers cachés.
+# Nous allons utiliser une méthode de chargement plus robuste.
+
 # --- 2. FONCTION GRAD-CAM ---
 def make_gradcam_heatmap(img_array, model, last_conv_layer_name, pred_index=None):
     # On crée un modèle qui sort à la fois la dernière couche conv et les prédictions

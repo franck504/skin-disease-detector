@@ -13,20 +13,27 @@ DATA_DIR = 'datasets-cutisia'
 SAVE_DIR = 'evaluation_results'
 IMG_SIZE = (384, 384)
 
-# Détection de l'environnement pour trouver le modèle
+# Détection de l'environnement et recherche récursive du modèle
 if os.path.exists('/kaggle/working'):
     MODEL_PATH = os.path.join('/kaggle/working', MODEL_NAME)
-    DATA_DIR = '/kaggle/input/datasets/scribeassistant/cutisiav2/cutisia_data/cutisia_datasets'
-elif os.path.exists('/content/drive/MyDrive/cutisia_models'):
-    MODEL_PATH = os.path.join('/content/drive/MyDrive/cutisia_models', MODEL_NAME)
-    DATA_DIR = '/content/drive/MyDrive/cutisia_datasets'
+    DATA_DIR = '/kaggle/input/datasets-cutisia/' # Ajustez selon votre input Kaggle
+elif os.path.exists('/content/drive/MyDrive'):
+    print("🔍 Recherche du modèle dans Google Drive (cela peut prendre un instant)...")
+    import glob
+    # On cherche le fichier dans tout le Drive
+    matches = glob.glob(f"/content/drive/MyDrive/**/{MODEL_NAME}", recursive=True)
+    if matches:
+        MODEL_PATH = matches[0]
+        print(f"🎯 Modèle trouvé : {MODEL_PATH}")
+    else:
+        MODEL_PATH = MODEL_NAME
 else:
-    # Si lancé localement
     MODEL_PATH = MODEL_NAME
 
-# Si le modèle n'est pas trouvé au chemin spécifique, on cherche dans le dossier courant
+# Vérification finale
 if not os.path.exists(MODEL_PATH):
-    MODEL_PATH = MODEL_NAME
+    print(f"⚠️ AVERTISSEMENT : Le fichier {MODEL_NAME} est introuvable au chemin {MODEL_PATH}")
+    print("💡 Sur Colab, n'oubliez pas de lancer : drive.mount('/content/drive')")
 
 os.makedirs(SAVE_DIR, exist_ok=True)
 

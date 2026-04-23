@@ -300,6 +300,13 @@ Chaque diagnostic est accompagné d'une position géographique (via GPS). Cela p
 
 Même sans internet, Cutisia garde une trace des examens. Nous utilisons une base de données locale **SQLite**. Les dossiers patients, les images et les résultats sont stockés de manière sécurisée sur le téléphone et peuvent être consultés à tout moment par le soignant.
 
+> **[ILLUSTRATION : CAPTURE D'ÉCRAN 1]**
+> *Description : Écran d'accueil de l'application Cutisia en Malgache (Fandraisana) montrant la grille des maladies et le bouton de diagnostic rapide.*
+
+#### 7.1.3 Interface de capture et guidage intelligent
+> **[ILLUSTRATION : CAPTURE D'ÉCRAN 2]**
+> *Description : Interface de capture d'image en temps réel montrant un guide de superposition pour aider l'utilisateur à centrer correctement la lésion cutanée.*
+
 #### 7.3.2 Optimisation pour les contraintes du terrain (API 24, terminaux limités)
 
 Le projet a été testé sur des téléphones anciens (Android API 24). Nous avons dû optimiser la gestion de la mémoire pour éviter que l'application ne plante sur des appareils ayant peu de puissance. C'est une condition sine qua non pour un déploiement réussi dans des zones reculées, tout en respectant les exigences de sécurité et de supervision humaine prônées par l'AI Act [6].
@@ -317,6 +324,9 @@ L'IA a été spécifiquement entraînée pour reconnaître des lésions sur diff
 ## Chapitre 8 : Évaluation des performances et Validation
 
 ### 8.1 Validation expérimentale du modèle de détection
+
+> **[ILLUSTRATION : CAPTURE D'ÉCRAN 3]**
+> *Description : Écran de collecte de données (Fanangonana angon-drakitra) utilisé par le personnel de santé, montrant les champs de saisie du patient et la localisation GPS.*
 
 #### 8.1.1 Analyse de la matrice de confusion et courbes AUC-ROC
 

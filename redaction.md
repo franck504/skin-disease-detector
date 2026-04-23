@@ -35,13 +35,25 @@ La détection précoce est la clé pour stopper la propagation de ces maladies. 
 
 Le monde fait face à une crise majeure du personnel de santé spécialisé. Dans de nombreux pays en développement, on compte parfois un seul dermatologue pour plusieurs millions d'habitants [3]. Cette situation crée des files d'attente interminables dans les hôpitaux centraux.
 
-> **[ILLUSTRATION : DIAGRAMME MERMAID]**
-> ```mermaid
-> graph TD
->     A[Patient en zone isolée] --> B{Accès au soin?}
->     B -- Non --> C[Complication de la maladie]
->     B -- Oui --> D[Transport coûteux]
->     D --> E[Attente longue]
+### Schéma 1 : Comparaison des flux de prise en charge
+
+```mermaid
+graph TD
+    subgraph "Sans Cutisia"
+    A[Symptôme cutané] --> B[Déplacement long/coûteux]
+    B --> C[Attente hôpital central]
+    C --> D[Diagnostic tardif]
+    D --> E[Complications graves]
+    end
+
+    subgraph "Avec Cutisia"
+    F[Symptôme cutané] --> G[Scan mobile immédiat]
+    G --> H{Alerte?}
+    H -- Oui --> I[Consultation prioritaire]
+    H -- Non --> J[Conseils de soin locaux]
+    I --> K[Traitement rapide]
+    end
+```
 >     E --> F[Diagnostic tardif]
 > ```
 

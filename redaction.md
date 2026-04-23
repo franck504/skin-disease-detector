@@ -9,12 +9,18 @@
 Les maladies de la peau représentent l'une des causes les plus fréquentes de consultation médicale à l'échelle mondiale. Elles touchent près de 900 millions de personnes chaque année [3]. Dans les zones rurales ou isolées, ces pathologies sont souvent liées aux conditions d'hygiène et au climat. Sans soins adaptés, une simple infection cutanée peut évoluer vers des complications graves.
 
 
-| Maladie de peau         | Prévalence en Zone Tropicale (Rurale / Défavorisée)                                                     | Prévalence en Zone Urbaine (Standard)                                     | Facteurs Favorisants (Tropical)                                                      |
-| ----------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| Gale (Scabiose)         | Très élevée (fréquente, endémique, jusqu’à 5–50 % chez les enfants dans certaines zones) [1] | Modérée à faible (cas sporadiques ou épidémies localisées) [1] | Surpeuplement, pauvreté, promiscuité, accès limité à l’eau et à l’hygiène [1] |
+### Tableau 1 : Prévalence et facteurs favorisants des pathologies cibles
 
+| Maladie de peau | Prévalence (Zones Tropicales/Isolées) | Facteurs Favorisants |
+| :--- | :--- | :--- |
+| **Gale (Scabiose)** | Très élevée (5–50% chez les enfants) [1] | Surpeuplement, hygiène limitée |
+| **Teigne (Tinea)** | Élevée (Endémique chez les écoliers) | Chaleur, humidité, contact animal |
+| **Lèpre** | Persistante (Foyers endémiques) [1] | Pauvreté, retard de diagnostic |
+| **Candidiase** | Fréquente (Pathologie opportuniste) | Humidité élevée, immunité |
+| **Monkeypox** | Épidémique (Zones forestières) | Contact faune sauvage, promiscuité |
+| **Mélanome** | Rare (mais souvent diagnostiqué tard) | Rayonnement UV, manque de dépistage |
 
-### Tableau 1 : Comparaison des approches de diagnostic dermatologique
+### Tableau 2 : Comparaison des approches de diagnostic dermatologique
 
 | Critère | Diagnostic Clinique (Visuel) | Teledermatologie | Cutisia (IA Mobile) |
 | :--- | :--- | :--- | :--- |
@@ -132,7 +138,7 @@ Il est crucial de préciser que Cutisia n'est pas un médecin. C'est un outil d'
 
 Les nouvelles lois européennes, comme l'**AI Act**, imposent que les systèmes d'IA à haut risque soient transparents. Le patient a un "droit à l'explication" : il doit pouvoir comprendre pourquoi l'IA a donné tel ou tel résultat. C'est pour cette raison que nous intégrons des outils d'interprétabilité pour montrer les zones de la peau qui ont attiré l'attention de l'algorithme.
 
-### Tableau 2 : Résumé des obligations de l'AI Act pour Cutisia
+### Tableau 3 : Résumé des obligations de l'AI Act pour Cutisia
 
 | Exigence AI Act | Mise en œuvre Cutisia |
 | :--- | :--- |
@@ -343,7 +349,7 @@ Malgré ces succès, le système a des limites. Les images très sombres ou pris
 
 Le déploiement à l'échelle d'une ville (Smart City) demande une infrastructure réseau stable pour la centralisation des données. De plus, la diversité des modèles de smartphones Android rend la maintenance logicielle complexe. Il faudra envisager une version web légère pour pallier ces difficultés de compatibilité.
 
-### Tableau 3 : Forces et Faiblesses du système Cutisia après tests réels
+### Tableau 4 : Forces et Faiblesses du système Cutisia après tests réels
 
 | Forces | Faiblesses |
 | :--- | :--- |

@@ -184,6 +184,13 @@ plt.legend()
 plt.savefig(os.path.join(SAVE_DIR, 'roc_curve.png'))
 print("✅ Courbes ROC sauvegardées.")
 
+# Rapport de classification
+report = classification_report(y_true_indices, np.argmax(y_pred_probs, axis=1), target_names=classes)
+report_path = os.path.join(SAVE_DIR, 'classification_report.txt')
+with open(report_path, 'w') as f:
+    f.write(report)
+print(f"✅ Rapport de classification sauvegardé dans {report_path}")
+
 # Grad-CAM
 save_gradcam_sample(model, classes)
 

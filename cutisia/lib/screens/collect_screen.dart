@@ -40,8 +40,8 @@ class _CollectScreenState extends State<CollectScreen> {
   static const List<String> _labels = [
     'Candidiase',
     'Leprosy',
-    'Monkeypox',
     'Mélanomes',
+    'Monkeypox',
     'Scabies',
     'Tinea',
   ];

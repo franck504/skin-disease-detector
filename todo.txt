@@ -4,3 +4,9 @@
 4 - corriger bug de camera : gestion de camera special pour cet API24
 - appliquer la langue de l'application en Malgache
 - reproduire des captures des etapes de projet IA
+
+
+
+5 - verification des references , fiable , vrai url , livre avec indication de page
+6 - generation des tableaux manquants
+7 - 

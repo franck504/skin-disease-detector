@@ -246,12 +246,17 @@ class _CollectionHistoryScreenState extends State<CollectionHistoryScreen> {
           children: [
             // Image thumbnail
             Padding(
-              padding: const EdgeInsets.all(12),
+              padding: const EdgeInsets.only(
+                left: 16,
+                // right: 6,
+                // top: 6,
+                // bottom: 6,
+              ),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(12),
                 child: SizedBox(
-                  width: 80,
-                  height: 80,
+                  width: 100,
+                  height: 100,
                   child: Image.file(
                     File(e.imagePath),
                     fit: BoxFit.cover,

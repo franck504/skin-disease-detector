@@ -218,8 +218,8 @@ class HomeScreen extends StatelessWidget {
     final diseases = [
       {'name': 'Candidiase', 'img': 'assets/images/diseases/Candidiase.jpg'},
       {'name': 'Leprosy', 'img': 'assets/images/diseases/leprosy.png'},
-      {'name': 'Monkeypox', 'img': 'assets/images/diseases/Monkeypox.jpg'},
       {'name': 'Mélanomes', 'img': 'assets/images/diseases/Melanoma.jpg'},
+      {'name': 'Monkeypox', 'img': 'assets/images/diseases/Monkeypox.jpg'},
       {'name': 'Scabies', 'img': 'assets/images/diseases/scabies.jpg'},
       {'name': 'Tinea', 'img': 'assets/images/diseases/tinea.jpg'},
     ];

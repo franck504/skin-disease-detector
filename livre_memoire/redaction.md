@@ -1,8 +1,15 @@
 # INTRODUCTION GÉNÉRALE
 
-À l’ère de l’urbanisation galopante et des villes intelligentes (Smart Cities), la santé dermatologique demeure un défi majeur, particulièrement dans les zones isolées ou les quartiers défavorisés. On estime que près d'un milliard de personnes souffrent de pathologies cutanées, souvent négligées faute d'accès à un personnel spécialisé. La fracture numérique et sanitaire transforme des infections bénignes en enjeux de santé publique critiques.
+À l’ère de l’urbanisation galopante et du développement des "Smart Cities", la santé publique demeure un défi majeur, particulièrement dans les contextes où la fracture numérique et sanitaire est la plus marquée. Les maladies de la peau, bien que souvent perçues comme moins critiques que les maladies infectieuses majeures, représentent pourtant l'une des causes les plus fréquentes de consultation médicale mondiale, touchant près de 900 millions de personnes. Dans les zones rurales isolées ou les quartiers urbains denses à faible revenu, ces pathologies entraînent non seulement une souffrance physique, mais aussi une stigmatisation sociale profonde et une perte significative de productivité économique.
 
-Le projet **Cutisia** s'inscrit dans cette vision "Smart DATA-CITY" : transformer le smartphone, capteur universel, en un outil de diagnostic de précision. En s'appuyant sur l'Intelligence Artificielle embarquée (**Edge Computing**) et des architectures de pointe comme **U-Net** et **MobileNetV2**, Cutisia permet une détection immédiate, anonyme et déconnectée des pathologies cutanées tropicales. Ce mémoire documente la conception, la réalisation et l'évaluation de cette solution innovante, conçue pour être déployée au plus près des populations, en intégrant des contraintes éthiques et linguistiques fortes.
+Le diagnostic précoce est le rempart principal contre ces complications, mais il se heurte à une réalité brutale : la pénurie mondiale de dermatologues. Dans de nombreux pays en développement, l'accès à un spécialiste relève du privilège, obligeant les populations à des déplacements coûteux vers les centres urbains, souvent pour des résultats tardifs. Le projet **Cutisia** naît de cette nécessité d'apporter une expertise de pointe directement au creux de la main de chaque soignant ou citoyen.
+
+Notre approche repose sur la vision **"Smart DATA-CITY"**, où la donnée de santé n'est plus statique mais devient un flux dynamique permettant de piloter la ville. Pour réaliser cet objectif, ce mémoire s'articule autour de trois piliers fondamentaux :
+1.  **L'Ingénierie des Données** : La création d'un pipeline robuste allant de la segmentation par **U-Net** à l'optimisation des datasets multi-sources.
+2.  **La Modélisation IA** : Le développement d'un modèle performant basé sur **MobileNetV2**, optimisé pour l'inférence locale (**Edge Computing**) sans dépendance au réseau.
+3.  **L'Expérience Utilisateur (UX)** : La conception d'une application Flutter ergonomique, localisée en **Malgache**, garantissant que la puissance de l'IA soit réellement accessible et comprise par ses utilisateurs finaux.
+
+Ce travail documente ainsi le passage d'une intelligence artificielle théorique à un outil de terrain éthique, transparent et capable de transformer radicalement le dépistage dermatologique de proximité.
 
 ---
 
@@ -438,11 +445,13 @@ L'avenir de Cutisia passe par son intégration dans les dossiers médicaux parta
 
 # CONCLUSION GÉNÉRALE
 
-Le projet **Cutisia** a démontré qu'il est possible de concilier technologie de pointe et contraintes de terrain pour répondre à un défi majeur de santé publique. En utilisant l'Intelligence Artificielle embarquée, nous avons créé un outil capable d'apporter une expertise dermatologique là où elle fait le plus défaut, tout en garantissant la souveraineté des données grâce au traitement local (Edge Computing).
+Le projet **Cutisia** a démontré qu'il est possible de concilier technologie de pointe et contraintes de terrain pour répondre à un défi majeur de santé publique. En utilisant l'Intelligence Artificielle embarquée, nous avons créé un outil capable d'apporter une expertise dermatologique là où elle fait le plus défaut, tout en garantissant la souveraineté et la confidentialité des données grâce au traitement local (**Edge Computing**). Cette autonomie technologique est la clé d'un déploiement réussi dans des contextes où l'infrastructure réseau est instable.
 
-Les résultats expérimentaux valident la pertinence de l'approche : avec une précision de **66% sur la Lèpre** et une interface intégralement localisée en **Malgache**, Cutisia n'est plus un simple prototype, mais une preuve de concept pour une télémédecine plus humaine et plus accessible. L'intégration de l'interprétabilité via **Grad-CAM** assure une transparence indispensable pour la confiance des soignants, conformément aux exigences de l'**AI Act**.
+Les résultats expérimentaux valident la pertinence de l'architecture hybride choisie : avec une précision remarquable de **66% sur la Lèpre** et une interface intégralement localisée en **Malgache**, Cutisia dépasse le stade de simple prototype pour devenir une preuve de concept concrète d'une télémédecine plus humaine et inclusive. L'intégration de l'interprétabilité via **Grad-CAM (XAI)** n'est pas qu'un ajout technique ; c'est un engagement éthique qui assure une transparence indispensable pour la confiance des soignants et la formation des agents de santé, conformément aux orientations futures de l'**AI Act**.
 
-L'avenir de Cutisia réside désormais dans sa capacité à apprendre en continu via l'**Active Learning** et à s'intégrer dans les réseaux de surveillance épidémiologique des **Smart DATA-CITY**. En transformant chaque diagnostic en une donnée cartographique anonymisée, nous passons du soin individuel à une gestion préventive et intelligente de la santé à l'échelle d'une nation.
+Au-delà de l'application individuelle, l'avenir de Cutisia réside dans sa dimension collective au sein de la **Smart DATA-CITY**. En transformant chaque acte de dépistage en une donnée cartographique anonymisée, nous permettons aux autorités sanitaires de passer d'une médecine réactive à une surveillance épidémiologique proactive. La boucle de rétroaction permise par l'**Active Learning** garantit que l'IA continuera de s'affiner au contact de l'expertise humaine, créant ainsi un cercle vertueux d'amélioration continue.
+
+En conclusion, Cutisia ouvre la voie à une nouvelle ère de la santé urbaine et rurale, où la complexité de l'intelligence artificielle est mise au service de la simplicité du geste médical de proximité. Le smartphone ne remplace pas le médecin, mais il devient un multiplicateur de compétences, garantissant que la distance ne soit plus, à l'avenir, un obstacle à une santé de qualité pour tous.
 
 ---
 

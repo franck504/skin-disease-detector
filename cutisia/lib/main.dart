@@ -61,11 +61,11 @@ class MainShell extends StatefulWidget {
 }
 
 class _MainShellState extends State<MainShell> {
-  int _currentIndex = 1; // Home au centre par défaut
+  int _currentIndex = 0; // Home par défaut à gauche
 
   final List<Widget> _screens = const [
-    CollectScreen(),        // index 0 - gauche
-    HomeScreen(),           // index 1 - centre (défaut)
+    HomeScreen(),           // index 0 - gauche (défaut)
+    CollectScreen(),        // index 1 - centre
     CollectionHistoryScreen(), // index 2 - droite
   ];
 
@@ -84,9 +84,9 @@ class _MainShellState extends State<MainShell> {
         animationDuration: const Duration(milliseconds: 350),
         animationCurve: Curves.easeInOut,
         items: const [
-          Icon(Icons.add_a_photo_rounded, color: Colors.white, size: 28), // Fanangonana
-          Icon(Icons.home_rounded, color: Colors.white, size: 28),        // Fandraisana (centre)
-          Icon(Icons.folder_special_rounded, color: Colors.white, size: 28), // Tahiry
+          Icon(Icons.home_rounded, color: Colors.white, size: 28),        // Fandraisana (index 0)
+          Icon(Icons.add_a_photo_rounded, color: Colors.white, size: 28), // Fanangonana (index 1)
+          Icon(Icons.folder_special_rounded, color: Colors.white, size: 28), // Tahiry (index 2)
         ],
         onTap: (index) => setState(() => _currentIndex = index),
       ),

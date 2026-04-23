@@ -10,7 +10,7 @@ class CameraScreen extends StatefulWidget {
   State<CameraScreen> createState() => _CameraScreenState();
 }
 
-class _CameraScreenState extends State<CameraScreen> {
+class _CameraScreenState extends State<CameraScreen> with WidgetsBindingObserver {
   CameraController? _controller;
   List<CameraDescription>? _cameras;
   bool _isReady = false;
@@ -19,7 +19,23 @@ class _CameraScreenState extends State<CameraScreen> {
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addObserver(this);
     _initCamera();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    final CameraController? cameraController = _controller;
+
+    if (cameraController == null || !cameraController.value.isInitialized) {
+      return;
+    }
+
+    if (state == AppLifecycleState.inactive) {
+      cameraController.dispose();
+    } else if (state == AppLifecycleState.resumed) {
+      _initCamera();
+    }
   }
 
   Future<void> _initCamera() async {
@@ -35,13 +51,16 @@ class _CameraScreenState extends State<CameraScreen> {
         throw Exception("Tsy misy fakan-tsary hita.");
       }
 
-      _controller = CameraController(
+      final controller = CameraController(
         _cameras![0],
-        ResolutionPreset.high,
+        ResolutionPreset.medium, // Plus stable sur les vieux terminaux (API 24)
         enableAudio: false,
+        imageFormatGroup: ImageFormatGroup.jpeg,
       );
 
-      await _controller!.initialize();
+      _controller = controller;
+
+      await controller.initialize();
       if (mounted) {
         setState(() => _isReady = true);
       }
@@ -60,6 +79,7 @@ class _CameraScreenState extends State<CameraScreen> {
 
   @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
     _controller?.dispose();
     super.dispose();
   }

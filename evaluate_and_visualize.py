@@ -168,21 +168,59 @@ print("🚀 Génération des statistiques globales (Matrice & ROC)...")
 # Chargement du dataset pour évaluation
 from tensorflow.keras.utils import image_dataset_from_directory
 
-val_ds = image_dataset_from_directory(
-    DATA_DIR,
-    image_size=IMG_SIZE,
-    batch_size=32,
-    shuffle=False
-)
+# --- CHARGEMENT ROBUSTE DU DATASET ---
+def process_path(file_path):
+    label = tf.strings.split(file_path, os.path.sep)[-2]
+    label_id = tf.argmax(label == classes)
+    try:
+        img = tf.io.read_file(file_path)
+        img = tf.image.decode_jpeg(img, channels=3)
+        img = tf.image.resize(img, IMG_SIZE)
+        img = img / 255.0
+        return img, label_id
+    except:
+        return None
+
+# On récupère tous les chemins de fichiers
+import glob
+all_image_paths = glob.glob(f"{DATA_DIR}/**/*.*", recursive=True)
+all_image_paths = [p for p in all_image_paths if p.split('.')[-1].lower() in ['jpg', 'jpeg', 'png', 'bmp']]
+
+def generator():
+    for path in all_image_paths:
+        try:
+            img = tf.io.read_file(path)
+            img = tf.image.decode_image(img, channels=3, expand_animations=False)
+            img = tf.image.resize(img, IMG_SIZE)
+            img = img / 255.0
+            
+            # Extraction du label depuis le dossier parent
+            label_name = os.path.basename(os.path.dirname(path))
+            label_id = classes.index(label_name)
+            yield img, label_id
+        except Exception as e:
+            continue # On ignore les images corrompues
+
+val_ds = tf.data.Dataset.from_generator(
+    generator,
+    output_signature=(
+        tf.TensorSpec(shape=(IMG_SIZE[0], IMG_SIZE[1], 3), dtype=tf.float32),
+        tf.TensorSpec(shape=(), dtype=tf.int32)
+    )
+).batch(32).prefetch(tf.data.AUTOTUNE)
 
 # Prédictions
-y_pred_probs = model.predict(val_ds)
-y_true = np.concatenate([y for x, y in val_ds], axis=0)
-y_true_indices = y_true # Comme shuffle=False, c'est direct
+print("📊 Début des prédictions (les fichiers corrompus seront ignorés)...")
+y_pred_probs = []
+y_true_indices = []
 
-# En cas d'encodage one-hot
-if len(y_true.shape) > 1 and y_true.shape[1] > 1:
-    y_true_indices = np.argmax(y_true, axis=1)
+for imgs, labels in val_ds:
+    preds = model.predict(imgs, verbose=0)
+    y_pred_probs.extend(preds)
+    y_true_indices.extend(labels.numpy())
+
+y_pred_probs = np.array(y_pred_probs)
+y_true_indices = np.array(y_true_indices)
 
 # Matrice de confusion
 save_confusion_matrix(tf.one_hot(y_true_indices, depth=len(classes)).numpy(), y_pred_probs, classes)

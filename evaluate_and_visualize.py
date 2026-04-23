@@ -147,10 +147,44 @@ def save_gradcam_sample(model, classes):
     print(f"✅ Grad-CAM sauvegardé dans {output_path} (utilisant {sample_img_path})")
 
 # --- 5. EXECUTION FINALE ---
-# Ici on appelle les fonctions
-# Dans votre cas réel, passez vos vrais y_true et y_pred
-# y_pred = model.predict(val_ds) 
+print("🚀 Génération des statistiques globales (Matrice & ROC)...")
 
+# Chargement du dataset pour évaluation
+from tensorflow.keras.utils import image_dataset_from_directory
+
+val_ds = image_dataset_from_directory(
+    DATA_DIR,
+    image_size=IMG_SIZE,
+    batch_size=32,
+    shuffle=False
+)
+
+# Prédictions
+y_pred_probs = model.predict(val_ds)
+y_true = np.concatenate([y for x, y in val_ds], axis=0)
+y_true_indices = y_true # Comme shuffle=False, c'est direct
+
+# En cas d'encodage one-hot
+if len(y_true.shape) > 1 and y_true.shape[1] > 1:
+    y_true_indices = np.argmax(y_true, axis=1)
+
+# Matrice de confusion
+save_confusion_matrix(tf.one_hot(y_true_indices, depth=len(classes)).numpy(), y_pred_probs, classes)
+
+# Courbe ROC (simplifiée pour multi-classe)
+plt.figure(figsize=(10, 8))
+for i in range(len(classes)):
+    fpr, tpr, _ = roc_curve((y_true_indices == i).astype(int), y_pred_probs[:, i])
+    plt.plot(fpr, tpr, label=f'ROC {classes[i]} (AUC = {auc(fpr, tpr):.2f})')
+plt.plot([0, 1], [0, 1], 'k--')
+plt.xlabel('Taux de Faux Positifs')
+plt.ylabel('Taux de Vrais Positifs')
+plt.title('Courbes AUC-ROC - Cutisia')
+plt.legend()
+plt.savefig(os.path.join(SAVE_DIR, 'roc_curve.png'))
+print("✅ Courbes ROC sauvegardées.")
+
+# Grad-CAM
 save_gradcam_sample(model, classes)
 
-print("\n✨ Terminé ! Récupérez vos images dans le dossier 'evaluation_results'.")
+print("\n✨ TOUT EST PRÊT ! Récupérez vos PNG dans 'evaluation_results'.")

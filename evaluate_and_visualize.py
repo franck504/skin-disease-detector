@@ -57,14 +57,21 @@ print(f"✅ Classes détectées : {classes}")
 
 # --- 2. FONCTION GRAD-CAM ---
 def make_gradcam_heatmap(img_array, model, last_conv_layer_name, pred_index=None):
+    # On crée un modèle qui sort à la fois la dernière couche conv et les prédictions
     grad_model = tf.keras.models.Model(
-        [model.inputs], [model.get_layer(last_conv_layer_name).output, model.output]
+        inputs=model.inputs, 
+        outputs=[model.get_layer(last_conv_layer_name).output, model.output]
     )
 
     with tf.GradientTape() as tape:
         last_conv_layer_output, preds = grad_model(img_array)
         if pred_index is None:
             pred_index = tf.argmax(preds[0])
+        
+        # On s'assure que preds est bien un tenseur et non une liste
+        if isinstance(preds, list):
+            preds = preds[0]
+            
         class_channel = preds[:, pred_index]
 
     grads = tape.gradient(class_channel, last_conv_layer_output)

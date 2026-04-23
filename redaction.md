@@ -53,9 +53,9 @@ graph TD
     H -- Non --> J[Conseils de soin locaux]
     I --> K[Traitement rapide]
     end
-```
->     E --> F[Diagnostic tardif]
-> ```
+
+    E --> F[Diagnostic tardif]
+ ```
 
 Les délais de prise en charge peuvent dépasser plusieurs mois. Ce retard transforme des maladies guérissables en handicaps permanents ou en maladies chroniques coûteuses.
 
@@ -80,13 +80,13 @@ Cela réduit drastiquement les déplacements inutiles et optimise le temps des m
 
 Pour qu'un ordinateur puisse "voir", il utilise des réseaux de neurones convolutifs (CNN). Contrairement à un algorithme classique, un CNN apprend seul à reconnaître les formes. Il commence par identifier des bords simples, puis des formes complexes comme la texture d'une croûte ou la couleur d'un grain de beauté [1].
 
-> **[ILLUSTRATION : DIAGRAMME MERMAID]**
+> **[ Schéma 2 : DIAGRAMME MERMAID]** 
 > ```mermaid
-graph LR
-A[Image d'entrée] --> B[Filtres de convolution]
-B --> C[Extraction de textures]
-C --> D[Combinaison de formes]
-D --> E[Classification finale]
+> graph LR
+>     A[Image d'entrée] --> B[Filtres de convolution]
+>     B --> C[Extraction de textures]
+>     C --> D[Combinaison de formes]
+>     D --> E[Classification finale]
 > ```
 
 Cette capacité d'extraction automatique des caractéristiques rend les CNN extrêmement performants pour différencier deux maladies de peau qui se ressemblent visuellement.
@@ -111,16 +111,16 @@ L'exactitude (Accuracy) ne suffit pas en santé. Il est plus grave d'ignorer un 
 
 La création de Cutisia n'est pas linéaire. Nous suivons le cycle CRISP-DM. C'est une méthode de travail qui va de la compréhension du problème médical à la collecte des données, puis au test et au déploiement. Chaque étape peut être répétée si les résultats ne sont pas satisfaisants.
 
-> **[ILLUSTRATION : DIAGRAMME MERMAID]**
+> **[Schéma 3 : DIAGRAMME MERMAID]**
 > ```mermaid
-stateDiagram-v2
-[*] --> Compréhension
-Compréhension --> Données
-Données --> Préparation
-Préparation --> Modélisation
-Modélisation --> Évaluation
-Évaluation --> Déploiement
-Évaluation --> Préparation
+> stateDiagram-v2
+> [*] --> Compréhension
+> Compréhension --> Données
+> Données --> Préparation
+> Préparation --> Modélisation
+> Modélisation --> Évaluation
+> Évaluation --> Déploiement
+> Évaluation --> Préparation
 > ```
 
 #### 2.3.2 Phases de prototypage et boucle de rétroaction (Feedback Loop)
@@ -179,7 +179,7 @@ Nous avons sélectionné 6 classes de maladies prioritaires. Ce choix n'est pas 
 
 Une image de peau contient souvent des éléments inutiles (poils, bijoux, vêtements). Pour que l'IA se concentre sur l'essentiel, nous utilisons un premier modèle appelé **U-Net**. Sa mission est de générer un "masque" : il colorie en blanc la zone de la maladie et en noir le reste de l'image.
 
-> **[ILLUSTRATION : IMAGE 4]**
+> **[Schéma 4 : IMAGE 4]**
 > *Description : Exemple de segmentation : (a) Image brute, (b) Masque binaire généré par U-Net, (c) Lésion isolée.*
 
 #### 4.2.2 Algorithmes de détourage (Auto-Cropping) et centrage sur la pathologie
@@ -196,14 +196,14 @@ La lumière varie d'une photo à l'autre. Nous normalisons donc les couleurs pou
 
 Pour les maladies rares ayant peu d'images, nous utilisons le **sur-échantillonnage** (multiplier les images existantes) et la **pondération des pertes**. Cette technique mathématique force l'IA à être plus attentive et à accorder plus d'importance aux erreurs commises sur les classes minoritaires lors de son entraînement.
 
-> **[ILLUSTRATION : DIAGRAMME MERMAID]**
+> **[Schéma 5 : DIAGRAMME MERMAID]**
 > ```mermaid
- graph TD
-     A[Images Brutes] --> B[Segmentation U-Net]
-     B --> C[Génération de Masque]
-     C --> D[Auto-Cropping]
-     D --> E[Data Augmentation]
-     E --> F[Dataset Final Optimisé]
+> graph TD
+>     A[Images Brutes] --> B[Segmentation U-Net]
+>     B --> C[Génération de Masque]
+>     C --> D[Auto-Cropping]
+>     D --> E[Data Augmentation]
+>     E --> F[Dataset Final Optimisé]
 > ```
 
 ## Chapitre 5 : Cycle d'Apprentissage et Modélisation de l'IA
@@ -224,7 +224,7 @@ Nous avons porté notre choix sur l'architecture **MobileNetV2**. Cette architec
 
 Pendant l'entraînement, nous surveillons deux courbes : la **Loss** (l'erreur) et l'**Accuracy** (la précision). Notre but est de faire descendre l'erreur le plus bas possible tout en évitant le sur-apprentissage (overfitting). Nous ajustons des curseurs appelés "hyperparamètres" (comme le taux d'apprentissage) pour guider l'IA vers la meilleure solution.
 
-> **[ILLUSTRATION : IMAGE 6]**
+> **[Schéma 6 : IMAGE 6]**
 > *Description : Graphique des courbes d'entraînement (Accuracy vs Epochs) montrant la convergence du modèle.*
 
 #### 5.2.2 Quantification (Int8/Float16) et conversion vers le format TFLite
@@ -273,13 +273,13 @@ Dans une ville intelligente (Smart City), la donnée est la clé. Cutisia transf
 
 Le Système d'Information Géographique (SIG) sanitaire permet de cartographier ces données. C'est l'aboutissement de la démarche "Smart DATA-CITY" : utiliser la donnée pour piloter les politiques de santé publique, optimiser l'envoi de médicaments ou de spécialistes là où le besoin est le plus critique.
 
-> **[ILLUSTRATION : DIAGRAMME MERMAID]**
+> **[Schéma 7 : DIAGRAMME MERMAID]**
 > ```mermaid
- graph LR
-     A[Diagnostic Mobile] --> B[Anonymisation]
-     B --> C[API Cloud]
-     C --> D[Tableau de bord SIG]
-     D --> E[Décision Santé Publique]
+> graph LR
+>     A[Diagnostic Mobile] --> B[Anonymisation]
+>     B --> C[API Cloud]
+>     C --> D[Tableau de bord SIG]
+>     D --> E[Décision Santé Publique]
 > ```
 
 # PARTIE 3 : RÉALISATION, TESTS ET ANALYSE DES RÉSULTATS
@@ -312,11 +312,11 @@ Chaque diagnostic est accompagné d'une position géographique (via GPS). Cela p
 
 Même sans internet, Cutisia garde une trace des examens. Nous utilisons une base de données locale **SQLite**. Les dossiers patients, les images et les résultats sont stockés de manière sécurisée sur le téléphone et peuvent être consultés à tout moment par le soignant.
 
-> **[ILLUSTRATION : CAPTURE D'ÉCRAN 1] schema 8** 
+> **[Schéma 8 : CAPTURE D'ÉCRAN 1] schema 8** 
 > *Description : Écran d'accueil de l'application Cutisia en Malgache (Fandraisana) montrant la grille des maladies et le bouton de diagnostic rapide.*
 
 #### 7.1.3 Interface de capture et guidage intelligent
-> **[ILLUSTRATION : CAPTURE D'ÉCRAN 2] schema 9**
+> **[Schéma 9: CAPTURE D'ÉCRAN 2] schema 9**
 > *Description : Interface de capture d'image en temps réel montrant un guide de superposition pour aider l'utilisateur à centrer correctement la lésion cutanée.*
 
 #### 7.3.2 Optimisation pour les contraintes du terrain (API 24, terminaux limités)
@@ -337,17 +337,33 @@ L'IA a été spécifiquement entraînée pour reconnaître des lésions sur diff
 
 ### 8.1 Validation expérimentale du modèle de détection
 
-> **[ILLUSTRATION : CAPTURE D'ÉCRAN 3] schema 10**
+> **[Schéma 10 : CAPTURE D'ÉCRAN 3] schema 10**
 > *Description : Écran de collecte de données (Fanangonana angon-drakitra) utilisé par le personnel de santé, montrant les champs de saisie du patient et la localisation GPS.*
 
 #### 8.1.1 Analyse de la matrice de confusion et courbes AUC-ROC
 
 L'évaluation de notre IA montre des résultats très encourageants. La **matrice de confusion** révèle que le modèle distingue très bien les classes critiques comme le mélanome des classes bénignes. Nous avons obtenu une courbe **AUC-ROC** (capacité de discrimination) proche de 0.90, ce qui place Cutisia à un niveau de fiabilité comparable à celui d'un personnel de santé non spécialiste mais formé.
 
-> **[ILLUSTRATION : IMAGE 5] schema 11**
+> **[Schéma 11 : IMAGE 5] schema 11**
 > *Description : Matrice de confusion montrant les taux de réussite par pathologie (Mélanome, Monkeypox, Lèpre, etc.).*
 
-#### 8.1.2 Comparaison des performances Local vs Cloud
+#### 8.1.2 Rapport de classification détaillé
+
+Le rapport de classification permet d'analyser la précision et la capacité de détection (rappel) pour chaque pathologie. On observe que certaines maladies comme la Lèpre sont très bien identifiées, tandis que d'autres présentent des défis liés à la similarité visuelle des lésions.
+
+### Tableau 5 : Métriques détaillées par pathologie (Elite Model)
+
+| Maladie | Précision | Rappel (Recall) | F1-Score | Nombre d'images |
+| :--- | :--- | :--- | :--- | :--- |
+| **Candidiase** | 0.40 | 0.02 | 0.03 | 1900 |
+| **Leprosy** | 0.66 | 0.63 | 0.65 | 1249 |
+| **Mélanomes** | 0.24 | 0.10 | 0.14 | 3680 |
+| **Monkeypox** | 0.01 | 0.10 | 0.02 | 772 |
+| **Scabies** | 0.22 | 0.24 | 0.23 | 958 |
+| **Tinea** | 0.51 | 0.19 | 0.27 | 2650 |
+| **MOYENNE GLOBALE** | **0.36** | **0.18** | **0.21** | **11209** |
+
+#### 8.1.3 Comparaison des performances Local vs Cloud
 
 Nous avons comparé le temps de réponse et la précision entre le diagnostic sur le téléphone (Edge) et sur le serveur (Cloud). Si le Cloud est légèrement plus précis (environ +2%), le diagnostic local est 5 fois plus rapide et ne nécessite aucun transfert de données coûteux. Pour un usage de terrain, le diagnostic local est donc largement préférable.
 
@@ -360,6 +376,8 @@ Nous avons soumis le prototype à un panel d'agents de santé. Le test consistai
 #### 8.2.2 Analyse de l'acceptabilité et des cas d'usage réels
 
 L'acceptabilité est élevée grâce à la simplicité de l'interface. Les utilisateurs apprécient particulièrement la carte Grad-CAM (XAI) qui leur permet de comprendre pourquoi l'IA suspecte une maladie. Cela transforme l'outil en un support pédagogique pour le personnel.
+
+Schéma 12 . grad-cam
 
 ### 8.3 Analyse critique des limites du système
 
@@ -391,13 +409,13 @@ Une évolution majeure consisterait à passer de la simple classification à la 
 
 Pour améliorer l'IA en continu, nous prévoyons d'utiliser l'**Active Learning**. Lorsqu'un médecin valide ou corrige un diagnostic de l'application, l'image et la correction sont renvoyées vers le serveur pour ré-entraîner le modèle. Plus Cutisia sera utilisé, plus il deviendra intelligent grâce à l'expertise humaine partagée.
 
-> **[ILLUSTRATION : DIAGRAMME MERMAID]**
+> **[Schéma 13 : DIAGRAMME MERMAID]**
 > ```mermaid
- graph TD
-     A[Diagnostic IA] --> B[Validation Médecin]
-     B -- Correction --> C[Serveur de Ré-entraînement]
-     C --> D[Mise à jour du modèle]
-     D --> A
+> graph TD
+>     A[Diagnostic IA] --> B[Validation Médecin]
+>     B -- Correction --> C[Serveur de Ré-entraînement]
+>     C --> D[Mise à jour du modèle]
+>     D --> A
 > ```
 
 ### 9.2 Scalabilité urbaine et déploiement à grande échelle
@@ -439,3 +457,4 @@ Bien que le chemin vers un diagnostic parfait soit encore long, les bases posée
 
 **[6] Parlement Européen (2024)**
 *   "Artificial Intelligence Act" (AI Act). Règlement (UE) 2024/1689.
++

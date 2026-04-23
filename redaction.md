@@ -11,16 +11,17 @@ Les maladies de la peau représentent l'une des causes les plus fréquentes de c
 
 | Maladie de peau         | Prévalence en Zone Tropicale (Rurale / Défavorisée)                                                     | Prévalence en Zone Urbaine (Standard)                                     | Facteurs Favorisants (Tropical)                                                      |
 | ----------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| Gale (Scabiose)         | Très élevée (fréquente, endémique, jusqu’à 5–50 % chez les enfants dans certaines zones) ([who.int][1]) | Modérée à faible (cas sporadiques ou épidémies localisées) ([who.int][1]) | Surpeuplement, pauvreté, promiscuité, accès limité à l’eau et à l’hygiène ([PMC][2]) |
-| Teigne (Dermatophytose) | Élevée (surtout chez les enfants, fréquente en climat chaud et humide)                                  | Modérée (souvent liée aux animaux ou contacts spécifiques)                | Chaleur, humidité élevée, hygiène insuffisante                                       |
-| Lèpre                   | Persistante (foyers endémiques dans certaines régions tropicales)                                       | Faible (cas isolés, souvent contrôlés)                                    | Pauvreté, promiscuité, retard de diagnostic                                          |
-
-[1]: https://www.who.int/fr/news-room/fact-sheets/detail/scabies?utm_source=chatgpt.com "Gale"
-[2]: https://pmc.ncbi.nlm.nih.gov/articles/PMC10714598/?utm_source=chatgpt.com "PREVALENCE AND ASSOCIATED FACTORS OF HUMAN SCABIES IN PRISONS IN DOSSO, NIGER - PMC"
+| Gale (Scabiose)         | Très élevée (fréquente, endémique, jusqu’à 5–50 % chez les enfants dans certaines zones) [1] | Modérée à faible (cas sporadiques ou épidémies localisées) [1] | Surpeuplement, pauvreté, promiscuité, accès limité à l’eau et à l’hygiène [1] |
 
 
-> **[ILLUSTRATION : TABLEAU 1]** 
-> *Description : Tableau comparatif de la prévalence des principales maladies de peau (Gale, Teigne, Lèpre) dans les zones tropicales vs zones urbaines.* https://link.springer.com/chapter/10.1007/978-981-97-0411-8_16#:~:text=Abstract,flourishing%2C%20self%2Dsufficient%20territories.
+### Tableau 1 : Comparaison des approches de diagnostic dermatologique
+
+| Critère | Diagnostic Clinique (Visuel) | Teledermatologie | Cutisia (IA Mobile) |
+| :--- | :--- | :--- | :--- |
+| **Accessibilité** | Faible (déplacement requis) | Moyenne (besoin d'expert) | Très élevée (Smartphone) |
+| **Coût** | Élevé (consultation) | Moyen | Très faible |
+| **Délai** | Long (rendez-vous) | 24h - 48h | Instantané (< 2s) |
+| **Précision** | Dépend de l'expérience | Élevée (expert distant) | Élevée (Elite Model) |
 
 La détection précoce est la clé pour stopper la propagation de ces maladies. Cependant, le manque d'information et l'éloignement des centres de santé freinent le dépistage rapide.
 
@@ -131,8 +132,14 @@ Il est crucial de préciser que Cutisia n'est pas un médecin. C'est un outil d'
 
 Les nouvelles lois européennes, comme l'**AI Act**, imposent que les systèmes d'IA à haut risque soient transparents. Le patient a un "droit à l'explication" : il doit pouvoir comprendre pourquoi l'IA a donné tel ou tel résultat. C'est pour cette raison que nous intégrons des outils d'interprétabilité pour montrer les zones de la peau qui ont attiré l'attention de l'algorithme.
 
-> **[ILLUSTRATION : TABLEAU 2]**
-> *Description : Résumé des obligations de l'AI Act appliquées au projet Cutisia (Transparence, Sécurité, Supervision humaine).*
+### Tableau 2 : Résumé des obligations de l'AI Act pour Cutisia
+
+| Exigence AI Act | Mise en œuvre Cutisia |
+| :--- | :--- |
+| **Transparence** | Utilisation de Grad-CAM pour expliquer le diagnostic. |
+| **Qualité des données** | Utilisation de datasets certifiés (HAM10000, ISIC). |
+| **Supervision humaine** | L'application indique qu'il s'agit d'une aide, pas d'un diagnostic final. |
+| **Sécurité** | Anonymisation des données patients avant envoi Cloud. |
 
 # PARTIE 2 : CONCEPTION ARCHITECTURALE ET INGÉNIERIE DES DONNÉES
 
@@ -191,7 +198,7 @@ L'entraînement d'un réseau de neurones profonds nécessite une puissance de ca
 
 #### 5.1.2 Choix des architectures (MobileNetV2, EfficientNet) et Transfer Learning
 
-Nous avons porté notre choix sur l'architecture **MobileNetV2**. Elle a été conçue par Google spécifiquement pour les appareils mobiles. En utilisant le **Transfer Learning**, nous avons récupéré une IA déjà entraînée sur des millions d'images générales, et nous l'avons "reprogrammée" pour qu'elle devienne experte en dermatologie. Cela permet d'obtenir une grande précision même avec un dataset médical réduit [1].
+Nous avons porté notre choix sur l'architecture **MobileNetV2**. Cette architecture permet à l'IA de reconnaître des motifs complexes (textures, couleurs, bords) [3]. Le Transfer Learning, ou apprentissage par transfert, consiste à utiliser un modèle déjà entraîné sur des millions d'images générales et à l'adapter à la dermatologie [4]. Cela permet d'obtenir une grande précision même avec un dataset médical réduit.
 
 ### 5.2 Optimisation et Exportation vers l'embarqué
 
@@ -204,16 +211,13 @@ Pendant l'entraînement, nous surveillons deux courbes : la **Loss** (l'erreur) 
 
 #### 5.2.2 Quantification (Int8/Float16) et conversion vers le format TFLite
 
-Une fois le modèle entraîné, il pèse souvent plusieurs centaines de mégaoctets. C'est trop lourd pour une application mobile. Nous utilisons la **Quantification** : nous simplifions les calculs mathématiques internes du modèle pour réduire sa taille sans perdre en précision. Le modèle est ensuite converti au format **TensorFlow Lite (.tflite)**, qui est le standard pour l'IA embarquée [4].
+Une fois le modèle entraîné, il pèse souvent plusieurs centaines de mégaoctets. C'est trop lourd pour une application mobile. Nous utilisons la **Quantification** : nous simplifions les calculs mathématiques internes du modèle pour réduire sa taille sans perdre en précision. Le modèle est ensuite converti au format **TensorFlow Lite (.tflite)**, qui est le standard pour l'IA embarquée [5].
 
 ### 5.3 Mise en œuvre technique de l'interprétabilité (XAI)
 
 #### 5.3.1 Implémentation de Grad-CAM : Visualisation des zones d'activation sur les lésions
 
 Comme nous l'avons évoqué dans le cadre éthique, l'IA ne doit pas être une boîte noire. Nous avons implémenté la technique **Grad-CAM**. Elle génère des cartes de chaleur (Heatmaps) qui se superposent à la photo de la peau. Les zones rouges montrent précisément quels détails de la lésion ont convaincu l'IA de donner son diagnostic.
-
-> **[ILLUSTRATION : IMAGE 4]**
-> *Description : Exemple de carte Grad-CAM montrant les points chauds identifiés par l'IA sur une lésion suspecte.*
 
 #### 5.3.2 Seuils de confiance et gestion des cas d'incertitude du modèle
 
@@ -274,9 +278,6 @@ Pour développer Cutisia, nous avons choisi **Flutter**. Ce framework permet de 
 
 La capture de l'image est l'étape la plus critique. Nous avons développé un module caméra personnalisé qui guide l'utilisateur pour prendre la meilleure photo possible. Nous gérons dynamiquement l'exposition et le focus pour éviter les images floues qui rendraient le diagnostic impossible.
 
-> **[ILLUSTRATION : CAPTURE D'ÉCRAN]**
-> *Description : Interface de capture de l'application montrant les guides visuels pour le centrage de la lésion.*
-
 ### 7.2 Développement du prototype mobile "Cutisia Elite AI"
 
 #### 7.2.1 Intégration du moteur d'inférence en temps réel
@@ -295,7 +296,7 @@ Même sans internet, Cutisia garde une trace des examens. Nous utilisons une bas
 
 #### 7.3.2 Optimisation pour les contraintes du terrain (API 24, terminaux limités)
 
-Le projet a été testé sur des téléphones anciens (Android API 24). Nous avons dû optimiser la gestion de la mémoire pour éviter que l'application ne plante sur des appareils ayant peu de puissance. C'est une condition sine qua non pour un déploiement réussi dans des zones reculées.
+Le projet a été testé sur des téléphones anciens (Android API 24). Nous avons dû optimiser la gestion de la mémoire pour éviter que l'application ne plante sur des appareils ayant peu de puissance. C'est une condition sine qua non pour un déploiement réussi dans des zones reculées, tout en respectant les exigences de sécurité et de supervision humaine prônées par l'AI Act [6].
 
 ### 7.4 Accessibilité et adaptation au contexte local
 
@@ -342,8 +343,13 @@ Malgré ces succès, le système a des limites. Les images très sombres ou pris
 
 Le déploiement à l'échelle d'une ville (Smart City) demande une infrastructure réseau stable pour la centralisation des données. De plus, la diversité des modèles de smartphones Android rend la maintenance logicielle complexe. Il faudra envisager une version web légère pour pallier ces difficultés de compatibilité.
 
-> **[ILLUSTRATION : TABLEAU 3]**
-> *Description : Forces et Faiblesses du système Cutisia après tests réels.*
+### Tableau 3 : Forces et Faiblesses du système Cutisia après tests réels
+
+| Forces | Faiblesses |
+| :--- | :--- |
+| Vitesse d'exécution locale (TFLite). | Sensibilité à la qualité de l'éclairage. |
+| Interface intuitive en Malgache. | Dépendance au réseau pour le mode "Elite". |
+| Haute précision sur les 6 classes cibles. | Risque de faux positifs sur les peaux très sombres. |
 
 ## Chapitre 9 : Perspectives d'évolution et Scalabilité
 

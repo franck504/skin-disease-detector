@@ -65,12 +65,15 @@ def make_gradcam_heatmap(img_array, model, last_conv_layer_name, pred_index=None
 
     with tf.GradientTape() as tape:
         last_conv_layer_output, preds = grad_model(img_array)
-        if pred_index is None:
-            pred_index = tf.argmax(preds[0])
         
-        # On s'assure que preds est bien un tenseur et non une liste
+        # On s'assure que preds est un tenseur simple
         if isinstance(preds, list):
             preds = preds[0]
+            
+        if pred_index is None:
+            # On récupère l'index de la classe avec la plus haute probabilité
+            import numpy as np
+            pred_index = np.argmax(preds[0])
             
         class_channel = preds[:, pred_index]
 

@@ -1,5 +1,0 @@
-1 - il faut attribuer une distance de capture camera pour chaque classe , et source de dataset , pour sous-classer les datasets , parce qu'il peut y avoir des images de meme classe mais de zoom differente
-2 - determiner l'organisation des datasets a prendre 
-3 - migrer petit a petit les images de meme classe dans des dossiers differentes si elles ne sont pas encore uniformes
-4 - uniformiser et unifier les images de le meme classe (zoom ,resolution, nom-de-fichier)
-5 - egaliser le nombre de images de chaque classe

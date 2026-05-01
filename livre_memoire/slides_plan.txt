@@ -1,0 +1,18 @@
+Thème : Application mobile sanitaire avec modèle CNN léger pour la détection de maladies cutanées tropicales-africaines
+
+Étapes :
+1 - Définition du contexte et du problème à résoudre
+2 - Collecte de données : ISIC, HAM10000, Kaggle, Huggingface, Web Scrapping
+3 - Analyse des données :
+    * Recensement de toutes les classes
+    * Adoption de noms uniques de classes
+    * Visualisation, statistiques, charts, comparaison du nombre d'images par classe
+4 - Choix :
+    * Sélection et choix des classes pour la détection selon la quantité et qualité des datasets dans la classe
+    * 6 classes choisies : Monkeypox, Leprosy, Tinea, Candidiase, Mélanome, Scabies
+5 - Préparation :
+    * Normalisation et standardisation : utiliser le modèle/architecture U-Net, OpenCV (pour rogner, pour générer MASK, zoom)
+    * Enrichissement de données : rotation 180°/90°, varier luminosité, rogner les images
+6 - Entraînement du modèle : MobileNetV2 / EfficientNetV2 sur Kaggle avec le GPU P100
+7 - Déploiement : FastAPI pour le backend, environnement dans Google Colab, exposer API via pyngrok, stockage Google Drive, frontend app mobile avec Flutter
+8 - Amélioration des datasets : ajout de fonctionnalité de collecte des images avec labels et autres informations (images, pays, âge, sexe, nom de maladie, GPS, ...)

@@ -1,0 +1,46 @@
+Pour votre mémoire et votre soutenance, il est très important de bien justifier l'utilisation de chaque outil. Voici la liste complète des **modules Python** utilisés dans le projet **Cutisia**, classés par rôle, de la préparation des données jusqu'à l'exportation finale.
+
+---
+
+### 1. Le Cœur de l'Intelligence Artificielle
+*   **TensorFlow / Keras** :
+    *   *Rôle* : C'est le moteur principal. Il permet de définir l'architecture des réseaux de neurones (**MobileNetV2**, **EfficientNet**, **U-Net**).
+    *   *Utilité* : Chargement des modèles pré-entraînés, gestion de l'apprentissage par transfert (Transfer Learning) et entraînement sur GPU.
+*   **TensorFlow Lite (TFLite)** :
+    *   *Rôle* : Module de compression.
+    *   *Utilité* : Convertit les modèles lourds (`.h5`) en formats ultra-légers (`.tflite`) pour qu'ils puissent tourner sur un smartphone sans internet.
+
+### 2. Traitement d'Images et Vision par Ordinateur
+*   **OpenCV (`cv2`)** :
+    *   *Rôle* : Manipulation avancée des images.
+    *   *Utilité* : Redimensionnement des photos, conversion des couleurs, et surtout génération des **Heatmaps Grad-CAM** (superposition de la couleur sur la lésion).
+*   **Matplotlib / Seaborn** :
+    *   *Rôle* : Visualisation de données.
+    *   *Utilité* : Création de la **Matrice de Confusion**, des courbes de précision (Accuracy) et des courbes **AUC-ROC**.
+
+### 3. Analyse Mathématique et Statistique
+*   **NumPy** :
+    *   *Rôle* : Calcul matriciel.
+    *   *Utilité* : Les images sont converties en "tableaux de nombres". NumPy permet de faire des calculs rapides sur ces tableaux pour que l'IA puisse "comprendre" les pixels.
+*   **Scikit-learn (`sklearn`)** :
+    *   *Rôle* : Boîte à outils de métriques.
+    *   *Utilité* : Calcul automatique de la **Précision**, du **Rappel** et du **F1-Score**. C'est lui qui génère le fameux "Classification Report".
+
+### 4. Gestion des Données et du Système
+*   **OS / Glob / Pathlib** :
+    *   *Rôle* : Interaction avec le système de fichiers.
+    *   *Utilité* : Recherche récursive des images dans votre Google Drive, création des dossiers de résultats, et gestion des chemins d'accès (Windows vs Linux).
+*   **Imghdr** :
+    *   *Rôle* : Vérificateur de format.
+    *   *Utilité* : (Utilisé dans notre version robuste) Il vérifie si un fichier est réellement une image avant que l'IA ne tente de l'ouvrir, évitant ainsi les plantages.
+*   **Google.colab (`drive`)** :
+    *   *Rôle* : Pont vers le Cloud.
+    *   *Utilité* : Permet de "monter" votre Google Drive dans l'environnement de calcul pour accéder à vos 11 000 images sans avoir à les télécharger sur votre PC.
+
+---
+
+### 💡 Note pour votre soutenance :
+Si le jury vous demande : *"Pourquoi ne pas avoir utilisé uniquement TensorFlow ?"*, vous pourrez répondre :
+> *"Nous avons utilisé une architecture hybride : **TensorFlow** pour le cerveau de l'IA, **OpenCV** pour l'interprétabilité visuelle (Grad-CAM), et **Scikit-learn** pour garantir une évaluation scientifique rigoureuse de nos résultats."*
+
+Cela montre que vous maîtrisez l'ensemble du pipeline de la Data Science.

@@ -12,8 +12,21 @@ from tensorflow.keras.preprocessing.image import img_to_array
 import nest_asyncio
 import cv2
 
+# --- PATCH KERAS 3 POUR SEGMENTATION-MODELS ---
+import tensorflow as tf
+import keras
+class GenericUtilsStub:
+    def get_custom_objects(self):
+        try: return keras.saving.get_custom_objects()
+        except: return {}
+if not hasattr(keras.utils, 'generic_utils'):
+    keras.utils.generic_utils = GenericUtilsStub()
+os.environ['SM_FRAMEWORK'] = 'tf.keras'
+import segmentation_models as sm
+
 # --- CONFIGURATION ---
 IMG_SIZE = (384, 384)
+UNET_SIZE = (256, 256)
 PORT = 8000
 
 # Labels hardcodés (ordre alphabétique = ordre du modèle)
@@ -38,12 +51,18 @@ NGROK_AUTHTOKEN = os.getenv("NGROK_AUTHTOKEN", "VOTRE_AUTHTOKEN_NGROK")
 app = FastAPI(title="Cutisia API - Skin Disease Detection")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
-# Chargement du modèle
+# Chargement du modèle de classification (EfficientNetV2)
 try:
     model = load_model(MODEL_PATH)
-    print(f"✅ Modèle chargé avec succès : {MODEL_PATH}")
+    print(f"✅ Modèle de classification chargé : {MODEL_PATH}")
 except:
     print(f"❌ Erreur : Modèle {MODEL_PATH} introuvable. Entraînez-le d'abord.")
+
+# Chargement du modèle U-Net (segmentation des lésions)
+BACKBONE = 'resnet34'
+unet_preprocess = sm.get_preprocessing(BACKBONE)
+unet_model = sm.Unet(BACKBONE, encoder_weights='imagenet', classes=1, activation='sigmoid')
+print("✅ Modèle U-Net (segmentation) chargé avec succès.")
 
 def equalize_derma(img):
     """Égalisation adaptative (CLAHE) identique à l'entraînement"""
@@ -55,13 +74,37 @@ def equalize_derma(img):
     img = cv2.cvtColor(lab, cv2.COLOR_LAB2RGB)
     return img
 
+def segment_and_crop(img_rgb):
+    """Utilise U-Net pour isoler la lésion et cropper l'image autour."""
+    h, w = img_rgb.shape[:2]
+    # 1. Préparer l'image pour U-Net (256x256)
+    img_small = cv2.resize(img_rgb, UNET_SIZE)
+    img_input = np.expand_dims(img_small, axis=0)
+    img_input = unet_preprocess(img_input)
+    # 2. Générer le masque binaire
+    pr_mask = unet_model.predict(img_input, verbose=0).squeeze()
+    binary_mask = (pr_mask > 0.5).astype(np.uint8) * 255
+    # 3. Redimensionner le masque à la taille originale
+    full_mask = cv2.resize(binary_mask, (w, h))
+    # 4. Cropper autour de la lésion détectée
+    coords = np.where(full_mask > 0)
+    if len(coords[0]) == 0:
+        return img_rgb  # Pas de lésion détectée → image entière
+    y0, x0 = coords[0].min(), coords[1].min()
+    y1, x1 = coords[0].max(), coords[1].max()
+    cropped = img_rgb[y0:y1, x0:x1]
+    return cropped
+
 def preprocess_image(image: Image.Image):
-    # 1. Conversion en array et redimensionnement
+    # 1. Conversion en array RGB
     img = np.array(image.convert('RGB'))
+    # 2. Segmentation U-Net : isoler et cropper la lésion
+    img = segment_and_crop(img)
+    # 3. Redimensionner au format d'entrée du modèle (384x384)
     img = cv2.resize(img, IMG_SIZE)
-    # 2. Application de l'égalisation CLAHE
+    # 4. Application de l'égalisation CLAHE
     img = equalize_derma(img)
-    # 3. Normalisation
+    # 5. Normalisation
     img = img.astype(np.float32) / 255.0
     img = np.expand_dims(img, axis=0)
     return img

@@ -7,7 +7,7 @@ class CloudApiService {
 
   // URL de base de votre serveur Ngrok (à mettre à jour par l'utilisateur)
   String baseUrl = "https://chalazian-nonfissile-dian.ngrok-free.dev";
-
+  // other URL String baseUrl = "https://franck504-cutisia-hf.hf.space";
   Future<Map<String, dynamic>?> predictImage(String imagePath) async {
     try {
       final url = Uri.parse("$baseUrl/predict");
@@ -37,7 +37,10 @@ class CloudApiService {
     }
   }
 
-  Future<bool> submitCollection(String imagePath, Map<String, dynamic> metadata) async {
+  Future<bool> submitCollection(
+    String imagePath,
+    Map<String, dynamic> metadata,
+  ) async {
     try {
       final url = Uri.parse("$baseUrl/collect");
       _logger.i("Sending collection data to Cloud API: $url");
@@ -49,7 +52,7 @@ class CloudApiService {
       var streamedResponse = await request.send().timeout(
         const Duration(seconds: 30),
       );
-      
+
       if (streamedResponse.statusCode == 200) {
         _logger.i("Collection data submitted successfully to Cloud");
         return true;
